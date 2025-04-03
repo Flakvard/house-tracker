@@ -184,33 +184,104 @@ void findBetriProperties(GumboNode *node, std::vector<Property> &results) {
   }
 }
 
-int main() {
-  // 1. Download HTML with libcurl
+// Simple check if a file exists.
+bool fileExists(const std::string &path) {
+  struct stat buffer;
+  return (stat(path.c_str(), &buffer) == 0);
+}
+
+// Download HTML via libcurl
+std::string downloadHtml(const std::string &url) {
   CURL *curl;
   CURLcode res;
   std::string html;
 
   curl_global_init(CURL_GLOBAL_DEFAULT);
   curl = curl_easy_init();
+  if (!curl) {
+    std::cerr << "Failed to init curl\n";
+    return "";
+  }
 
-  if (curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.betriheim.fo/");
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &html);
+  curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+  curl_easy_setopt(curl, CURLOPT_WRITEDATA, &html);
 
-    // Perform the request
-    res = curl_easy_perform(curl);
-    curl_easy_cleanup(curl);
+  res = curl_easy_perform(curl);
+  if (res != CURLE_OK) {
+    std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res)
+              << std::endl;
+    html.clear(); // Indicate failure
+  }
 
-    if (res != CURLE_OK) {
-      std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res)
-                << std::endl;
-      return 1;
+  curl_easy_cleanup(curl);
+  curl_global_cleanup();
+  return html;
+}
+
+/**
+ * Load HTML from cache if it exists, or download from a URL and cache it.
+ * filePath is something like "../src/raw_html/html_1.json"
+ */
+std::string loadHtmlFromCacheOrDownload(const std::string &url,
+                                        const std::string &filePath) {
+  if (fileExists(filePath)) {
+    // If file exists, read JSON from disk
+    std::ifstream ifs(filePath);
+    if (!ifs.is_open()) {
+      std::cerr << "Error opening cache file: " << filePath << std::endl;
+      return "";
+    }
+
+    nlohmann::json j;
+    ifs >> j;
+    ifs.close();
+
+    // Optionally, you can do version checks, timestamps, etc. For simplicity:
+    std::string cachedHtml = j.value("html", "");
+    if (!cachedHtml.empty()) {
+      std::cout << "[Cache] Using cached HTML from " << filePath << "\n";
+      return cachedHtml;
     }
   }
-  curl_global_cleanup();
 
-  // 2. Parse downloaded HTML with Gumbo
+  // Otherwise, download fresh
+  std::cout << "[Download] Fetching fresh HTML from " << url << "\n";
+  std::string freshHtml = downloadHtml(url);
+  if (freshHtml.empty()) {
+    // Download failed; handle error accordingly
+    return "";
+  }
+
+  // Save to JSON cache file
+  nlohmann::json j;
+  j["url"] = url;
+  j["html"] = freshHtml;
+
+  std::ofstream ofs(filePath);
+  if (!ofs.is_open()) {
+    std::cerr << "Error opening file for writing: " << filePath << std::endl;
+    return freshHtml; // We have HTML, but we couldn't cache it
+  }
+  ofs << j.dump(4);
+  ofs.close();
+
+  return freshHtml;
+}
+
+int main() {
+  // 1. Try to load HTML from "../src/raw_html/html_1.json", or download if
+  // missing
+  const std::string url = "https://www.betriheim.fo/";
+  const std::string cachePath = "../src/raw_html/html_1.json";
+  std::string html = loadHtmlFromCacheOrDownload(url, cachePath);
+
+  if (html.empty()) {
+    std::cerr << "Failed to load or download HTML.\n";
+    return 1;
+  }
+
+  // 2. Parse with Gumbo
   GumboOutput *output = gumbo_parse(html.c_str());
   if (!output) {
     std::cerr << "Failed to parse HTML with Gumbo\n";
@@ -220,9 +291,9 @@ int main() {
   // 3. Recursively find your property listings
   std::vector<Property> betriProperties;
   findBetriProperties(output->root, betriProperties);
-
   gumbo_destroy_output(&kGumboDefaultOptions, output);
 
+  // 5. Build JSON of the scraped properties
   nlohmann::json propertiesArray = nlohmann::json::array();
 
   int count = 0;
@@ -245,7 +316,7 @@ int main() {
     propertiesArray.push_back(j);
   }
 
-  // Write to file
+  // 6. Write to properties.json or wherever you wish
   std::ofstream outFile("../src/storage/properties.json");
   if (!outFile.is_open()) {
     std::cerr << "Error opening output file!\n";
