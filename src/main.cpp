@@ -1,9 +1,8 @@
 #include <curl/curl.h>
+#include <fstream>
 #include <gumbo.h>
 #include <iostream>
 #include <nlohmann/json.hpp>
-
-using json = nlohmann::json;
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
                             void *userp) {
@@ -224,7 +223,42 @@ int main() {
 
   gumbo_destroy_output(&kGumboDefaultOptions, output);
 
+  nlohmann::json propertiesArray = nlohmann::json::array();
+
   int count = 0;
+  for (const auto &prop : betriProperties) {
+    nlohmann::json j;
+    j["Number"] = ++count;
+    j["Website"] = prop.website;
+    j["Address"] = prop.address;
+    j["Price"] = prop.price;
+    j["Latest"] = prop.latestPrice;
+    j["ValidDate"] = prop.validDate;
+    j["YearBuilt"] = prop.date;
+    j["InsideM2"] = prop.buildingSize;
+    j["LandM2"] = prop.landSize;
+    j["Rooms"] = prop.room;
+    j["Floors"] = prop.floor;
+    j["Img"] = prop.img;
+
+    // Add this JSON object to our properties array
+    propertiesArray.push_back(j);
+  }
+
+  // Write to file
+  std::ofstream outFile("../src/storage/properties.json");
+  if (!outFile.is_open()) {
+    std::cerr << "Error opening output file!\n";
+    return 1;
+  }
+
+  // Pretty-print with 4 spaces of indentation
+  outFile << propertiesArray.dump(4) << std::endl;
+  outFile.close();
+
+  std::cout << "Properties written to properties.json\n";
+
+  count = 0;
   // 4. Print them out (debug) or do something else
   for (const auto &prop : betriProperties) {
     count++;
