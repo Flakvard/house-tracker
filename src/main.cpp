@@ -1,8 +1,13 @@
+#include <chrono> // C++17
+#include <ctime>
 #include <curl/curl.h>
+#include <filesystem> // C++17
 #include <fstream>
 #include <gumbo.h>
 #include <iostream>
 #include <nlohmann/json.hpp>
+
+namespace fs = std::filesystem;
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
                             void *userp) {
@@ -350,7 +355,7 @@ void mergeProperties(std::vector<Property> &existing,
 }
 
 // Convert entire property list to JSON array
-nlohmann::json allPropertiesToJson(const std::vector<Property> &props) {
+nlohmann::json propertiesToJson(const std::vector<Property> &props) {
   nlohmann::json arr = nlohmann::json::array();
   for (auto &p : props) {
     arr.push_back(propertyToJson(p));
@@ -359,7 +364,7 @@ nlohmann::json allPropertiesToJson(const std::vector<Property> &props) {
 }
 
 // Convert JSON array to entire property list
-std::vector<Property> jsonToAllProperties(const nlohmann::json &arr) {
+std::vector<Property> jsonToProperties(const nlohmann::json &arr) {
   std::vector<Property> props;
   if (!arr.is_array()) {
     return props;
@@ -370,27 +375,82 @@ std::vector<Property> jsonToAllProperties(const nlohmann::json &arr) {
   return props;
 }
 
-int main() {
-  // 1. Try to load HTML from "../src/raw_html/html_1.json", or download if
-  // missing
-  const std::string url = "https://www.betriheim.fo/";
-  const std::string cachePath = "../src/raw_html/html_1.json";
-  std::string html = loadHtmlFromCacheOrDownload(url, cachePath);
+// Utility to get a string like "html_2025-04-03_14-00-00.json"
+// You might prefer a shorter or simpler format
+std::string makeTimestampedFilename() {
+  using namespace std::chrono;
+
+  // Get the current time and time zone
+  auto now = system_clock::now();
+  auto tz = current_zone();
+  zoned_time zt{tz, now};
+
+  // Format using std::format with chrono support (C++20)
+  std::string timestamp = std::format("{:%Y-%m-%d_%H-%M-%S}", zt);
+
+  return "../src/raw_html/html_" + timestamp + ".json";
+}
+
+std::string downloadAndSaveHtml(const std::string &url) {
+  // 1) Download
+  std::string html = downloadHtml(url);
+  if (html.empty()) {
+    std::cerr << "Download failed\n";
+    return "";
+  }
+
+  // 2) Build a new timestamped filename
+  std::string filePath = makeTimestampedFilename();
+
+  // 3) Save the raw HTML (plus any metadata) into a JSON file
+  nlohmann::json j;
+  j["url"] = url;
+  j["timestamp"] = std::time(nullptr); // or store as string
+  j["html"] = html;
+
+  std::ofstream ofs(filePath);
+  if (!ofs.is_open()) {
+    std::cerr << "Error opening file: " << filePath << std::endl;
+    return html; // At least we have the HTML in memory
+  }
+
+  ofs << j.dump(4);
+  ofs.close();
+
+  std::cout << "Saved raw HTML to: " << filePath << "\n";
+  return html;
+}
+
+// Example function to gather and sort all .json files from a directory
+std::vector<fs::path> gatherJsonFiles(const std::string &dir) {
+  std::vector<fs::path> result;
+  for (auto &entry : fs::directory_iterator(dir)) {
+    if (entry.is_regular_file() && entry.path().extension() == ".json") {
+      result.push_back(entry.path());
+    }
+  }
+
+  // Sort them in ascending order by filename
+  // (If your filenames are timestamped, this is effectively chronological.)
+  std::sort(result.begin(), result.end());
+  return result;
+}
+
+std::vector<Property> parseHtmlWithGumbo(std::string html) {
+  std::vector<Property> betriProperties;
 
   if (html.empty()) {
     std::cerr << "Failed to load or download HTML.\n";
-    return 1;
+    return betriProperties;
   }
 
   // 2. Parse with Gumbo
   GumboOutput *output = gumbo_parse(html.c_str());
   if (!output) {
     std::cerr << "Failed to parse HTML with Gumbo\n";
-    return 1;
+    return betriProperties;
   }
-
   // 3. Recursively find your property listings
-  std::vector<Property> betriProperties;
   findBetriProperties(output->root, betriProperties);
   gumbo_destroy_output(&kGumboDefaultOptions, output);
 
@@ -398,48 +458,81 @@ int main() {
 
     prop.id = prop.address + prop.city + prop.postNum;
   }
+  return betriProperties;
+}
 
-  // 5. Build JSON of the scraped properties
-  //
-  std::vector<Property> existingProperties;
+int main() {
+  // 1. Try to load HTML from "../src/raw_html/html_1.json", or download if
+  // missing
+  const std::string url = "https://www.betriheim.fo/";
+  const std::string cachePath = "../src/raw_html/html_1.json";
+  // std::string html = loadHtmlFromCacheOrDownload(url, cachePath);
+  std::string html = downloadAndSaveHtml(url);
+
+  // 1. Prepare an "existing properties" vector
+  //    (Load from properties.json if it exists)
+  std::vector<Property> allProperties;
   {
     std::ifstream ifs("../src/storage/properties.json");
     if (ifs.is_open()) {
       nlohmann::json j;
       ifs >> j;
+      allProperties = jsonToProperties(j);
       ifs.close();
-      existingProperties = jsonToAllProperties(j);
-      std::cout << "Loaded " << existingProperties.size()
-                << " properties from disk.\n";
     } else {
-      std::cout << "No existing properties.json, starting fresh.\n";
+      std::cout << "No existing properties.json found; starting fresh.\n";
     }
   }
-  nlohmann::json newlyScrapedProps = nlohmann::json::array();
-
-  for (const auto &prop : betriProperties) {
-    nlohmann::json j = propertyToJson(prop);
-    // Add this JSON object to our properties array
-    newlyScrapedProps.push_back(j);
+  // 2. Gather all timestamped .json files from ../src/raw_html
+  std::string rawHtmlDir = "../src/raw_html";
+  std::vector<fs::path> htmlFiles = gatherJsonFiles(rawHtmlDir);
+  if (htmlFiles.empty()) {
+    std::cerr << "No JSON files found in " << rawHtmlDir << "\n";
+    return 0;
   }
-  auto newProperties = jsonToAllProperties(newlyScrapedProps);
 
-  mergeProperties(existingProperties, newProperties);
+  // 3. For each file, read the JSON, extract "html", parse with Gumbo, merge
+  for (const auto &path : htmlFiles) {
+    std::ifstream ifs(path);
+    if (!ifs.is_open()) {
+      std::cerr << "Failed to open " << path << "\n";
+      continue;
+    }
 
-  auto updatedProperties = allPropertiesToJson(existingProperties);
+    nlohmann::json j;
+    ifs >> j;
+    ifs.close();
 
-  // 6. Write to properties.json or wherever you wish
-  std::ofstream outFile("../src/storage/properties.json");
-  if (!outFile.is_open()) {
-    std::cerr << "Error opening output file!\n";
+    // If your JSON structure is: { "url": "...", "timestamp": ..., "html":
+    // "..." }
+    std::string rawHtml = j.value("html", "");
+    if (rawHtml.empty()) {
+      std::cerr << "No HTML found in " << path << "\n";
+      continue;
+    }
+
+    // Parse
+    std::vector<Property> newProperties = parseHtmlWithGumbo(rawHtml);
+
+    // Merge
+    mergeProperties(allProperties, newProperties);
+
+    std::cout << "Processed file: " << path.filename().string() << " => found "
+              << newProperties.size() << " properties.\n";
+  }
+
+  // 4. Write final results to properties.json
+  nlohmann::json finalJson = propertiesToJson(allProperties);
+  std::ofstream ofs("../src/storage/properties.json");
+  if (!ofs.is_open()) {
+    std::cerr << "Failed to open ../src/storage/properties.json for writing!\n";
     return 1;
   }
+  ofs << finalJson.dump(4);
+  ofs.close();
 
-  // Pretty-print with 4 spaces of indentation
-  outFile << updatedProperties.dump(4) << std::endl;
-  outFile.close();
-
-  std::cout << "Properties written to properties.json\n";
-
+  std::cout << "Wrote " << allProperties.size()
+            << " total properties to properties.json\n";
+  return 0;
   return 0;
 }
