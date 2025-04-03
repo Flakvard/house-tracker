@@ -9,11 +9,12 @@ project(HouseTracker VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "") # works
 
 # Add dependencies
 find_package(CURL CONFIG REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
-# find_package(Gumbo CONFIG REQUIRED)
+find_package(unofficial-gumbo CONFIG REQUIRED)
 find_package(Drogon CONFIG REQUIRED)
 
 # No C++20 modules
@@ -47,7 +48,7 @@ target_link_libraries(HouseTracker PRIVATE
     CURL::libcurl 
     nlohmann_json::nlohmann_json 
     Drogon::Drogon
-    gumbo
+    unofficial::gumbo::gumbo
 )
 
 
