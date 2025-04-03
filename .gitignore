@@ -73,5 +73,8 @@ ipch/
 *.svclog
 *.scc
 
+buildVS/
+.cache/
+buildNinja/
 build/
 vcpkg_installed/
