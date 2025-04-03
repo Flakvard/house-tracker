@@ -10,13 +10,15 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
   return size * nmemb;
 }
 struct Property {
+  std::string id;
   std::string website;
   std::string address;
   std::string houseNum;
   std::string city;
   std::string postNum;
   std::string price;
-  std::string latestPrice;
+  std::vector<std::string> previousPrices; // All prior prices
+  std::string latestOffer;
   std::string validDate;
   std::string date;
   std::string buildingSize;
@@ -107,7 +109,7 @@ void parseBetriProperty(GumboNode *node, Property *p) {
     if (classStr == "price") {
       p->price = getNodeText(node);
     } else if (classStr == "latest-offer") {
-      p->latestPrice = getNodeText(node);
+      p->latestOffer = getNodeText(node);
     } else if (classStr == "valid") {
       p->validDate = getNodeText(node);
     } else if (classStr == "date") {
@@ -269,6 +271,105 @@ std::string loadHtmlFromCacheOrDownload(const std::string &url,
   return freshHtml;
 }
 
+// Convert a single Property to JSON
+nlohmann::json propertyToJson(const Property &prop) {
+  nlohmann::json j;
+  j["id"] = prop.id;
+  j["website"] = prop.website;
+  j["address"] = prop.address;
+  j["price"] = prop.price;
+  j["previousPrices"] = prop.previousPrices;
+  j["latestOffer"] = prop.latestOffer;
+  j["validDate"] = prop.validDate;
+  j["yearBuilt"] = prop.date;
+  j["insideM2"] = prop.buildingSize;
+  j["landM2"] = prop.landSize;
+  j["rooms"] = prop.room;
+  j["floors"] = prop.floor;
+  j["img"] = prop.img;
+  return j;
+}
+
+// Convert JSON to a single Property
+Property jsonToProperty(const nlohmann::json &j) {
+  Property p;
+  p.id = j.value("id", "");
+  p.website = j.value("website", "");
+  p.address = j.value("address", "");
+  p.price = j.value("price", "");
+  // If "previousPrices" doesn't exist or is the wrong type, this won't blow up
+  if (j.contains("previousPrices") && j["previousPrices"].is_array()) {
+    for (auto &item : j["previousPrices"]) {
+      p.previousPrices.push_back(item.get<std::string>());
+    }
+  }
+  p.latestOffer = j.value("latestOffer", "");
+  p.validDate = j.value("validDate", "");
+  p.date = j.value("yearBuilt", "");
+  p.buildingSize = j.value("insideM2", "");
+  p.landSize = j.value("landM2", "");
+  p.room = j.value("room", "");
+  p.floor = j.value("floors", "");
+  p.img = j.value("img", "");
+  return p;
+}
+
+// Compare two properties by ID (or address, or whichever unique key you choose)
+bool isSameProperty(const Property &a, const Property &b) {
+  return a.id == b.id;
+}
+
+// Merges new properties into existing, tracking price changes
+void mergeProperties(std::vector<Property> &existing,
+                     const std::vector<Property> &newOnes) {
+  for (const auto &newProp : newOnes) {
+    // 1) Find match in existing
+    auto it =
+        std::find_if(existing.begin(), existing.end(), [&](const Property &ex) {
+          return isSameProperty(ex, newProp);
+        });
+
+    if (it == existing.end()) {
+      // property not found => new property
+      std::cout << "Adding new property: " << newProp.address << "\n";
+      existing.push_back(newProp);
+    } else {
+      // property found => check if price changed
+      if (it->price != newProp.price) {
+        std::cout << "Price changed for: " << it->address << " from "
+                  << it->price << " to " << newProp.price << "\n";
+
+        // push the old price into the price history
+        it->previousPrices.push_back(it->price);
+        // update the current price
+        it->price = newProp.price;
+      }
+      // you can compare other fields (e.g., floors, rooms) similarly
+    }
+  }
+}
+
+// Convert entire property list to JSON array
+nlohmann::json allPropertiesToJson(const std::vector<Property> &props) {
+  nlohmann::json arr = nlohmann::json::array();
+  for (auto &p : props) {
+    arr.push_back(propertyToJson(p));
+  }
+  return arr;
+}
+
+// Convert JSON array to entire property list
+std::vector<Property> jsonToAllProperties(const nlohmann::json &arr) {
+  std::vector<Property> props;
+  if (!arr.is_array()) {
+    return props;
+  }
+  for (auto &item : arr) {
+    props.push_back(jsonToProperty(item));
+  }
+  return props;
+}
+
 int main() {
   // 1. Try to load HTML from "../src/raw_html/html_1.json", or download if
   // missing
@@ -293,28 +394,39 @@ int main() {
   findBetriProperties(output->root, betriProperties);
   gumbo_destroy_output(&kGumboDefaultOptions, output);
 
-  // 5. Build JSON of the scraped properties
-  nlohmann::json propertiesArray = nlohmann::json::array();
+  for (auto &prop : betriProperties) {
 
-  int count = 0;
-  for (const auto &prop : betriProperties) {
-    nlohmann::json j;
-    j["Number"] = ++count;
-    j["Website"] = prop.website;
-    j["Address"] = prop.address;
-    j["Price"] = prop.price;
-    j["Latest"] = prop.latestPrice;
-    j["ValidDate"] = prop.validDate;
-    j["YearBuilt"] = prop.date;
-    j["InsideM2"] = prop.buildingSize;
-    j["LandM2"] = prop.landSize;
-    j["Rooms"] = prop.room;
-    j["Floors"] = prop.floor;
-    j["Img"] = prop.img;
-
-    // Add this JSON object to our properties array
-    propertiesArray.push_back(j);
+    prop.id = prop.address + prop.city + prop.postNum;
   }
+
+  // 5. Build JSON of the scraped properties
+  //
+  std::vector<Property> existingProperties;
+  {
+    std::ifstream ifs("../src/storage/properties.json");
+    if (ifs.is_open()) {
+      nlohmann::json j;
+      ifs >> j;
+      ifs.close();
+      existingProperties = jsonToAllProperties(j);
+      std::cout << "Loaded " << existingProperties.size()
+                << " properties from disk.\n";
+    } else {
+      std::cout << "No existing properties.json, starting fresh.\n";
+    }
+  }
+  nlohmann::json newlyScrapedProps = nlohmann::json::array();
+
+  for (const auto &prop : betriProperties) {
+    nlohmann::json j = propertyToJson(prop);
+    // Add this JSON object to our properties array
+    newlyScrapedProps.push_back(j);
+  }
+  auto newProperties = jsonToAllProperties(newlyScrapedProps);
+
+  mergeProperties(existingProperties, newProperties);
+
+  auto updatedProperties = allPropertiesToJson(existingProperties);
 
   // 6. Write to properties.json or wherever you wish
   std::ofstream outFile("../src/storage/properties.json");
@@ -324,28 +436,10 @@ int main() {
   }
 
   // Pretty-print with 4 spaces of indentation
-  outFile << propertiesArray.dump(4) << std::endl;
+  outFile << updatedProperties.dump(4) << std::endl;
   outFile.close();
 
   std::cout << "Properties written to properties.json\n";
-
-  count = 0;
-  // 4. Print them out (debug) or do something else
-  for (const auto &prop : betriProperties) {
-    count++;
-    std::cout << "Number:    " << count << "\n";
-    std::cout << "Website:   " << prop.website << "\n";
-    std::cout << "Address:   " << prop.address << "\n";
-    std::cout << "Price:     " << prop.price << "\n";
-    std::cout << "Latest:    " << prop.latestPrice << "\n";
-    std::cout << "ValidDate: " << prop.validDate << "\n";
-    std::cout << "YearBuilt: " << prop.date << "\n";
-    std::cout << "InsideM2:  " << prop.buildingSize << "\n";
-    std::cout << "LandM2:    " << prop.landSize << "\n";
-    std::cout << "Rooms:     " << prop.room << "\n";
-    std::cout << "Floors:    " << prop.floor << "\n";
-    std::cout << "Img:       " << prop.img << "\n\n";
-  }
 
   return 0;
 }
