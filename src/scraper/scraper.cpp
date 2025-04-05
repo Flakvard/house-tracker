@@ -37,3 +37,33 @@ std::string downloadHtml(const std::string &url) {
   curl_global_cleanup();
   return html;
 }
+
+std::string downloadAndSaveHtml(const std::string &url) {
+  // 1) Download
+  std::string html = HT::downloadHtml(url);
+  if (html.empty()) {
+    std::cerr << "Download failed\n";
+    return "";
+  }
+
+  // 2) Build a new timestamped filename
+  std::string filePath = HT::makeTimestampedFilename();
+
+  // 3) Save the raw HTML (plus any metadata) into a JSON file
+  nlohmann::json j;
+  j["url"] = url;
+  j["timestamp"] = std::time(nullptr); // or store as string
+  j["html"] = html;
+
+  std::ofstream ofs(filePath);
+  if (!ofs.is_open()) {
+    std::cerr << "Error opening file: " << filePath << std::endl;
+    return html; // At least we have the HTML in memory
+  }
+
+  ofs << j.dump(4);
+  ofs.close();
+
+  std::cout << "Saved raw HTML to: " << filePath << "\n";
+  return html;
+}

@@ -76,7 +76,7 @@ int main() {
   // betriRun();
   //  1) Download page into `html`
   std::string url = "https://www.meklarin.fo/";
-  std::string html = downloadHtml(url);
+  std::string html = HT::downloadHtml(url);
 
   // 2) Parse with Gumbo
   GumboOutput *output = gumbo_parse(html.c_str());

@@ -79,3 +79,24 @@ void mergeProperties(std::vector<Property> &existing,
     }
   }
 }
+
+// Convert entire property list to JSON array
+nlohmann::json propertiesToJson(const std::vector<Property> &props) {
+  nlohmann::json arr = nlohmann::json::array();
+  for (auto &p : props) {
+    arr.push_back(HT::propertyToJson(p));
+  }
+  return arr;
+}
+
+// Convert JSON array to entire property list
+std::vector<Property> jsonToProperties(const nlohmann::json &arr) {
+  std::vector<Property> props;
+  if (!arr.is_array()) {
+    return props;
+  }
+  for (auto &item : arr) {
+    props.push_back(HT::jsonToProperty(item));
+  }
+  return props;
+}

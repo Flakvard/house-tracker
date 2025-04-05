@@ -65,64 +65,13 @@ std::string loadHtmlFromCacheOrDownload(const std::string &url,
   return freshHtml;
 }
 
-// Convert entire property list to JSON array
-nlohmann::json propertiesToJson(const std::vector<Property> &props) {
-  nlohmann::json arr = nlohmann::json::array();
-  for (auto &p : props) {
-    arr.push_back(HT::propertyToJson(p));
-  }
-  return arr;
-}
-
-// Convert JSON array to entire property list
-std::vector<Property> jsonToProperties(const nlohmann::json &arr) {
-  std::vector<Property> props;
-  if (!arr.is_array()) {
-    return props;
-  }
-  for (auto &item : arr) {
-    props.push_back(HT::jsonToProperty(item));
-  }
-  return props;
-}
-
-std::string downloadAndSaveHtml(const std::string &url) {
-  // 1) Download
-  std::string html = HT::downloadHtml(url);
-  if (html.empty()) {
-    std::cerr << "Download failed\n";
-    return "";
-  }
-
-  // 2) Build a new timestamped filename
-  std::string filePath = HT::makeTimestampedFilename();
-
-  // 3) Save the raw HTML (plus any metadata) into a JSON file
-  nlohmann::json j;
-  j["url"] = url;
-  j["timestamp"] = std::time(nullptr); // or store as string
-  j["html"] = html;
-
-  std::ofstream ofs(filePath);
-  if (!ofs.is_open()) {
-    std::cerr << "Error opening file: " << filePath << std::endl;
-    return html; // At least we have the HTML in memory
-  }
-
-  ofs << j.dump(4);
-  ofs.close();
-
-  std::cout << "Saved raw HTML to: " << filePath << "\n";
-  return html;
-}
-
 int betriRun() {
 
   // 1. Try to load HTML from "../src/raw_html/html_1.json", or download if
   // missing
   const std::string url = "https://www.betriheim.fo/";
   // std::string html = loadHtmlFromCacheOrDownload(url, cachePath);
-  std::string html = downloadAndSaveHtml(url);
+  std::string html = HT::downloadAndSaveHtml(url);
 
   // 1. Prepare an "existing properties" vector
   //    (Load from properties.json if it exists)
@@ -132,7 +81,7 @@ int betriRun() {
     if (ifs.is_open()) {
       nlohmann::json j;
       ifs >> j;
-      allProperties = jsonToProperties(j);
+      allProperties = HT::jsonToProperties(j);
       ifs.close();
     } else {
       std::cout << "No existing properties.json found; starting fresh.\n";
@@ -178,7 +127,7 @@ int betriRun() {
   }
 
   // 4. Write final results to properties.json
-  nlohmann::json finalJson = propertiesToJson(allProperties);
+  nlohmann::json finalJson = HT::propertiesToJson(allProperties);
   std::ofstream ofs("../src/storage/properties.json");
   if (!ofs.is_open()) {
     std::cerr << "Failed to open ../src/storage/properties.json for writing!\n";
