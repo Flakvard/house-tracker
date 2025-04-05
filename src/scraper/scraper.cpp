@@ -1,7 +1,12 @@
 
 #include <curl/curl.h>
+#include <filesystem.hpp>
+#include <fstream>
 #include <iostream>
+#include <nlohmann/json.hpp>
 #include <scraper.hpp>
+
+namespace HT {
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
                             void *userp) {
@@ -67,3 +72,4 @@ std::string downloadAndSaveHtml(const std::string &url) {
   std::cout << "Saved raw HTML to: " << filePath << "\n";
   return html;
 }
+} // namespace HT
