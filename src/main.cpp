@@ -1,20 +1,14 @@
 #include <chrono> // C++17
 #include <ctime>
-#include <curl/curl.h>
 #include <filesystem> // C++17
 #include <fstream>
 #include <gumbo.h>
 #include <house_model.hpp>
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <scraper.hpp>
 
 namespace fs = std::filesystem;
-
-static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
-                            void *userp) {
-  ((std::string *)userp)->append((char *)contents, size * nmemb);
-  return size * nmemb;
-}
 
 // Helper to get an attribute's value
 static const char *getAttribute(const GumboVector *attrs, const char *name) {
@@ -178,35 +172,6 @@ void findBetriProperties(GumboNode *node, std::vector<Property> &results) {
 bool fileExists(const std::string &path) {
   struct stat buffer;
   return (stat(path.c_str(), &buffer) == 0);
-}
-
-// Download HTML via libcurl
-std::string downloadHtml(const std::string &url) {
-  CURL *curl;
-  CURLcode res;
-  std::string html;
-
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
-  if (!curl) {
-    std::cerr << "Failed to init curl\n";
-    return "";
-  }
-
-  curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-  curl_easy_setopt(curl, CURLOPT_WRITEDATA, &html);
-
-  res = curl_easy_perform(curl);
-  if (res != CURLE_OK) {
-    std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res)
-              << std::endl;
-    html.clear(); // Indicate failure
-  }
-
-  curl_easy_cleanup(curl);
-  curl_global_cleanup();
-  return html;
 }
 
 /**
