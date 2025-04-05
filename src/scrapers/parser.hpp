@@ -1,7 +1,7 @@
 // parser.hpp
 #pragma once
 #include <gumbo.h>
-#include <house_model.hpp>
+#include <scrapers/house_model.hpp>
 
 namespace HT {
 // Helper to get an attribute's value

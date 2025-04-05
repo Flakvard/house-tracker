@@ -1,12 +1,14 @@
 // betriScraper.cpp
-#include <betriScraper.hpp>
-#include <filesystem.hpp>
 #include <fstream>
 #include <iostream>
-#include <jsonHelper.hpp>
 #include <nlohmann/json.hpp>
-#include <parser.hpp>
-#include <scraper.hpp>
+#include <scrapers/betri/betriScraper.hpp>
+#include <scrapers/filesystem.hpp>
+#include <scrapers/jsonHelper.hpp>
+#include <scrapers/parser.hpp>
+#include <scrapers/scraper.hpp>
+
+namespace HT {
 
 // Simple check if a file exists.
 bool fileExists(const std::string &path) {
@@ -123,5 +125,5 @@ int betriRun() {
 
   // 4. Write final results to properties.json
   return HT::writeToPropertiesJsonFile(allProperties);
-  ;
 }
+} // namespace HT

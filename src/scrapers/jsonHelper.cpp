@@ -1,6 +1,8 @@
 #include <iostream>
-#include <jsonHelper.hpp>
 #include <nlohmann/json.hpp>
+#include <scrapers/jsonHelper.hpp>
+
+namespace HT {
 
 // Convert a single Property to JSON
 nlohmann::json propertyToJson(const Property &prop) {
@@ -100,3 +102,4 @@ std::vector<Property> jsonToProperties(const nlohmann::json &arr) {
   }
   return props;
 }
+} // namespace HT

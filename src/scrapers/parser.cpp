@@ -1,6 +1,8 @@
 #include <gumbo.h>
-#include <house_model.hpp>
 #include <iostream>
+#include <scrapers/house_model.hpp>
+
+namespace HT {
 
 // Helper to get an attribute's value
 static const char *getAttribute(const GumboVector *attrs, const char *name) {
@@ -185,3 +187,4 @@ std::vector<Property> parseHtmlWithGumbo(std::string html) {
   }
   return betriProperties;
 }
+} // namespace HT

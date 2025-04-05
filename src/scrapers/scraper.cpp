@@ -1,10 +1,10 @@
 
 #include <curl/curl.h>
-#include <filesystem.hpp>
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
-#include <scraper.hpp>
+#include <scrapers/filesystem.hpp>
+#include <scrapers/scraper.hpp>
 
 namespace HT {
 

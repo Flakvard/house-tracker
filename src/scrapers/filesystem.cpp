@@ -1,11 +1,11 @@
-#include <filesystem.hpp>
 #include <fstream>
-#include <house_model.hpp>
 #include <iostream>
-#include <jsonHelper.hpp>
 #include <nlohmann/json.hpp>
+#include <scrapers/filesystem.hpp>
+#include <scrapers/house_model.hpp>
+#include <scrapers/jsonHelper.hpp>
 
-namespace HTFS {
+namespace HT {
 namespace fs = std::filesystem;
 // Example function to gather and sort all .json files from a directory
 std::vector<fs::path> gatherJsonFiles(const std::string &dir) {
@@ -69,4 +69,4 @@ int writeToPropertiesJsonFile(std::vector<Property> allProperties) {
   return 0;
 }
 
-} // namespace HTFS
+} // namespace HT
