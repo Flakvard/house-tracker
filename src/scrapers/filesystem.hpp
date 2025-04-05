@@ -10,4 +10,5 @@ namespace fs = std::filesystem;
 std::vector<fs::path> gatherJsonFiles(const std::string &dir);
 std::string makeTimestampedFilename();
 std::vector<Property> getAllPropertiesFromJson();
+int writeToPropertiesJsonFile(std::vector<Property> allProperties);
 } // namespace HT

@@ -53,4 +53,20 @@ std::vector<Property> getAllPropertiesFromJson() {
   }
   return allProperties;
 }
+
+int writeToPropertiesJsonFile(std::vector<Property> allProperties) {
+  nlohmann::json finalJson = HT::propertiesToJson(allProperties);
+  std::ofstream ofs("../src/storage/properties.json");
+  if (!ofs.is_open()) {
+    std::cerr << "Failed to open ../src/storage/properties.json for writing!\n";
+    return 1;
+  }
+  ofs << finalJson.dump(4);
+  ofs.close();
+
+  std::cout << "Wrote " << allProperties.size()
+            << " total properties to properties.json\n";
+  return 0;
+}
+
 } // namespace HTFS

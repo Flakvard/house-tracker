@@ -78,8 +78,10 @@ int betriRun() {
 
   // 2. Gather all timestamped .json files from ../src/raw_html
   std::string rawHtmlDir = "../src/raw_html";
+
   std::vector<std::filesystem::path> htmlFiles =
       HT::gatherJsonFiles(rawHtmlDir);
+
   if (htmlFiles.empty()) {
     std::cerr << "No JSON files found in " << rawHtmlDir << "\n";
     return 0;
@@ -99,6 +101,10 @@ int betriRun() {
 
     // If your JSON structure is: { "url": "...", "timestamp": ..., "html":
     // "..." }
+    std::string website = j.value("url", "");
+    if (website != url || website.empty())
+      continue;
+
     std::string rawHtml = j.value("html", "");
     if (rawHtml.empty()) {
       std::cerr << "No HTML found in " << path << "\n";
@@ -116,16 +122,6 @@ int betriRun() {
   }
 
   // 4. Write final results to properties.json
-  nlohmann::json finalJson = HT::propertiesToJson(allProperties);
-  std::ofstream ofs("../src/storage/properties.json");
-  if (!ofs.is_open()) {
-    std::cerr << "Failed to open ../src/storage/properties.json for writing!\n";
-    return 1;
-  }
-  ofs << finalJson.dump(4);
-  ofs.close();
-
-  std::cout << "Wrote " << allProperties.size()
-            << " total properties to properties.json\n";
-  return 0;
+  return HT::writeToPropertiesJsonFile(allProperties);
+  ;
 }
