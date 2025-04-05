@@ -1,3 +1,4 @@
+// main.cpp
 #include "scraper.hpp"
 #include <betriScraper.hpp>
 #include <curl/curl.h>
@@ -8,13 +9,6 @@
 #include <regex>
 #include <string>
 #include <vector>
-
-// Callback for cURL
-static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
-                            void *userp) {
-  ((std::string *)userp)->append((char *)contents, size * nmemb);
-  return size * nmemb;
-}
 
 // A simple utility to get all text inside a node if it is <script> or similar
 static std::string getScriptText(GumboNode *node) {

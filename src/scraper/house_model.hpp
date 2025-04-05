@@ -1,3 +1,5 @@
+// house_model.hpp
+#pragma once
 #include <string>
 #include <vector>
 

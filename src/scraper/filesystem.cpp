@@ -1,0 +1,34 @@
+#include <filesystem.hpp>
+
+namespace HTFS {
+// Example function to gather and sort all .json files from a directory
+std::vector<fs::path> gatherJsonFiles(const std::string &dir) {
+  std::vector<fs::path> result;
+  for (auto &entry : fs::directory_iterator(dir)) {
+    if (entry.is_regular_file() && entry.path().extension() == ".json") {
+      result.push_back(entry.path());
+    }
+  }
+
+  // Sort them in ascending order by filename
+  // (If your filenames are timestamped, this is effectively chronological.)
+  std::sort(result.begin(), result.end());
+  return result;
+}
+
+// Utility to get a string like "html_2025-04-03_14-00-00.json"
+// You might prefer a shorter or simpler format
+std::string makeTimestampedFilename() {
+  using namespace std::chrono;
+
+  // Get the current time and time zone
+  auto now = system_clock::now();
+  auto tz = current_zone();
+  zoned_time zt{tz, now};
+
+  // Format using std::format with chrono support (C++20)
+  std::string timestamp = std::format("{:%Y-%m-%d_%H-%M-%S}", zt);
+
+  return "../src/raw_html/html_" + timestamp + ".json";
+}
+} // namespace HTFS

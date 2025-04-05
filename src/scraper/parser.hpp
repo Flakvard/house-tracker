@@ -3,6 +3,7 @@
 #include <gumbo.h>
 #include <house_model.hpp>
 
+namespace HT {
 // Helper to get an attribute's value
 static const char *getAttribute(const GumboVector *attrs, const char *name);
 
@@ -24,3 +25,4 @@ void findBetriProperties(GumboNode *node, std::vector<Property> &results);
 
 // parse the Html with Gumbo
 std::vector<Property> parseHtmlWithGumbo(std::string html);
+} // namespace HT

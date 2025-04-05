@@ -1,13 +1,13 @@
-#include <chrono> // C++17
+// betriScraper.cpp
+#include <betriScraper.hpp>
 #include <ctime>
-#include <filesystem> // C++17
+#include <filesystem.hpp>
 #include <fstream>
 #include <iostream>
+#include <jsonHelper.hpp>
 #include <nlohmann/json.hpp>
 #include <parser.hpp>
 #include <scraper.hpp>
-
-namespace fs = std::filesystem;
 
 // Simple check if a file exists.
 bool fileExists(const std::string &path) {
@@ -43,7 +43,7 @@ std::string loadHtmlFromCacheOrDownload(const std::string &url,
 
   // Otherwise, download fresh
   std::cout << "[Download] Fetching fresh HTML from " << url << "\n";
-  std::string freshHtml = downloadHtml(url);
+  std::string freshHtml = HT::downloadHtml(url);
   if (freshHtml.empty()) {
     // Download failed; handle error accordingly
     return "";
@@ -65,89 +65,11 @@ std::string loadHtmlFromCacheOrDownload(const std::string &url,
   return freshHtml;
 }
 
-// Convert a single Property to JSON
-nlohmann::json propertyToJson(const Property &prop) {
-  nlohmann::json j;
-  j["id"] = prop.id;
-  j["website"] = prop.website;
-  j["address"] = prop.address;
-  j["price"] = prop.price;
-  j["previousPrices"] = prop.previousPrices;
-  j["latestOffer"] = prop.latestOffer;
-  j["validDate"] = prop.validDate;
-  j["yearBuilt"] = prop.date;
-  j["insideM2"] = prop.buildingSize;
-  j["landM2"] = prop.landSize;
-  j["rooms"] = prop.room;
-  j["floors"] = prop.floor;
-  j["img"] = prop.img;
-  return j;
-}
-
-// Convert JSON to a single Property
-Property jsonToProperty(const nlohmann::json &j) {
-  Property p;
-  p.id = j.value("id", "");
-  p.website = j.value("website", "");
-  p.address = j.value("address", "");
-  p.price = j.value("price", "");
-  // If "previousPrices" doesn't exist or is the wrong type, this won't blow up
-  if (j.contains("previousPrices") && j["previousPrices"].is_array()) {
-    for (auto &item : j["previousPrices"]) {
-      p.previousPrices.push_back(item.get<std::string>());
-    }
-  }
-  p.latestOffer = j.value("latestOffer", "");
-  p.validDate = j.value("validDate", "");
-  p.date = j.value("yearBuilt", "");
-  p.buildingSize = j.value("insideM2", "");
-  p.landSize = j.value("landM2", "");
-  p.room = j.value("room", "");
-  p.floor = j.value("floors", "");
-  p.img = j.value("img", "");
-  return p;
-}
-
-// Compare two properties by ID (or address, or whichever unique key you choose)
-bool isSameProperty(const Property &a, const Property &b) {
-  return a.id == b.id;
-}
-
-// Merges new properties into existing, tracking price changes
-void mergeProperties(std::vector<Property> &existing,
-                     const std::vector<Property> &newOnes) {
-  for (const auto &newProp : newOnes) {
-    // 1) Find match in existing
-    auto it =
-        std::find_if(existing.begin(), existing.end(), [&](const Property &ex) {
-          return isSameProperty(ex, newProp);
-        });
-
-    if (it == existing.end()) {
-      // property not found => new property
-      std::cout << "Adding new property: " << newProp.address << "\n";
-      existing.push_back(newProp);
-    } else {
-      // property found => check if price changed
-      if (it->price != newProp.price) {
-        std::cout << "Price changed for: " << it->address << " from "
-                  << it->price << " to " << newProp.price << "\n";
-
-        // push the old price into the price history
-        it->previousPrices.push_back(it->price);
-        // update the current price
-        it->price = newProp.price;
-      }
-      // you can compare other fields (e.g., floors, rooms) similarly
-    }
-  }
-}
-
 // Convert entire property list to JSON array
 nlohmann::json propertiesToJson(const std::vector<Property> &props) {
   nlohmann::json arr = nlohmann::json::array();
   for (auto &p : props) {
-    arr.push_back(propertyToJson(p));
+    arr.push_back(HT::propertyToJson(p));
   }
   return arr;
 }
@@ -159,37 +81,21 @@ std::vector<Property> jsonToProperties(const nlohmann::json &arr) {
     return props;
   }
   for (auto &item : arr) {
-    props.push_back(jsonToProperty(item));
+    props.push_back(HT::jsonToProperty(item));
   }
   return props;
 }
 
-// Utility to get a string like "html_2025-04-03_14-00-00.json"
-// You might prefer a shorter or simpler format
-std::string makeTimestampedFilename() {
-  using namespace std::chrono;
-
-  // Get the current time and time zone
-  auto now = system_clock::now();
-  auto tz = current_zone();
-  zoned_time zt{tz, now};
-
-  // Format using std::format with chrono support (C++20)
-  std::string timestamp = std::format("{:%Y-%m-%d_%H-%M-%S}", zt);
-
-  return "../src/raw_html/html_" + timestamp + ".json";
-}
-
 std::string downloadAndSaveHtml(const std::string &url) {
   // 1) Download
-  std::string html = downloadHtml(url);
+  std::string html = HT::downloadHtml(url);
   if (html.empty()) {
     std::cerr << "Download failed\n";
     return "";
   }
 
   // 2) Build a new timestamped filename
-  std::string filePath = makeTimestampedFilename();
+  std::string filePath = HT::makeTimestampedFilename();
 
   // 3) Save the raw HTML (plus any metadata) into a JSON file
   nlohmann::json j;
@@ -208,21 +114,6 @@ std::string downloadAndSaveHtml(const std::string &url) {
 
   std::cout << "Saved raw HTML to: " << filePath << "\n";
   return html;
-}
-
-// Example function to gather and sort all .json files from a directory
-std::vector<fs::path> gatherJsonFiles(const std::string &dir) {
-  std::vector<fs::path> result;
-  for (auto &entry : fs::directory_iterator(dir)) {
-    if (entry.is_regular_file() && entry.path().extension() == ".json") {
-      result.push_back(entry.path());
-    }
-  }
-
-  // Sort them in ascending order by filename
-  // (If your filenames are timestamped, this is effectively chronological.)
-  std::sort(result.begin(), result.end());
-  return result;
 }
 
 int betriRun() {
@@ -249,7 +140,8 @@ int betriRun() {
   }
   // 2. Gather all timestamped .json files from ../src/raw_html
   std::string rawHtmlDir = "../src/raw_html";
-  std::vector<fs::path> htmlFiles = gatherJsonFiles(rawHtmlDir);
+  std::vector<std::filesystem::path> htmlFiles =
+      HT::gatherJsonFiles(rawHtmlDir);
   if (htmlFiles.empty()) {
     std::cerr << "No JSON files found in " << rawHtmlDir << "\n";
     return 0;
@@ -276,10 +168,10 @@ int betriRun() {
     }
 
     // Parse
-    std::vector<Property> newProperties = parseHtmlWithGumbo(rawHtml);
+    std::vector<Property> newProperties = HT::parseHtmlWithGumbo(rawHtml);
 
     // Merge
-    mergeProperties(allProperties, newProperties);
+    HT::mergeProperties(allProperties, newProperties);
 
     std::cout << "Processed file: " << path.filename().string() << " => found "
               << newProperties.size() << " properties.\n";
