@@ -3,6 +3,8 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <regex>
+#include <scrapers/PropertyManager.hpp>
+#include <scrapers/filesystem.hpp>
 #include <scrapers/house_model.hpp>
 #include <scrapers/meklarin/meklarinScraper.hpp>
 #include <scrapers/scraper.hpp>
@@ -171,17 +173,43 @@ int meklarinRun() {
         properties.push_back(std::move(prop));
       }
 
-      // 8) Do whatever you want with `properties`
-      // e.g. print them:
+      std::vector<Property> allProperties;
       for (auto &p : properties) {
-        std::cout << "ID: " << p.ID << "\n"
-                  << "Areas: " << p.areas << "\n"
-                  << "Types: " << p.types << "\n"
-                  << "Featured Image: " << p.featured_image << "\n"
-                  << "Price: " << p.price << "\n"
-                  << "Sold: " << (p.sold == "true" ? "Yes" : "No") << "\n"
-                  << "--------------------------\n";
+        Property property;
+        property.id = p.address + p.areas;
+        property.website = "https://www.meklarin.fo/";
+        property.address = p.address;
+        property.houseNum = p.address;
+        property.city = p.city;
+        property.postNum = p.areas;
+        property.price = p.price;
+        property.latestOffer = p.bid;
+        property.validDate = p.bid_valid_until;
+        property.date = p.open_house_start_date;
+        property.buildingSize = p.house_area;
+        property.landSize = p.area_size;
+        property.room = p.bedrooms;
+        property.floor = "0";
+        property.img = p.featured_image;
+        allProperties.push_back(property);
       }
+
+      // 2. Gather all timestamped .json files from ../src/raw_html
+      std::string rawHtmlDir = "../src/raw_html";
+
+      std::vector<std::filesystem::path> htmlFiles =
+          HT::gatherJsonFiles(rawHtmlDir);
+
+      if (htmlFiles.empty()) {
+        std::cerr << "No JSON files found in " << rawHtmlDir << "\n";
+        return 0;
+      }
+      // 3. For each file, read the JSON, extract "html", parse with Gumbo,
+      // merge
+      PropertyManager::traverseAllHtmlAndMergeProperties(allProperties,
+                                                         htmlFiles, url);
+
+      HT::writeToPropertiesJsonFile(allProperties);
 
     } catch (std::exception &e) {
       std::cerr << "JSON parse error: " << e.what() << "\n";

@@ -16,9 +16,6 @@ bool isSameProperty(const Property &a, const Property &b);
 
 // Merges new properties into existing, tracking price changes
 
-void mergeProperties(std::vector<Property> &existing,
-                     const std::vector<Property> &newOnes);
-
 // Convert entire property list to JSON array
 nlohmann::json propertiesToJson(const std::vector<Property> &props);
 

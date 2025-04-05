@@ -2,11 +2,13 @@
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <scrapers/PropertyManager.hpp>
 #include <scrapers/betri/betriScraper.hpp>
 #include <scrapers/filesystem.hpp>
 #include <scrapers/jsonHelper.hpp>
 #include <scrapers/parser.hpp>
 #include <scrapers/scraper.hpp>
+#include <vector>
 
 namespace HT {
 
@@ -90,38 +92,8 @@ int betriRun() {
   }
 
   // 3. For each file, read the JSON, extract "html", parse with Gumbo, merge
-  for (const auto &path : htmlFiles) {
-    std::ifstream ifs(path);
-    if (!ifs.is_open()) {
-      std::cerr << "Failed to open " << path << "\n";
-      continue;
-    }
-
-    nlohmann::json j;
-    ifs >> j;
-    ifs.close();
-
-    // If your JSON structure is: { "url": "...", "timestamp": ..., "html":
-    // "..." }
-    std::string website = j.value("url", "");
-    if (website != url || website.empty())
-      continue;
-
-    std::string rawHtml = j.value("html", "");
-    if (rawHtml.empty()) {
-      std::cerr << "No HTML found in " << path << "\n";
-      continue;
-    }
-
-    // Parse
-    std::vector<Property> newProperties = HT::parseHtmlWithGumbo(rawHtml);
-
-    // Merge
-    HT::mergeProperties(allProperties, newProperties);
-
-    std::cout << "Processed file: " << path.filename().string() << " => found "
-              << newProperties.size() << " properties.\n";
-  }
+  PropertyManager::traverseAllHtmlAndMergeProperties(allProperties, htmlFiles,
+                                                     url);
 
   // 4. Write final results to properties.json
   return HT::writeToPropertiesJsonFile(allProperties);

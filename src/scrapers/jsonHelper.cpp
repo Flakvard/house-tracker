@@ -47,41 +47,6 @@ Property jsonToProperty(const nlohmann::json &j) {
   return p;
 }
 
-// Compare two properties by ID (or address, or whichever unique key you choose)
-bool isSameProperty(const Property &a, const Property &b) {
-  return a.id == b.id;
-}
-
-// Merges new properties into existing, tracking price changes
-void mergeProperties(std::vector<Property> &existing,
-                     const std::vector<Property> &newOnes) {
-  for (const auto &newProp : newOnes) {
-    // 1) Find match in existing
-    auto it =
-        std::find_if(existing.begin(), existing.end(), [&](const Property &ex) {
-          return isSameProperty(ex, newProp);
-        });
-
-    if (it == existing.end()) {
-      // property not found => new property
-      std::cout << "Adding new property: " << newProp.address << "\n";
-      existing.push_back(newProp);
-    } else {
-      // property found => check if price changed
-      if (it->price != newProp.price) {
-        std::cout << "Price changed for: " << it->address << " from "
-                  << it->price << " to " << newProp.price << "\n";
-
-        // push the old price into the price history
-        it->previousPrices.push_back(it->price);
-        // update the current price
-        it->price = newProp.price;
-      }
-      // you can compare other fields (e.g., floors, rooms) similarly
-    }
-  }
-}
-
 // Convert entire property list to JSON array
 nlohmann::json propertiesToJson(const std::vector<Property> &props) {
   nlohmann::json arr = nlohmann::json::array();
