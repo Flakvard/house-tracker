@@ -4,6 +4,7 @@
 #include <filesystem> // C++17
 #include <fstream>
 #include <gumbo.h>
+#include <house_model.hpp>
 #include <iostream>
 #include <nlohmann/json.hpp>
 
@@ -14,24 +15,6 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
   ((std::string *)userp)->append((char *)contents, size * nmemb);
   return size * nmemb;
 }
-struct Property {
-  std::string id;
-  std::string website;
-  std::string address;
-  std::string houseNum;
-  std::string city;
-  std::string postNum;
-  std::string price;
-  std::vector<std::string> previousPrices; // All prior prices
-  std::string latestOffer;
-  std::string validDate;
-  std::string date;
-  std::string buildingSize;
-  std::string landSize;
-  std::string room;
-  std::string floor;
-  std::string img;
-};
 
 // Helper to get an attribute's value
 static const char *getAttribute(const GumboVector *attrs, const char *name) {

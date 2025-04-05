@@ -35,7 +35,7 @@ target_sources(HouseTracker PRIVATE ${HouseTracker_SOURCES})
 
 # HouseTracker include dirs
 target_include_directories(HouseTracker PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
+  ${CMAKE_SOURCE_DIR}/src/scraper
 )
 
 # Preprocessor defines
