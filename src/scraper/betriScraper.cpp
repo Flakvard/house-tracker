@@ -1,6 +1,5 @@
 // betriScraper.cpp
 #include <betriScraper.hpp>
-#include <ctime>
 #include <filesystem.hpp>
 #include <fstream>
 #include <iostream>
@@ -75,18 +74,8 @@ int betriRun() {
 
   // 1. Prepare an "existing properties" vector
   //    (Load from properties.json if it exists)
-  std::vector<Property> allProperties;
-  {
-    std::ifstream ifs("../src/storage/properties.json");
-    if (ifs.is_open()) {
-      nlohmann::json j;
-      ifs >> j;
-      allProperties = HT::jsonToProperties(j);
-      ifs.close();
-    } else {
-      std::cout << "No existing properties.json found; starting fresh.\n";
-    }
-  }
+  std::vector<Property> allProperties = HT::getAllPropertiesFromJson();
+
   // 2. Gather all timestamped .json files from ../src/raw_html
   std::string rawHtmlDir = "../src/raw_html";
   std::vector<std::filesystem::path> htmlFiles =

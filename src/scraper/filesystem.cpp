@@ -1,6 +1,12 @@
 #include <filesystem.hpp>
+#include <fstream>
+#include <house_model.hpp>
+#include <iostream>
+#include <jsonHelper.hpp>
+#include <nlohmann/json.hpp>
 
 namespace HTFS {
+namespace fs = std::filesystem;
 // Example function to gather and sort all .json files from a directory
 std::vector<fs::path> gatherJsonFiles(const std::string &dir) {
   std::vector<fs::path> result;
@@ -30,5 +36,21 @@ std::string makeTimestampedFilename() {
   std::string timestamp = std::format("{:%Y-%m-%d_%H-%M-%S}", zt);
 
   return "../src/raw_html/html_" + timestamp + ".json";
+}
+
+std::vector<Property> getAllPropertiesFromJson() {
+  std::vector<Property> allProperties;
+  {
+    std::ifstream ifs("../src/storage/properties.json");
+    if (ifs.is_open()) {
+      nlohmann::json j;
+      ifs >> j;
+      allProperties = HT::jsonToProperties(j);
+      ifs.close();
+    } else {
+      std::cout << "No existing properties.json found; starting fresh.\n";
+    }
+  }
+  return allProperties;
 }
 } // namespace HTFS
