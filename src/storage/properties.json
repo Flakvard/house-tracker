@@ -9,7 +9,7 @@
         "latestOffer": "Seinasta boð: Kr. 1.900.000",
         "previousPrices": [],
         "price": "Kr. 2.195.000",
-        "rooms": "Rúm 2",
+        "rooms": "",
         "validDate": "Galdandi til 07-04-2025, kl 16:00",
         "website": "Betri",
         "yearBuilt": "Bygd Uml. 1996"
@@ -24,7 +24,7 @@
         "latestOffer": "Seinasta boð: Kr. 5.100.000",
         "previousPrices": [],
         "price": "Kr. 4.500.000",
-        "rooms": "Rúm 7",
+        "rooms": "",
         "validDate": "Galdandi til 07-04-2025, kl 12:00",
         "website": "Betri",
         "yearBuilt": "Bygd 1954"
@@ -39,7 +39,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 1.595.000",
-        "rooms": "Rúm 4",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1958"
@@ -54,7 +54,7 @@
         "latestOffer": "Seinasta boð: Kr. 3.200.000",
         "previousPrices": [],
         "price": "Kr. 2.750.000",
-        "rooms": "Rúm 3",
+        "rooms": "",
         "validDate": "Galdandi til 04-04-2025, kl 16:00",
         "website": "Betri",
         "yearBuilt": "Bygd 1932"
@@ -84,7 +84,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 1.795.000",
-        "rooms": "Rúm 3",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1968"
@@ -99,7 +99,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 1.945.000",
-        "rooms": "Rúm 4",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1928"
@@ -114,7 +114,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 2.195.000",
-        "rooms": "Rúm 4",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1999"
@@ -129,7 +129,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 2.695.000",
-        "rooms": "Rúm 1",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": ""
@@ -144,7 +144,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 2.195.000",
-        "rooms": "Rúm 4",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1978"
@@ -174,7 +174,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 6.495.000",
-        "rooms": "Rúm 6",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1966"
@@ -189,7 +189,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 3.495.000",
-        "rooms": "Rúm 3",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 2001"
@@ -234,7 +234,7 @@
         "latestOffer": "",
         "previousPrices": [],
         "price": "Kr. 3.595.000",
-        "rooms": "Rúm 4",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1971"
@@ -249,9 +249,24 @@
         "latestOffer": "Seinasta boð: Kr. 350.000",
         "previousPrices": [],
         "price": "Kr. 595.000",
-        "rooms": "Rúm 3",
+        "rooms": "",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1950"
+    },
+    {
+        "address": "Raðhús í Brekkugerði 21  420 Hósvík",
+        "floors": "Hæddir 1",
+        "id": "Raðhús í Brekkugerði 21  420 Hósvík",
+        "img": "",
+        "insideM2": "Stødd á bygningi 82 m2",
+        "landM2": "",
+        "latestOffer": "",
+        "previousPrices": [],
+        "price": "Kr. 998.000",
+        "rooms": "Rúm 2",
+        "validDate": "",
+        "website": "Betri",
+        "yearBuilt": "Bygd 2024"
     }
 ]
