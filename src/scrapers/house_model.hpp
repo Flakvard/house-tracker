@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-struct Property {
+struct RawProperty {
   std::string id;
   std::string website;
   std::string address;
@@ -22,6 +22,25 @@ struct Property {
   std::string img;
 };
 
+struct Property {
+  std::string id; // or separate into multiple fields if you like
+  std::string website;
+  std::string address;
+  std::string houseNum;
+  std::string city;
+  std::string postNum;
+  int price;
+  std::vector<int> previousPrices; // or vector<int>
+  std::string latestOffer;         // or convert to int if you want
+  std::string validDate;
+  std::string date;
+  int buildingSize;
+  int landSize;
+  int room;
+  int floor;
+  std::string img;
+};
+
 struct MeklarinProperty {
   std::string ID;
   std::string areas;
@@ -31,17 +50,17 @@ struct MeklarinProperty {
   std::string build;
   std::string address;
   std::string city;
-  std::string bedrooms;
-  std::string house_area;
-  std::string area_size;
-  std::string isNew;
-  std::string featured;
-  std::string sold;
-  std::string open_house;
+  int bedrooms;
+  int house_area;
+  int area_size;
+  bool isNew;
+  bool featured;
+  bool sold;
+  bool open_house;
   std::string open_house_start_date;
-  std::string price;
-  std::string bid;
-  std::string new_bid;
+  int price;
+  int bid;
+  bool new_bid;
   std::string bid_valid_until;
-  std::string new_price;
+  bool new_price;
 };
