@@ -18,11 +18,13 @@ static const char *getClassAttr(GumboNode *node);
 
 // Example function: parse an individual “Betri” property from a node that
 // corresponds to the <article class="c-property c-card grid"> block
-void parseBetriProperty(GumboNode *node, Property *p);
+void parseBetriProperty(GumboNode *node, RawProperty *p);
 
 // Recursively find <article class="c-property c-card grid"> in the DOM
-void findBetriProperties(GumboNode *node, std::vector<Property> &results);
+void findBetriProperties(GumboNode *node, std::vector<RawProperty> &results);
 
 // parse the Html with Gumbo
-std::vector<Property> parseHtmlWithGumbo(std::string html);
+std::vector<RawProperty> parseHtmlWithGumboBetri(std::string html);
+
+std::vector<RawProperty> parseWithGumboMeklarin(std::string html);
 } // namespace HT

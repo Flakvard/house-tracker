@@ -14,8 +14,6 @@ Property jsonToProperty(const nlohmann::json &j);
 // Compare two properties by ID (or address, or whichever unique key you choose)
 bool isSameProperty(const Property &a, const Property &b);
 
-// Merges new properties into existing, tracking price changes
-
 // Convert entire property list to JSON array
 nlohmann::json propertiesToJson(const std::vector<Property> &props);
 

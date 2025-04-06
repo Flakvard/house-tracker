@@ -1,8 +1,38 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <regex>
 #include <scrapers/jsonHelper.hpp>
+#include <scrapers/regexParser.hpp>
 
 namespace HT {
+
+int safeGetInt(const nlohmann::json &j, const std::string &key,
+               int defaultValue = 0) {
+  if (!j.contains(key) || j[key].is_null()) {
+    return defaultValue;
+  }
+
+  try {
+    if (j[key].is_number_integer()) {
+      return j[key].get<int>();
+    }
+    if (j[key].is_string()) {
+      std::string val = j[key].get<std::string>();
+      // Strip non-digit characters just in case
+      std::string digitsOnly;
+      for (char c : val) {
+        if (std::isdigit(static_cast<unsigned char>(c))) {
+          digitsOnly += c;
+        }
+      }
+      return digitsOnly.empty() ? defaultValue : std::stoi(digitsOnly);
+    }
+  } catch (...) {
+    // fallback on any unexpected errors
+  }
+
+  return defaultValue;
+}
 
 // Convert a single Property to JSON
 nlohmann::json propertyToJson(const Property &prop) {
@@ -29,20 +59,21 @@ Property jsonToProperty(const nlohmann::json &j) {
   p.id = j.value("id", "");
   p.website = j.value("website", "");
   p.address = j.value("address", "");
-  p.price = j.value("price", "");
-  // If "previousPrices" doesn't exist or is the wrong type, this won't blow up
+  p.price = safeGetInt(j, "price");
+
   if (j.contains("previousPrices") && j["previousPrices"].is_array()) {
-    for (auto &item : j["previousPrices"]) {
-      p.previousPrices.push_back(item.get<std::string>());
-    }
+    p.previousPrices = parsePreviousPrices(j["previousPrices"]);
   }
-  p.latestOffer = j.value("latestOffer", "");
+
+  p.latestOffer = safeGetInt(j, "latestOffer");
   p.validDate = j.value("validDate", "");
   p.date = j.value("yearBuilt", "");
-  p.buildingSize = j.value("insideM2", "");
-  p.landSize = j.value("landM2", "");
-  p.room = j.value("room", "");
-  p.floor = j.value("floors", "");
+
+  p.buildingSize = safeGetInt(j, "insideM2");
+  p.landSize = safeGetInt(j, "landM2");
+  p.room = safeGetInt(j, "room");
+  p.floor = safeGetInt(j, "floors");
+
   p.img = j.value("img", "");
   return p;
 }
@@ -67,4 +98,5 @@ std::vector<Property> jsonToProperties(const nlohmann::json &arr) {
   }
   return props;
 }
+
 } // namespace HT

@@ -1,8 +1,11 @@
+#include "scrapers/house_model.hpp"
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <scrapers/PropertyManager.hpp>
 #include <scrapers/parser.hpp>
+#include <scrapers/regexParser.hpp>
+#include <vector>
 
 namespace HT {
 
@@ -41,9 +44,34 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
   }
 }
 
-// PropertyManager::
+std::vector<Property>
+mapRawPropertiesTilProperties(std::vector<RawProperty> newProperties) {
+
+  std::vector<Property> properties;
+  for (const auto &newProp : newProperties) {
+    Property prop;
+
+    prop.id = stripOuterQuotes(newProp.id);
+    prop.website = stripOuterQuotes(newProp.website);
+    prop.address = stripOuterQuotes(newProp.address);
+    prop.price = parsePriceToInt(newProp.price);
+    prop.previousPrices = parsePreviousPrices(newProp.previousPrices);
+    prop.latestOffer = parsePriceToInt(newProp.latestOffer);
+    prop.validDate = stripOuterQuotes(newProp.validDate);
+    prop.date = stripOuterQuotes(newProp.date);
+    prop.buildingSize = parseInt(newProp.buildingSize);
+    prop.landSize = parseInt(newProp.landSize);
+    prop.room = parseInt(newProp.room);
+    prop.floor = parseInt(newProp.floor);
+    prop.img = stripOuterQuotes(newProp.img);
+    properties.push_back(prop);
+  }
+
+  return properties;
+}
+
 void PropertyManager::traverseAllHtmlAndMergeProperties(
-    std::vector<Property> allProperties,
+    std::vector<Property> &allProperties,
     std::vector<std::filesystem::path> htmlFiles, std::string url) {
   for (const auto &path : htmlFiles) {
     std::ifstream ifs(path);
@@ -68,8 +96,16 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
       continue;
     }
 
+    std::vector<RawProperty> newRawProperties;
     // Parse
-    std::vector<Property> newProperties = HT::parseHtmlWithGumbo(rawHtml);
+    if (url == "https://www.betriheim.fo/")
+      newRawProperties = HT::parseHtmlWithGumboBetri(rawHtml);
+
+    if (url == "https://www.meklarin.fo/")
+      newRawProperties = HT::parseWithGumboMeklarin(rawHtml);
+
+    std::vector<Property> newProperties =
+        mapRawPropertiesTilProperties(newRawProperties);
 
     // Merge
     PropertyManager::mergeProperties(allProperties, newProperties);

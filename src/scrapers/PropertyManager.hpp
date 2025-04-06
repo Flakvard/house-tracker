@@ -5,9 +5,10 @@ namespace HT {
 class PropertyManager {
 public:
   static void traverseAllHtmlAndMergeProperties(
-      std::vector<Property> allProperties,
+      std::vector<Property> &allProperties,
       std::vector<std::filesystem::path> htmlFiles, std::string url);
 
+  // Merges new properties into existing, tracking price changes
   static void mergeProperties(std::vector<Property> &existing,
                               const std::vector<Property> &newOnes);
 

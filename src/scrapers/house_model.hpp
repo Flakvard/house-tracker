@@ -31,7 +31,7 @@ struct Property {
   std::string postNum;
   int price;
   std::vector<int> previousPrices; // or vector<int>
-  std::string latestOffer;         // or convert to int if you want
+  int latestOffer;                 // or convert to int if you want
   std::string validDate;
   std::string date;
   int buildingSize;
@@ -62,5 +62,5 @@ struct MeklarinProperty {
   int bid;
   bool new_bid;
   std::string bid_valid_until;
-  bool new_price;
+  std::string new_price;
 };
