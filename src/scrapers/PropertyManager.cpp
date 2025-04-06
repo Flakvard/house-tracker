@@ -133,7 +133,8 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
 
     // If your JSON structure is: { "url": "...", "timestamp": ..., "html":
     // "..." }
-    PropertyType propType = stringToPropertyType(j.value("type", ""));
+    PropertyType propType =
+        PropertyManager::stringToPropertyType(j.value("type", ""));
 
     std::string website = j.value("url", "");
     if (website != url || website.empty())
@@ -149,6 +150,8 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     // Parse
     if (url == "https://www.betriheim.fo/")
       newRawProperties = HT::parseHtmlWithGumboBetri(rawHtml, propType);
+    if (propType == PropertyType::Vinnubygningur)
+      std::cout << "Here it is\n";
 
     if (url == "https://www.meklarin.fo/")
       newRawProperties = HT::parseWithGumboMeklarin(rawHtml);

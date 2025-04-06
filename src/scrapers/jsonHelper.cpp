@@ -51,7 +51,7 @@ nlohmann::json propertyToJson(const Property &prop) {
   j["rooms"] = prop.room;
   j["floors"] = prop.floor;
   j["img"] = prop.img;
-  j["type"] = prop.type;
+  j["type"] = PropertyManager::propertyTypeToString(prop.type);
   return j;
 }
 
