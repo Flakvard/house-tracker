@@ -1,8 +1,10 @@
 
+#include "scrapers/house_model.hpp"
 #include <curl/curl.h>
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <scrapers/PropertyManager.hpp>
 #include <scrapers/filesystem.hpp>
 #include <scrapers/scraper.hpp>
 
@@ -44,6 +46,12 @@ std::string downloadHtml(const std::string &url) {
 }
 
 std::string downloadAndSaveHtml(const std::string &url) {
+
+  PropertyType pt = PropertyType::Undefined;
+  return downloadAndSaveHtml(url, pt);
+}
+
+std::string downloadAndSaveHtml(const std::string &url, PropertyType propType) {
   // 1) Download
   std::string html = HT::downloadHtml(url);
   if (html.empty()) {
@@ -57,6 +65,7 @@ std::string downloadAndSaveHtml(const std::string &url) {
   // 3) Save the raw HTML (plus any metadata) into a JSON file
   nlohmann::json j;
   j["url"] = url;
+  j["type"] = PropertyManager::propertyTypeToString(propType);
   j["timestamp"] = std::time(nullptr); // or store as string
   j["html"] = html;
 

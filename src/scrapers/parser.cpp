@@ -1,6 +1,7 @@
 #include <gumbo.h>
 #include <iostream>
 #include <regex>
+#include <scrapers/PropertyManager.hpp>
 #include <scrapers/house_model.hpp>
 #include <scrapers/regexParser.hpp>
 #include <string>
@@ -166,7 +167,8 @@ void findBetriProperties(GumboNode *node, std::vector<RawProperty> &results) {
 }
 
 // parse the Html with Gumbo
-std::vector<RawProperty> parseHtmlWithGumboBetri(std::string html) {
+std::vector<RawProperty> parseHtmlWithGumboBetri(std::string html,
+                                                 PropertyType propType) {
   std::vector<RawProperty> betriProperties;
 
   if (html.empty()) {
@@ -185,7 +187,7 @@ std::vector<RawProperty> parseHtmlWithGumboBetri(std::string html) {
   gumbo_destroy_output(&kGumboDefaultOptions, output);
 
   for (auto &prop : betriProperties) {
-
+    prop.type = PropertyManager::propertyTypeToString(propType);
     prop.id = prop.address + prop.city + prop.postNum;
   }
   return betriProperties;

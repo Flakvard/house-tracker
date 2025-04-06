@@ -1,4 +1,5 @@
 // betriScraper.cpp
+#include "scrapers/house_model.hpp"
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
@@ -72,9 +73,32 @@ int betriRun() {
 
   // 1. Try to load HTML from "../src/raw_html/html_1.json", or download if
   // missing
+  std::string sethus = "https://www.betriheim.fo/api/properties/"
+                       "filter?area=&type=Seth%C3%BAs&skip=0,0";
+  std::string tvihus = "https://www.betriheim.fo/api/properties/"
+                       "filter?area=&type=Tv%C3%ADh%C3%BAs&skip=0,0";
+  std::string radhus =
+      "https://www.betriheim.fo/api/properties/"
+      "filter?area=&type=Ra%C3%B0h%C3%BAs%20/%20Randarh%C3%BAs&skip=0,0";
+  std::string ibud = "https://www.betriheim.fo/api/properties/"
+                     "filter?area=&type=%C3%8Db%C3%BA%C3%B0&skip=0,0";
+  std::string summarhus = "https://www.betriheim.fo/api/properties/"
+                          "filter?area=&type=Summarh%C3%BAs%20/"
+                          "%20Fr%C3%ADt%C3%AD%C3%B0arh%C3%BAs&skip=0,0";
+  std::string vinnubygningur = "https://www.betriheim.fo/api/properties/"
+                               "filter?area=&type=Vinnubygningur&skip=0,0";
+  std::string grundstykki = "https://www.betriheim.fo/api/properties/"
+                            "filter?area=&type=Grundstykki&skip=0,0";
+  std::string jord = "https://www.betriheim.fo/api/properties/"
+                     "filter?area=&type=J%C3%B8r%C3%B0&skip=0,0";
+  std::string neyst = "https://www.betriheim.fo/api/properties/"
+                      "filter?area=&type=Neyst&skip=0,0";
+
   const std::string url = "https://www.betriheim.fo/";
-  // std::string html = loadHtmlFromCacheOrDownload(url, cachePath);
-  std::string html = HT::downloadAndSaveHtml(url);
+
+  // std::string html = HT::downloadAndSaveHtml(url);
+  std::string html =
+      HT::downloadAndSaveHtml(vinnubygningur, PropertyType::Sethus);
 
   // 1. Prepare an "existing properties" vector
   //    (Load from properties.json if it exists)

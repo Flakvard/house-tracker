@@ -13,5 +13,7 @@ public:
                               const std::vector<Property> &newOnes);
 
   static bool isSameProperty(const Property &a, const Property &b);
+  static std::string propertyTypeToString(PropertyType type);
+  static PropertyType stringToPropertyType(const std::string &str);
 };
 } // namespace HT

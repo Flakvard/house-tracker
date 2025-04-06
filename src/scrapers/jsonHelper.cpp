@@ -1,6 +1,7 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <regex>
+#include <scrapers/PropertyManager.hpp>
 #include <scrapers/jsonHelper.hpp>
 #include <scrapers/regexParser.hpp>
 
@@ -50,6 +51,7 @@ nlohmann::json propertyToJson(const Property &prop) {
   j["rooms"] = prop.room;
   j["floors"] = prop.floor;
   j["img"] = prop.img;
+  j["type"] = prop.type;
   return j;
 }
 
@@ -75,6 +77,7 @@ Property jsonToProperty(const nlohmann::json &j) {
   p.floor = safeGetInt(j, "floors");
 
   p.img = j.value("img", "");
+  p.type = PropertyManager::stringToPropertyType(j.value("type", ""));
   return p;
 }
 

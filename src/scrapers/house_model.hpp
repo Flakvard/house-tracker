@@ -3,6 +3,19 @@
 #include <string>
 #include <vector>
 
+enum class PropertyType {
+  Sethus,
+  Tvihus,
+  Radhus,
+  Ibud,
+  Summarhus,
+  Vinnubygningur,
+  Grundstykki,
+  Jord,
+  Neyst,
+  Undefined
+};
+
 struct RawProperty {
   std::string id;
   std::string website;
@@ -20,6 +33,7 @@ struct RawProperty {
   std::string room;
   std::string floor;
   std::string img;
+  std::string type;
 };
 
 struct Property {
@@ -39,6 +53,7 @@ struct Property {
   int room;
   int floor;
   std::string img;
+  PropertyType type;
 };
 
 struct MeklarinProperty {

@@ -1,9 +1,7 @@
 // meklarinScraper.cpp
-#include <cstddef>
 #include <gumbo.h>
 #include <iostream>
 #include <nlohmann/json.hpp>
-#include <regex>
 #include <scrapers/PropertyManager.hpp>
 #include <scrapers/filesystem.hpp>
 #include <scrapers/house_model.hpp>

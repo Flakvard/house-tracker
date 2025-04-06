@@ -5,9 +5,55 @@
 #include <scrapers/PropertyManager.hpp>
 #include <scrapers/parser.hpp>
 #include <scrapers/regexParser.hpp>
+#include <unordered_map>
 #include <vector>
 
 namespace HT {
+
+std::string PropertyManager::propertyTypeToString(PropertyType type) {
+  switch (type) {
+  case PropertyType::Sethus:
+    return "Sethus";
+  case PropertyType::Tvihus:
+    return "Tvihus";
+  case PropertyType::Radhus:
+    return "Radhus";
+  case PropertyType::Ibud:
+    return "Ibud";
+  case PropertyType::Summarhus:
+    return "Summarhus";
+  case PropertyType::Vinnubygningur:
+    return "Vinnubygningur";
+  case PropertyType::Grundstykki:
+    return "Grundstykki";
+  case PropertyType::Jord:
+    return "Jord";
+  case PropertyType::Neyst:
+    return "Neyst";
+  default:
+    return "Undefined";
+  }
+}
+
+PropertyType PropertyManager::stringToPropertyType(const std::string &str) {
+  static const std::unordered_map<std::string, PropertyType> map = {
+      {"Sethus", PropertyType::Sethus},
+      {"Tvihus", PropertyType::Tvihus},
+      {"Radhus", PropertyType::Radhus},
+      {"Ibud", PropertyType::Ibud},
+      {"Summarhus", PropertyType::Summarhus},
+      {"Vinnubygningur", PropertyType::Vinnubygningur},
+      {"Grundstykki", PropertyType::Grundstykki},
+      {"Jord", PropertyType::Jord},
+      {"Neyst", PropertyType::Neyst},
+      {"Undefined", PropertyType::Undefined}};
+
+  auto it = map.find(str);
+  if (it != map.end())
+    return it->second;
+  return PropertyType::Undefined;
+  // throw std::invalid_argument("Invalid property type string: " + str);
+}
 
 // Compare two properties by ID (or address, or whichever unique key you choose)
 bool PropertyManager::isSameProperty(const Property &a, const Property &b) {
@@ -64,6 +110,7 @@ mapRawPropertiesTilProperties(std::vector<RawProperty> newProperties) {
     prop.room = parseInt(newProp.room);
     prop.floor = parseInt(newProp.floor);
     prop.img = stripOuterQuotes(newProp.img);
+    prop.type = PropertyManager::stringToPropertyType(newProp.type);
     properties.push_back(prop);
   }
 
@@ -86,6 +133,8 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
 
     // If your JSON structure is: { "url": "...", "timestamp": ..., "html":
     // "..." }
+    PropertyType propType = stringToPropertyType(j.value("type", ""));
+
     std::string website = j.value("url", "");
     if (website != url || website.empty())
       continue;
@@ -99,7 +148,7 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     std::vector<RawProperty> newRawProperties;
     // Parse
     if (url == "https://www.betriheim.fo/")
-      newRawProperties = HT::parseHtmlWithGumboBetri(rawHtml);
+      newRawProperties = HT::parseHtmlWithGumboBetri(rawHtml, propType);
 
     if (url == "https://www.meklarin.fo/")
       newRawProperties = HT::parseWithGumboMeklarin(rawHtml);
