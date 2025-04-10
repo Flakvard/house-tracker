@@ -97,8 +97,7 @@ int betriRun() {
   const std::string url = "https://www.betriheim.fo/";
 
   // std::string html = HT::downloadAndSaveHtml(url);
-  std::string html =
-      HT::downloadAndSaveHtml(vinnubygningur, PropertyType::Sethus);
+  std::string html = HT::downloadAndSaveHtml(url, PropertyType::Sethus);
 
   // 1. Prepare an "existing properties" vector
   //    (Load from properties.json if it exists)

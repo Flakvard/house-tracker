@@ -5,7 +5,7 @@
 
 int main() {
   HT::betriRun();
-  // HT::meklarinRun();
-  // HT::runServer();
+  HT::meklarinRun();
+  HT::runServer();
   return 0;
 }
