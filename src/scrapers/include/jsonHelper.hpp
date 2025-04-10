@@ -1,7 +1,7 @@
 // jsonHelper.hpp
 #pragma once
 #include <nlohmann/json.hpp>
-#include <scrapers/house_model.hpp>
+#include <scrapers/include/house_model.hpp>
 
 namespace HT {
 

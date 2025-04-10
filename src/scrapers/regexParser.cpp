@@ -1,7 +1,7 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <regex>
-#include <scrapers/house_model.hpp>
+#include <scrapers/include/house_model.hpp>
 
 namespace HT {
 

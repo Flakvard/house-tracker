@@ -1,8 +1,9 @@
 #include <gumbo.h>
 #include <iostream>
-#include <scrapers/PropertyManager.hpp>
+#include <scrapers/betri/betriModel.hpp>
 #include <scrapers/betri/betriParser.hpp>
-#include <scrapers/house_model.hpp>
+#include <scrapers/include/PropertyManager.hpp>
+#include <scrapers/include/house_model.hpp>
 #include <string>
 namespace HT::BETRI {
 // Helper to get an attribute's value
@@ -55,7 +56,7 @@ std::string getNodeText(GumboNode *node) {
 
 // Example function: parse an individual “Betri” property from a node that
 // corresponds to the <article class="c-property c-card grid"> block
-void parseBetriProperty(GumboNode *node, RawProperty *p) {
+void parseBetriProperty(GumboNode *node, BetriProperty *p) {
   if (!node || node->type != GUMBO_NODE_ELEMENT) {
     return;
   }
@@ -121,7 +122,7 @@ void parseBetriProperty(GumboNode *node, RawProperty *p) {
 }
 
 // Recursively find <article class="c-property c-card grid"> in the DOM
-void findBetriProperties(GumboNode *node, std::vector<RawProperty> &results) {
+void findBetriProperties(GumboNode *node, std::vector<BetriProperty> &results) {
   if (!node)
     return;
 
@@ -132,7 +133,7 @@ void findBetriProperties(GumboNode *node, std::vector<RawProperty> &results) {
           getAttribute(&node->v.element.attributes, "class");
       if (classAttr && std::string(classAttr) == "c-property c-card grid") {
         // parse this entire block as a Betri property
-        RawProperty prop;
+        BetriProperty prop;
         prop.website = "Betri";
         parseBetriProperty(node, &prop);
         results.push_back(prop);
@@ -151,27 +152,48 @@ void findBetriProperties(GumboNode *node, std::vector<RawProperty> &results) {
 // parse the Html with Gumbo
 std::vector<RawProperty> parseHtmlWithGumboBetri(std::string html,
                                                  PropertyType propType) {
-  std::vector<RawProperty> betriProperties;
+  std::vector<BetriProperty> betriProperties;
+  std::vector<RawProperty> rawProperties;
 
   if (html.empty()) {
     std::cerr << "Failed to load or download HTML.\n";
-    return betriProperties;
+    return rawProperties;
   }
 
   // 2. Parse with Gumbo
   GumboOutput *output = gumbo_parse(html.c_str());
   if (!output) {
     std::cerr << "Failed to parse HTML with Gumbo\n";
-    return betriProperties;
+    return rawProperties;
   }
   // 3. Recursively find your property listings
   findBetriProperties(output->root, betriProperties);
   gumbo_destroy_output(&kGumboDefaultOptions, output);
 
   for (auto &prop : betriProperties) {
+    RawProperty p;
     prop.type = PropertyManager::propertyTypeToString(propType);
     prop.id = prop.address + prop.city + prop.postNum;
+
+    p.id = prop.id;
+    p.website = prop.website;
+    p.address = prop.address;
+    p.type = prop.type;
+    p.houseNum = prop.houseNum;
+    p.city = prop.city;
+    p.postNum = prop.postNum;
+    p.price = prop.price;
+    p.previousPrices = prop.previousPrices;
+    p.latestOffer = prop.latestOffer;
+    p.validDate = prop.validDate;
+    p.date = prop.date;
+    p.buildingSize = prop.buildingSize;
+    p.landSize = prop.landSize;
+    p.room = prop.room;
+    p.floor = prop.floor;
+    p.img = prop.img;
+    rawProperties.push_back(p);
   }
-  return betriProperties;
+  return rawProperties;
 }
 } // namespace HT::BETRI

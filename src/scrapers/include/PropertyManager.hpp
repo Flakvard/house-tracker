@@ -1,5 +1,5 @@
-#include "scrapers/house_model.hpp"
 #include <filesystem>
+#include <scrapers/include/house_model.hpp>
 namespace HT {
 
 class PropertyManager {

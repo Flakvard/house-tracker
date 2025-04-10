@@ -1,9 +1,9 @@
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
-#include <scrapers/filesystem.hpp>
-#include <scrapers/house_model.hpp>
-#include <scrapers/jsonHelper.hpp>
+#include <scrapers/include/filesystem.hpp>
+#include <scrapers/include/house_model.hpp>
+#include <scrapers/include/jsonHelper.hpp>
 
 namespace HT {
 namespace fs = std::filesystem;

@@ -1,7 +1,7 @@
 // filesystem.hpp
 #pragma once
 #include <filesystem>
-#include <scrapers/house_model.hpp>
+#include <scrapers/include/house_model.hpp>
 #include <string>
 #include <vector>
 

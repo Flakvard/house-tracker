@@ -1,9 +1,9 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <regex>
-#include <scrapers/PropertyManager.hpp>
-#include <scrapers/jsonHelper.hpp>
-#include <scrapers/regexParser.hpp>
+#include <scrapers/include/PropertyManager.hpp>
+#include <scrapers/include/jsonHelper.hpp>
+#include <scrapers/include/regexParser.hpp>
 
 namespace HT {
 

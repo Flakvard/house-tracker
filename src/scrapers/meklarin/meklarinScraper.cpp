@@ -2,13 +2,13 @@
 #include <gumbo.h>
 #include <iostream>
 #include <nlohmann/json.hpp>
-#include <scrapers/PropertyManager.hpp>
-#include <scrapers/filesystem.hpp>
-#include <scrapers/house_model.hpp>
+#include <scrapers/include/PropertyManager.hpp>
+#include <scrapers/include/filesystem.hpp>
+#include <scrapers/include/house_model.hpp>
+#include <scrapers/include/parser.hpp>
+#include <scrapers/include/regexParser.hpp>
+#include <scrapers/include/scraper.hpp>
 #include <scrapers/meklarin/meklarinScraper.hpp>
-#include <scrapers/parser.hpp>
-#include <scrapers/regexParser.hpp>
-#include <scrapers/scraper.hpp>
 #include <string>
 #include <vector>
 

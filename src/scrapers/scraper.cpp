@@ -1,12 +1,12 @@
 
-#include "scrapers/house_model.hpp"
 #include <curl/curl.h>
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
-#include <scrapers/PropertyManager.hpp>
-#include <scrapers/filesystem.hpp>
-#include <scrapers/scraper.hpp>
+#include <scrapers/include/PropertyManager.hpp>
+#include <scrapers/include/filesystem.hpp>
+#include <scrapers/include/house_model.hpp>
+#include <scrapers/include/scraper.hpp>
 
 namespace HT {
 

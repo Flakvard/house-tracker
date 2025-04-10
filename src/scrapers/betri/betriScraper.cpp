@@ -1,14 +1,14 @@
 // betriScraper.cpp
-#include "scrapers/house_model.hpp"
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
-#include <scrapers/PropertyManager.hpp>
 #include <scrapers/betri/betriScraper.hpp>
-#include <scrapers/filesystem.hpp>
-#include <scrapers/jsonHelper.hpp>
-#include <scrapers/parser.hpp>
-#include <scrapers/scraper.hpp>
+#include <scrapers/include/PropertyManager.hpp>
+#include <scrapers/include/filesystem.hpp>
+#include <scrapers/include/house_model.hpp>
+#include <scrapers/include/jsonHelper.hpp>
+#include <scrapers/include/parser.hpp>
+#include <scrapers/include/scraper.hpp>
 #include <vector>
 
 namespace HT {

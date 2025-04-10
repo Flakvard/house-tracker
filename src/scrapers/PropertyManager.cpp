@@ -1,11 +1,12 @@
-#include "scrapers/house_model.hpp"
 #include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
-#include <scrapers/PropertyManager.hpp>
+#include <scrapers/betri/betriParser.hpp>
+#include <scrapers/include/PropertyManager.hpp>
+#include <scrapers/include/house_model.hpp>
+#include <scrapers/include/parser.hpp>
+#include <scrapers/include/regexParser.hpp>
 #include <scrapers/meklarin/meklarinParser.hpp>
-#include <scrapers/parser.hpp>
-#include <scrapers/regexParser.hpp>
 #include <unordered_map>
 #include <vector>
 
