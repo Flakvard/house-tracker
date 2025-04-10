@@ -14,6 +14,7 @@ public:
 
   static bool isSameProperty(const Property &a, const Property &b);
   static std::string propertyTypeToString(PropertyType type);
+  static std::string extractPropertyTypeMeklarin(const std::string &s);
   static PropertyType stringToPropertyType(const std::string &str);
 };
 } // namespace HT

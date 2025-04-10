@@ -1,5 +1,5 @@
 // meklarinScraper.hpp
 #pragma once
 namespace HT {
-int meklarinRun();
+int meklarinRun(bool downloadNewHtml);
 }

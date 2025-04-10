@@ -69,7 +69,7 @@ std::string loadHtmlFromCacheOrDownload(const std::string &url,
   return freshHtml;
 }
 
-int betriRun() {
+int betriRun(bool downloadNewHtml) {
 
   // 1. Try to load HTML from "../src/raw_html/html_1.json", or download if
   // missing
@@ -97,7 +97,8 @@ int betriRun() {
   const std::string url = "https://www.betriheim.fo/";
 
   // std::string html = HT::downloadAndSaveHtml(url);
-  std::string html = HT::downloadAndSaveHtml(url, PropertyType::Sethus);
+  if (downloadNewHtml)
+    std::string html = HT::downloadAndSaveHtml(url, PropertyType::Sethus);
 
   // 1. Prepare an "existing properties" vector
   //    (Load from properties.json if it exists)

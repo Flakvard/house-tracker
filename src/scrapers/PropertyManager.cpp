@@ -35,6 +35,52 @@ std::string PropertyManager::propertyTypeToString(PropertyType type) {
   }
 }
 
+// Sethús
+// Tvíhús
+// Raðhús
+// Íbúð
+// Vinnubygningur
+// Samanbygd hús
+// Grundstykki, Neyst
+// Grundstykki
+// Jørð
+// Neyst
+// Vinnuhøli
+// Handil, Vinnubygningur
+std::string PropertyManager::extractPropertyTypeMeklarin(const std::string &s) {
+  std::string lower = s;
+  std::transform(lower.begin(), lower.end(), lower.begin(),
+                 ::tolower); // make lowercase
+
+  PropertyType typeOfProperty;
+
+  if (lower.find("sethús") != std::string::npos)
+    typeOfProperty = PropertyType::Sethus;
+  if (lower.find("tvíhús") != std::string::npos)
+    typeOfProperty = PropertyType::Tvihus;
+  if (lower.find("raðhús") != std::string::npos)
+    typeOfProperty = PropertyType::Radhus;
+  if (lower.find("íbúð") != std::string::npos)
+    typeOfProperty = PropertyType::Ibud;
+  if (lower.find("samanbygd hús") != std::string::npos ||
+      lower.find("summarhus") != std::string::npos)
+    typeOfProperty = PropertyType::Summarhus;
+  if (lower.find("vinnubygningur") != std::string::npos ||
+      lower.find("vinnuhøli") != std::string::npos ||
+      lower.find("handil") != std::string::npos)
+    typeOfProperty = PropertyType::Vinnubygningur;
+  if (lower.find("grundstykki") != std::string::npos)
+    typeOfProperty = PropertyType::Grundstykki;
+  if (lower.find("jørð") != std::string::npos ||
+      lower.find("jord") != std::string::npos)
+    typeOfProperty = PropertyType::Jord;
+  if (lower.find("neyst") != std::string::npos)
+    typeOfProperty = PropertyType::Neyst;
+
+  typeOfProperty = PropertyType::Undefined;
+  return propertyTypeToString(typeOfProperty);
+}
+
 PropertyType PropertyManager::stringToPropertyType(const std::string &str) {
   static const std::unordered_map<std::string, PropertyType> map = {
       {"Sethus", PropertyType::Sethus},
@@ -76,6 +122,13 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
       existing.push_back(newProp);
     } else {
       // property found => check if price changed
+      if (it->type != newProp.type) {
+        std::cout << "Type changed for: " << it->id << " from "
+                  << propertyTypeToString(it->type) << " to "
+                  << propertyTypeToString(newProp.type) << "\n";
+        // update type
+        it->type = newProp.type;
+      }
       if (it->price != newProp.price) {
         std::cout << "Price changed for: " << it->address << " from "
                   << it->price << " to " << newProp.price << "\n";

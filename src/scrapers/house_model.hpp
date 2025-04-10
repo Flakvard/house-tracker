@@ -16,6 +16,19 @@ enum class PropertyType {
   Undefined
 };
 
+// Sethús
+// Tvíhús
+// Raðhús
+// Íbúð
+// Vinnubygningur
+// Samanbygd hús
+// Grundstykki, Neyst
+// Grundstykki
+// Jørð
+// Neyst
+// Vinnuhøli
+// Handil, Vinnubygningur
+
 struct RawProperty {
   std::string id;
   std::string website;

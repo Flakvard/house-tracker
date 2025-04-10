@@ -350,6 +350,7 @@ std::vector<RawProperty> parseWithGumboMeklarin(std::string html) {
     property.id = p.address + p.areas;
     property.website = "https://www.meklarin.fo/";
     property.address = p.address;
+    property.type = PropertyManager::extractPropertyTypeMeklarin(p.types);
     property.houseNum = p.address;
     property.city = p.city;
     property.postNum = p.areas;

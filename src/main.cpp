@@ -4,8 +4,9 @@
 #include <webapi/webapi.hpp>
 
 int main() {
-  HT::betriRun();
-  HT::meklarinRun();
+  bool downloadNewHtml = false;
+  HT::betriRun(downloadNewHtml);
+  HT::meklarinRun(downloadNewHtml);
   HT::runServer();
   return 0;
 }

@@ -14,11 +14,12 @@
 
 namespace HT {
 
-int meklarinRun() {
+int meklarinRun(bool downloadNewHtml) {
 
   //  1) Download page into `html`
   std::string url = "https://www.meklarin.fo/";
-  std::string html = HT::downloadAndSaveHtml(url);
+  if (downloadNewHtml)
+    std::string html = HT::downloadAndSaveHtml(url);
 
   std::vector<Property> allProperties = HT::getAllPropertiesFromJson();
 
