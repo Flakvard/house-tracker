@@ -3,6 +3,7 @@
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <scrapers/PropertyManager.hpp>
+#include <scrapers/meklarin/meklarinParser.hpp>
 #include <scrapers/parser.hpp>
 #include <scrapers/regexParser.hpp>
 #include <unordered_map>
@@ -207,7 +208,7 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
       std::cout << "Here it is\n";
 
     if (url == "https://www.meklarin.fo/")
-      newRawProperties = HT::parseWithGumboMeklarin(rawHtml);
+      newRawProperties = HT::MEKLARIN::parseWithGumboMeklarin(rawHtml);
 
     std::vector<Property> newProperties =
         mapRawPropertiesTilProperties(newRawProperties);

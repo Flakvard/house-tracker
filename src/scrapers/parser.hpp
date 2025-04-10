@@ -26,6 +26,4 @@ void findBetriProperties(GumboNode *node, std::vector<RawProperty> &results);
 // parse the Html with Gumbo
 std::vector<RawProperty> parseHtmlWithGumboBetri(std::string html,
                                                  PropertyType propType);
-
-std::vector<RawProperty> parseWithGumboMeklarin(std::string html);
 } // namespace HT
