@@ -203,7 +203,7 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     std::vector<RawProperty> newRawProperties;
     // Parse
     if (url == "https://www.betriheim.fo/")
-      newRawProperties = HT::parseHtmlWithGumboBetri(rawHtml, propType);
+      newRawProperties = HT::BETRI::parseHtmlWithGumboBetri(rawHtml, propType);
     if (propType == PropertyType::Vinnubygningur)
       std::cout << "Here it is\n";
 
