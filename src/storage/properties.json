@@ -1070,5 +1070,37 @@
         "validDate": "",
         "website": "Betri",
         "yearBuilt": "Bygd 1932"
+    },
+    {
+        "address": "\n        Heiðavegur 13 \n        600 Saltangará\n      ",
+        "floors": 3,
+        "id": "\n        Heiðavegur 13 \n        600 Saltangará\n      ",
+        "img": "",
+        "insideM2": 4192,
+        "landM2": 12002,
+        "latestOffer": 0,
+        "previousPrices": [],
+        "price": 17500000,
+        "rooms": 0,
+        "type": "Vinnubygningur",
+        "validDate": "",
+        "website": "Betri",
+        "yearBuilt": "Bygd\n            1987\n          "
+    },
+    {
+        "address": "",
+        "floors": 0,
+        "id": "",
+        "img": "",
+        "insideM2": 0,
+        "landM2": 0,
+        "latestOffer": 0,
+        "previousPrices": [],
+        "price": 0,
+        "rooms": 0,
+        "type": "Sethus",
+        "validDate": "",
+        "website": "Betri",
+        "yearBuilt": ""
     }
 ]
