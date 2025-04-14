@@ -1,4 +1,3 @@
-
 #include <curl/curl.h>
 #include <fstream>
 #include <iostream>
@@ -14,6 +13,30 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
                             void *userp) {
   ((std::string *)userp)->append((char *)contents, size * nmemb);
   return size * nmemb;
+}
+
+std::string extractHtmlFromJson(const std::string &url) {
+
+  // Try to parse it as JSON
+  try {
+    auto j = nlohmann::json::parse(url);
+
+    // If it contains an "html" field, extract that
+    if (j.contains("html") && j["html"].is_string()) {
+      return j["html"].get<std::string>(); // Return HTML string from JSON
+    }
+
+    // JSON is valid, but doesn't contain "html"
+    return url;
+  } catch (const nlohmann::json::parse_error &e) {
+    // Not valid JSON, treat as raw HTML
+    std::cerr << "Parse error JSON" << e.what() << "\n";
+    return url;
+  } catch (const std::exception &e) {
+    // Some other exception, just print/log
+    std::cerr << "Exception while parsing JSON: " << e.what() << "\n";
+    return url;
+  }
 }
 
 // Download HTML via libcurl
@@ -42,7 +65,7 @@ std::string downloadHtml(const std::string &url) {
 
   curl_easy_cleanup(curl);
   curl_global_cleanup();
-  return html;
+  return extractHtmlFromJson(html);
 }
 
 std::string downloadAndSaveHtml(const std::string &url) {

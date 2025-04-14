@@ -192,17 +192,24 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
         PropertyManager::stringToPropertyType(j.value("type", ""));
 
     std::string website = j.value("url", "");
-    if (website != url || website.empty())
-      continue;
+    // if (website != url || website.empty())
+    //   continue;
 
     std::string rawHtml = j.value("html", "");
     if (rawHtml.empty()) {
       std::cerr << "No HTML found in " << path << "\n";
       continue;
     }
+    int timestamp = j.value("timestamp", 0);
+
+    if (timestamp == 1744313158)
+      std::cout << "Here it is\n";
 
     std::vector<RawProperty> newRawProperties;
     // Parse
+    if (url == "https://www.betriheim.fo/api/properties/"
+               "filter?area=&type=Vinnubygningur&skip=0,0")
+      newRawProperties = HT::BETRI::parseHtmlWithGumboBetri(rawHtml, propType);
     if (url == "https://www.betriheim.fo/")
       newRawProperties = HT::BETRI::parseHtmlWithGumboBetri(rawHtml, propType);
     if (propType == PropertyType::Vinnubygningur)
