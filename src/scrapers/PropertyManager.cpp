@@ -131,14 +131,14 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
         // update type
         it->type = newProp.type;
       }
-      if (it->price != newProp.price) {
+      if (it->latestOffer != newProp.latestOffer) {
         std::cout << "Price changed for: " << it->address << " from "
-                  << it->price << " to " << newProp.price << "\n";
+                  << it->latestOffer << " to " << newProp.latestOffer << "\n";
 
         // push the old price into the price history
-        it->previousPrices.push_back(it->price);
+        it->previousPrices.push_back(it->latestOffer);
         // update the current price
-        it->price = newProp.price;
+        it->latestOffer = newProp.latestOffer;
       }
       // you can compare other fields (e.g., floors, rooms) similarly
     }

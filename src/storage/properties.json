@@ -6,8 +6,10 @@
         "img": "",
         "insideM2": 1222,
         "landM2": 10012,
-        "latestOffer": 1900000,
-        "previousPrices": [],
+        "latestOffer": 2100000,
+        "previousPrices": [
+            1900000
+        ],
         "price": 2195000,
         "rooms": 0,
         "type": "Undefined",
@@ -54,8 +56,10 @@
         "img": "",
         "insideM2": 1272,
         "landM2": 2652,
-        "latestOffer": 3200000,
-        "previousPrices": [],
+        "latestOffer": 0,
+        "previousPrices": [
+            3200000
+        ],
         "price": 2750000,
         "rooms": 0,
         "type": "Undefined",
@@ -294,8 +298,12 @@
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-800x450.jpg",
         "insideM2": 0,
         "landM2": 125,
-        "latestOffer": 0,
-        "previousPrices": [],
+        "latestOffer": 4600000,
+        "previousPrices": [
+            0,
+            4400000,
+            4525000
+        ],
         "price": 3995000,
         "rooms": 0,
         "type": "Undefined",
@@ -326,8 +334,11 @@
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-4-800x533.jpg",
         "insideM2": 665,
         "landM2": 142,
-        "latestOffer": 2995000,
-        "previousPrices": [],
+        "latestOffer": 2800000,
+        "previousPrices": [
+            2995000,
+            0
+        ],
         "price": 2995000,
         "rooms": 0,
         "type": "Undefined",
@@ -1110,8 +1121,11 @@
         "img": "",
         "insideM2": 1762,
         "landM2": 2702,
-        "latestOffer": 1800000,
-        "previousPrices": [],
+        "latestOffer": 1900000,
+        "previousPrices": [
+            1800000,
+            1850000
+        ],
         "price": 1945000,
         "rooms": 0,
         "type": "Sethus",
@@ -1126,8 +1140,10 @@
         "img": "",
         "insideM2": 1222,
         "landM2": 10012,
-        "latestOffer": 2400000,
-        "previousPrices": [],
+        "latestOffer": 0,
+        "previousPrices": [
+            2400000
+        ],
         "price": 2195000,
         "rooms": 0,
         "type": "Sethus",
@@ -1366,8 +1382,10 @@
         "img": "",
         "insideM2": 792,
         "landM2": 0,
-        "latestOffer": 2250000,
-        "previousPrices": [],
+        "latestOffer": 2300000,
+        "previousPrices": [
+            2250000
+        ],
         "price": 2250000,
         "rooms": 0,
         "type": "Ibud",
@@ -1625,10 +1643,26 @@
         "latestOffer": 0,
         "previousPrices": [],
         "price": 2750000,
-        "rooms": 2,
+        "rooms": 0,
         "type": "Undefined",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
+    },
+    {
+        "address": "\n        Dalagøta 27 \n        100 Tórshavn\n      ",
+        "floors": 2,
+        "id": "\n        Dalagøta 27 \n        100 Tórshavn\n      ",
+        "img": "",
+        "insideM2": 2342,
+        "landM2": 6552,
+        "latestOffer": 0,
+        "previousPrices": [],
+        "price": 5695000,
+        "rooms": 0,
+        "type": "Sethus",
+        "validDate": "",
+        "website": "Betri",
+        "yearBuilt": "Bygd\n            1973\n          "
     }
 ]
