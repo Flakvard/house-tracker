@@ -156,6 +156,20 @@ std::string downloadAndSaveHtml(const std::string &url, PropertyType propType,
   return html;
 }
 
+std::string cleanAsciiFilename(const std::string &filename) {
+  std::string result;
+  for (char c : filename) {
+    if (static_cast<unsigned char>(c) < 128) {
+      if (c == ' ')
+        result += '_';
+      else
+        result += c;
+    }
+    // else skip non-ASCII chars like ð, ø, á
+  }
+  return result;
+}
+
 std::string getFilenameFromUrl(const std::string &url) {
   // just an example; in real code you might do robust checks
   // or use a cross-platform path library
@@ -184,7 +198,8 @@ void checkAndDownloadImages(const std::vector<Property> &allProperties) {
 
     // 1) Generate local filename
     std::string filename = getFilenameFromUrl(imgUrl);
-    std::string fullLocalPath = imgFolder + filename;
+    std::string fullImgName = cleanAsciiFilename(prop.id + filename);
+    std::string fullLocalPath = imgFolder + fullImgName;
 
     // 2) Check if file already exists
     if (alreadyDownloaded(fullLocalPath)) {

@@ -318,11 +318,12 @@
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-800x450.jpg",
         "insideM2": 0,
         "landM2": 125,
-        "latestOffer": 4600000,
+        "latestOffer": 4700000,
         "previousPrices": [
             0,
             4400000,
-            4525000
+            4525000,
+            4600000
         ],
         "price": 3995000,
         "rooms": 0,
@@ -530,8 +531,10 @@
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-4-800x533.jpg",
         "insideM2": 136,
         "landM2": 183,
-        "latestOffer": 0,
-        "previousPrices": [],
+        "latestOffer": 4000000,
+        "previousPrices": [
+            0
+        ],
         "price": 4395000,
         "rooms": 0,
         "type": "Undefined",
@@ -1170,7 +1173,7 @@
     },
     {
         "address": "",
-        "agent": "Undefined",
+        "agent": "Betri",
         "floors": 0,
         "id": "",
         "img": "",
@@ -1180,7 +1183,7 @@
         "previousPrices": [],
         "price": 0,
         "rooms": 0,
-        "type": "Sethus",
+        "type": "Neyst",
         "validDate": "",
         "website": "Betri",
         "yearBuilt": ""
