@@ -14,4 +14,6 @@ std::string downloadAndSaveHtml(const std::string &url, PropertyType propType,
                                 RealEstateAgent agent);
 
 void checkAndDownloadImages(const std::vector<Property> &allProperties);
+std::string getFilenameFromUrl(const std::string &url);
+std::string cleanAsciiFilename(const std::string &filename);
 } // namespace HT

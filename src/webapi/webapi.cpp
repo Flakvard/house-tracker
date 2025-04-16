@@ -1,6 +1,7 @@
 #include <drogon/drogon.h>
 #include <fstream>
 #include <nlohmann/json.hpp>
+#include <scrapers/include/scraper.hpp>
 #include <sstream>
 #include <string>
 #include <webapi/webapi.hpp>
@@ -31,8 +32,22 @@ std::string buildPropertiesTableRows() {
 
   std::stringstream rows;
   for (auto &item : j) {
+
+    /* …existing extraction… */
+    std::string imgUrl = item.value("img", "");
+
+    /* reconstruct the local filename exactly the same way
+       you did when downloading */
+    std::string fileName = HT::getFilenameFromUrl(imgUrl);
+    std::string localName =
+        HT::cleanAsciiFilename(item.value("id", "") + fileName);
+
+    /* assemble the public URL (matches addALocation above) */
+    std::string servedPath = "/images/" + localName;
+
     // Safely extract fields
     std::string address = item.value("address", "");
+    std::string typeProperty = item.value("type", "");
     int floors = item.value("floors", 0);
     int price = item.value("price", 0);
     int latestOffer = item.value("latestOffer", 0);
@@ -44,6 +59,9 @@ std::string buildPropertiesTableRows() {
     std::string website = item.value("website", "");
 
     rows << "<tr>\n"
+         << "  <td><img class=\"w-32 h-auto\" src=\"" << servedPath
+         << "\" alt=\"" << address << "\"></td>\n"
+         << "  <td>" << typeProperty << "</td>\n"
          << "  <td>" << address << "</td>\n"
          << "  <td>" << floors << "</td>\n"
          << "  <td>" << price << "</td>\n"
@@ -101,6 +119,8 @@ void runServer() {
     <table class="table w-full">
       <thead>
         <tr>
+          <th>Photo</th>
+          <th>Type of Property</th>
           <th>Address</th>
           <th>Floors</th>
           <th>Price</th>
@@ -143,6 +163,14 @@ void runServer() {
         resp->setBody(rows);
         callback(resp);
       });
+
+  /* make everything in ../src/raw_images/ available under
+   http://<host>:8080/images/<file> */
+  app().addALocation("/images", // URI prefix
+                     "",        // default mime‑type (auto)
+                     "../src/raw_images", true,
+                     true); // the real folder on disk
+
   // Start Drogon server (on port 8080 by default if no config)
   app().addListener("0.0.0.0", 8080);
   app().run();

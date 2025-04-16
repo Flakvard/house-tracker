@@ -5,8 +5,8 @@
 
 int main() {
   bool downloadNewHtml = false;
-  HT::betriRun(downloadNewHtml);
+  // HT::betriRun(downloadNewHtml);
   HT::meklarinRun(downloadNewHtml);
-  // HT::runServer();
+  HT::runServer();
   return 0;
 }
