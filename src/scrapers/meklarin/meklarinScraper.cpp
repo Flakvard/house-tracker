@@ -19,7 +19,7 @@ int meklarinRun(bool downloadNewHtml) {
   //  1) Download page into `html`
   std::string url = "https://www.meklarin.fo/";
   if (downloadNewHtml)
-    std::string html = HT::downloadAndSaveHtml(url);
+    std::string html = HT::downloadAndSaveHtml(url, RealEstateAgent::Meklarin);
 
   std::vector<Property> allProperties = HT::getAllPropertiesFromJson();
 

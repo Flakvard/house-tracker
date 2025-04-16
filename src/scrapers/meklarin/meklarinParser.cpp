@@ -179,6 +179,8 @@ std::vector<RawProperty> parseWithGumboMeklarin(std::string html) {
     property.room = std::to_string(p.bedrooms);
     property.floor = "0";
     property.img = p.featured_image;
+    property.agent =
+        PropertyManager::propertyAgentToString(RealEstateAgent::Meklarin);
     allProperties.push_back(property);
   }
   return allProperties;

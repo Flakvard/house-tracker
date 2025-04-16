@@ -13,8 +13,10 @@ public:
                               const std::vector<Property> &newOnes);
 
   static bool isSameProperty(const Property &a, const Property &b);
+  static std::string propertyAgentToString(RealEstateAgent agent);
   static std::string propertyTypeToString(PropertyType type);
   static std::string extractPropertyTypeMeklarin(const std::string &s);
+  static RealEstateAgent stringToAgent(const std::string &str);
   static PropertyType stringToPropertyType(const std::string &str);
 };
 } // namespace HT

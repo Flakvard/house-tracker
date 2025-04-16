@@ -108,7 +108,8 @@ int betriRun(bool downloadNewHtml) {
          PropertyType::Neyst}};
 
     for (const auto &[url, type] : urls) {
-      std::string html = HT::downloadAndSaveHtml(url, type);
+      std::string html =
+          HT::downloadAndSaveHtml(url, type, RealEstateAgent::Betri);
     }
   }
 

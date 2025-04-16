@@ -12,6 +12,21 @@
 
 namespace HT {
 
+std::string PropertyManager::propertyAgentToString(RealEstateAgent agent) {
+  switch (agent) {
+  case RealEstateAgent::Betri:
+    return "Betri";
+  case RealEstateAgent::Meklarin:
+    return "Meklarin";
+  case RealEstateAgent::Ogn:
+    return "Ogn";
+  case RealEstateAgent::Skyn:
+    return "Skyn";
+  default:
+    return "Undefined";
+  }
+}
+
 std::string PropertyManager::propertyTypeToString(PropertyType type) {
   switch (type) {
   case PropertyType::Sethus:
@@ -83,6 +98,21 @@ std::string PropertyManager::extractPropertyTypeMeklarin(const std::string &s) {
   return propertyTypeToString(typeOfProperty);
 }
 
+RealEstateAgent PropertyManager::stringToAgent(const std::string &str) {
+  static const std::unordered_map<std::string, RealEstateAgent> map = {
+      {"Betri", RealEstateAgent::Betri},
+      {"Meklarin", RealEstateAgent::Meklarin},
+      {"Ogn", RealEstateAgent::Ogn},
+      {"Skyn", RealEstateAgent::Skyn},
+      {"Undefined", RealEstateAgent::Undefined}};
+
+  auto it = map.find(str);
+  if (it != map.end())
+    return it->second;
+  return RealEstateAgent::Undefined;
+  // throw std::invalid_argument("Invalid property type string: " + str);
+}
+
 PropertyType PropertyManager::stringToPropertyType(const std::string &str) {
   static const std::unordered_map<std::string, PropertyType> map = {
       {"Sethus", PropertyType::Sethus},
@@ -140,6 +170,14 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
         // update the current price
         it->latestOffer = newProp.latestOffer;
       }
+      // property found => check if agent changed
+      if (it->agent != newProp.agent) {
+        std::cout << "Agent changed for: " << it->id << " from "
+                  << propertyAgentToString(it->agent) << " to "
+                  << propertyAgentToString(newProp.agent) << "\n";
+        // update Agent
+        it->agent = newProp.agent;
+      }
       // you can compare other fields (e.g., floors, rooms) similarly
     }
   }
@@ -166,6 +204,7 @@ mapRawPropertiesTilProperties(std::vector<RawProperty> newProperties) {
     prop.floor = parseInt(newProp.floor);
     prop.img = stripOuterQuotes(newProp.img);
     prop.type = PropertyManager::stringToPropertyType(newProp.type);
+    prop.agent = PropertyManager::stringToAgent(newProp.agent);
     properties.push_back(prop);
   }
 
@@ -200,10 +239,6 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
       std::cerr << "No HTML found in " << path << "\n";
       continue;
     }
-    int timestamp = j.value("timestamp", 0);
-
-    if (timestamp == 1744313158)
-      std::cout << "Here it is\n";
 
     std::vector<RawProperty> newRawProperties;
     // Parse
@@ -212,8 +247,6 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
       newRawProperties = HT::BETRI::parseHtmlWithGumboBetri(rawHtml, propType);
     if (url == "https://www.betriheim.fo/")
       newRawProperties = HT::BETRI::parseHtmlWithGumboBetri(rawHtml, propType);
-    if (propType == PropertyType::Vinnubygningur)
-      std::cout << "Here it is\n";
 
     if (url == "https://www.meklarin.fo/")
       newRawProperties = HT::MEKLARIN::parseWithGumboMeklarin(rawHtml);

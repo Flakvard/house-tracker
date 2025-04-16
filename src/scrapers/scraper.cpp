@@ -71,10 +71,16 @@ std::string downloadHtml(const std::string &url) {
 std::string downloadAndSaveHtml(const std::string &url) {
 
   PropertyType pt = PropertyType::Undefined;
-  return downloadAndSaveHtml(url, pt);
+  auto agent = RealEstateAgent::Undefined;
+  return downloadAndSaveHtml(url, pt, agent);
+}
+std::string downloadAndSaveHtml(const std::string &url, RealEstateAgent agent) {
+  PropertyType pt = PropertyType::Undefined;
+  return downloadAndSaveHtml(url, pt, agent);
 }
 
-std::string downloadAndSaveHtml(const std::string &url, PropertyType propType) {
+std::string downloadAndSaveHtml(const std::string &url, PropertyType propType,
+                                RealEstateAgent agent) {
   // 1) Download
   std::string html = HT::downloadHtml(url);
   if (html.empty()) {
@@ -89,6 +95,7 @@ std::string downloadAndSaveHtml(const std::string &url, PropertyType propType) {
   nlohmann::json j;
   j["url"] = url;
   j["type"] = PropertyManager::propertyTypeToString(propType);
+  j["agent"] = PropertyManager::propertyAgentToString(agent);
   j["timestamp"] = std::time(nullptr); // or store as string
   j["html"] = html;
 

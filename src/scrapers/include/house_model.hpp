@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+enum class RealEstateAgent { Betri, Meklarin, Skyn, Ogn, Undefined };
+
 enum class PropertyType {
   Sethus,
   Tvihus,
@@ -34,6 +36,7 @@ struct RawProperty {
   std::string floor;
   std::string img;
   std::string type;
+  std::string agent;
 };
 
 struct Property {
@@ -54,4 +57,5 @@ struct Property {
   int floor;
   std::string img;
   PropertyType type;
+  RealEstateAgent agent;
 };

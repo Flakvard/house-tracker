@@ -176,6 +176,7 @@ mapBetriToRawProperty(std::vector<RawProperty> &rawProperties,
     p.room = prop.room;
     p.floor = prop.floor;
     p.img = prop.img;
+    p.agent = PropertyManager::propertyAgentToString(RealEstateAgent::Betri);
     rawProperties.push_back(p);
   }
   return rawProperties;
