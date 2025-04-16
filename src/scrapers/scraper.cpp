@@ -9,10 +9,28 @@
 
 namespace HT {
 
+enum class WriteMode { ToMemory, ToFile };
+
+struct WriteData {
+  WriteMode mode;
+  std::string *outString; // if mode == ToMemory
+  std::ofstream outFile;  // if mode == ToFile
+};
+
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb,
                             void *userp) {
-  ((std::string *)userp)->append((char *)contents, size * nmemb);
-  return size * nmemb;
+  size_t totalBytes = size * nmemb;
+  WriteData *wd = static_cast<WriteData *>(userp);
+
+  if (wd->mode == WriteMode::ToMemory) {
+    // Append to the output string
+    wd->outString->append(static_cast<char *>(contents), totalBytes);
+  } else if (wd->mode == WriteMode::ToFile) {
+    // Write to file
+    wd->outFile.write(static_cast<char *>(contents), totalBytes);
+  }
+
+  return totalBytes;
 }
 
 std::string extractHtmlFromJson(const std::string &url) {
@@ -40,32 +58,40 @@ std::string extractHtmlFromJson(const std::string &url) {
 }
 
 // Download HTML via libcurl
-std::string downloadHtml(const std::string &url) {
-  CURL *curl;
-  CURLcode res;
-  std::string html;
-
-  curl_global_init(CURL_GLOBAL_DEFAULT);
-  curl = curl_easy_init();
+bool downloadData(const std::string &url, WriteData &wd) {
+  CURL *curl = curl_easy_init();
   if (!curl) {
     std::cerr << "Failed to init curl\n";
-    return "";
+    return false;
   }
 
   curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
   curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-  curl_easy_setopt(curl, CURLOPT_WRITEDATA, &html);
+  curl_easy_setopt(curl, CURLOPT_WRITEDATA, &wd);
 
-  res = curl_easy_perform(curl);
+  CURLcode res = curl_easy_perform(curl);
   if (res != CURLE_OK) {
     std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res)
               << std::endl;
-    html.clear(); // Indicate failure
+    curl_easy_cleanup(curl);
+    return false;
   }
 
   curl_easy_cleanup(curl);
-  curl_global_cleanup();
-  return extractHtmlFromJson(html);
+  return true;
+}
+
+bool downloadToString(const std::string &url, std::string &outString) {
+  // Ensure the output is empty or in a known state
+  outString.clear();
+
+  // Prepare our WriteData struct to store data in memory
+  WriteData wd;
+  wd.mode = WriteMode::ToMemory;
+  wd.outString = &outString;
+
+  // Actually do the download
+  return downloadData(url, wd);
 }
 
 std::string downloadAndSaveHtml(const std::string &url) {
@@ -82,8 +108,10 @@ std::string downloadAndSaveHtml(const std::string &url, RealEstateAgent agent) {
 std::string downloadAndSaveHtml(const std::string &url, PropertyType propType,
                                 RealEstateAgent agent) {
   // 1) Download
-  std::string html = HT::downloadHtml(url);
-  if (html.empty()) {
+  std::string html;
+  bool success = HT::downloadToString(url, html);
+  extractHtmlFromJson(html);
+  if (html.empty() || !success) {
     std::cerr << "Download failed\n";
     return "";
   }
