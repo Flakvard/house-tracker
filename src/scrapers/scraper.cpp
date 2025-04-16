@@ -105,6 +105,22 @@ std::string downloadAndSaveHtml(const std::string &url, RealEstateAgent agent) {
   return downloadAndSaveHtml(url, pt, agent);
 }
 
+bool downloadToFile(const std::string &url, const std::string &filePath) {
+  WriteData wd;
+  wd.mode = WriteMode::ToFile;
+
+  // Open the file in binary mode
+  wd.outFile.open(filePath, std::ios::binary);
+  if (!wd.outFile.is_open()) {
+    std::cerr << "Failed to open file for writing: " << filePath << "\n";
+    return false;
+  }
+
+  bool success = downloadData(url, wd);
+  wd.outFile.close();
+  return success;
+}
+
 std::string downloadAndSaveHtml(const std::string &url, PropertyType propType,
                                 RealEstateAgent agent) {
   // 1) Download
@@ -139,4 +155,49 @@ std::string downloadAndSaveHtml(const std::string &url, PropertyType propType,
   std::cout << "Saved raw HTML to: " << filePath << "\n";
   return html;
 }
+
+std::string getFilenameFromUrl(const std::string &url) {
+  // just an example; in real code you might do robust checks
+  // or use a cross-platform path library
+  auto pos = url.find_last_of('/');
+  if (pos == std::string::npos) {
+    // fallback: everything is the filename if there's no slash
+    return url;
+  }
+  // substring after the slash
+  return url.substr(pos + 1);
+}
+
+bool alreadyDownloaded(const std::string &filename) {
+  return std::filesystem::exists(filename);
+}
+
+void checkAndDownloadImages(const std::vector<Property> &allProperties) {
+  std::string imgFolder = "../src/raw_images/";
+
+  for (auto &prop : allProperties) {
+    // Suppose prop.img is the URL string
+    const std::string &imgUrl = prop.img;
+    if (imgUrl.empty()) {
+      continue; // no image
+    }
+
+    // 1) Generate local filename
+    std::string filename = getFilenameFromUrl(imgUrl);
+    std::string fullLocalPath = imgFolder + filename;
+
+    // 2) Check if file already exists
+    if (alreadyDownloaded(fullLocalPath)) {
+      continue; // skip
+    }
+
+    // 3) Download
+    if (!downloadToFile(imgUrl, fullLocalPath)) {
+      std::cerr << "Failed to download: " << imgUrl << "\n";
+    } else {
+      std::cout << "Downloaded: " << imgUrl << " => " << fullLocalPath << "\n";
+    }
+  }
+}
+
 } // namespace HT

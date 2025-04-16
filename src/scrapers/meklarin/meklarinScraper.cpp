@@ -39,7 +39,7 @@ int meklarinRun(bool downloadNewHtml) {
                                                      url);
 
   HT::writeToPropertiesJsonFile(allProperties);
-  // HT::checkAndDownloadImages(allProperties);
+  HT::checkAndDownloadImages(allProperties);
   return 0;
 }
 
