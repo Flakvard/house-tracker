@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <iterator>
 #include <nlohmann/json.hpp>
 #include <scrapers/betri/betriParser.hpp>
 #include <scrapers/include/PropertyManager.hpp>
@@ -242,13 +243,12 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
 
     std::vector<RawProperty> newRawProperties;
     // Parse
-    if (url == "https://www.betriheim.fo/api/properties/"
-               "filter?area=&type=Vinnubygningur&skip=0,0")
-      newRawProperties = HT::BETRI::parseHtmlWithGumboBetri(rawHtml, propType);
-    if (url == "https://www.betriheim.fo/")
+    size_t betriFound = website.find("betriheim");
+    if (betriFound != std::string::npos)
       newRawProperties = HT::BETRI::parseHtmlWithGumboBetri(rawHtml, propType);
 
-    if (url == "https://www.meklarin.fo/")
+    size_t meklarinFound = website.find("meklarin");
+    if (meklarinFound != std::string::npos)
       newRawProperties = HT::MEKLARIN::parseWithGumboMeklarin(rawHtml);
 
     std::vector<Property> newProperties =
