@@ -70,7 +70,7 @@ std::string PropertyManager::extractPropertyTypeMeklarin(const std::string &s) {
   std::transform(lower.begin(), lower.end(), lower.begin(),
                  ::tolower); // make lowercase
 
-  PropertyType typeOfProperty;
+  PropertyType typeOfProperty = PropertyType::Undefined;
 
   if (lower.find("sethús") != std::string::npos)
     typeOfProperty = PropertyType::Sethus;
@@ -95,7 +95,6 @@ std::string PropertyManager::extractPropertyTypeMeklarin(const std::string &s) {
   if (lower.find("neyst") != std::string::npos)
     typeOfProperty = PropertyType::Neyst;
 
-  typeOfProperty = PropertyType::Undefined;
   return propertyTypeToString(typeOfProperty);
 }
 

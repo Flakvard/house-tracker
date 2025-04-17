@@ -346,7 +346,7 @@
         "previousPrices": [],
         "price": 1500000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Summarhus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": " 8. apr. kl. 15:00"
@@ -363,7 +363,7 @@
         "previousPrices": [],
         "price": 2995000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "07/04 kl. 13:00",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "14. mar. kl. 14:00"
@@ -380,7 +380,7 @@
         "previousPrices": [],
         "price": 4475000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "26. mar. kl. 15:00"
@@ -397,7 +397,7 @@
         "previousPrices": [],
         "price": 3295000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "21. mar. kl. 15:00"
@@ -414,7 +414,7 @@
         "previousPrices": [],
         "price": 150000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Neyst",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -431,7 +431,7 @@
         "previousPrices": [],
         "price": 650000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Grundstykki",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -448,7 +448,7 @@
         "previousPrices": [],
         "price": 2800000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "16. okt. kl. 14:00"
@@ -465,7 +465,7 @@
         "previousPrices": [],
         "price": 6495000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -482,7 +482,7 @@
         "previousPrices": [],
         "price": 4250000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "12. mar. kl. 15:00"
@@ -499,7 +499,7 @@
         "previousPrices": [],
         "price": 3995000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -516,7 +516,7 @@
         "previousPrices": [],
         "price": 2995000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -535,7 +535,7 @@
         ],
         "price": 4395000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Summarhus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": " 3. mar. kl. 15:00"
@@ -569,7 +569,7 @@
         "previousPrices": [],
         "price": 2300000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -586,7 +586,7 @@
         "previousPrices": [],
         "price": 12500000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Vinnubygningur",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -603,7 +603,7 @@
         "previousPrices": [],
         "price": 2750000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -620,7 +620,7 @@
         "previousPrices": [],
         "price": 2000000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Jord",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -637,7 +637,7 @@
         "previousPrices": [],
         "price": 200000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Grundstykki",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -654,7 +654,7 @@
         "previousPrices": [],
         "price": 1995000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Vinnubygningur",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -671,7 +671,7 @@
         "previousPrices": [],
         "price": 595000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Grundstykki",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -688,7 +688,7 @@
         "previousPrices": [],
         "price": 295000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Grundstykki",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -705,7 +705,7 @@
         "previousPrices": [],
         "price": 895000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Grundstykki",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -722,7 +722,7 @@
         "previousPrices": [],
         "price": 2695000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Vinnubygningur",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -739,7 +739,7 @@
         "previousPrices": [],
         "price": 250000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Jord",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -756,7 +756,7 @@
         "previousPrices": [],
         "price": 590000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Jord",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -773,7 +773,7 @@
         "previousPrices": [],
         "price": 150000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Grundstykki",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -790,7 +790,7 @@
         "previousPrices": [],
         "price": 1200000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Vinnubygningur",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -807,7 +807,7 @@
         "previousPrices": [],
         "price": 95000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Jord",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -824,7 +824,7 @@
         "previousPrices": [],
         "price": 820000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Grundstykki",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -858,7 +858,7 @@
         "previousPrices": [],
         "price": 895000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -875,7 +875,7 @@
         "previousPrices": [],
         "price": 3250000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "18. mar. kl. 15:00"
@@ -892,7 +892,7 @@
         "previousPrices": [],
         "price": 4475000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "17. mar. kl. 15:00"
@@ -909,7 +909,7 @@
         "previousPrices": [],
         "price": 200000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Jord",
         "validDate": "21/03 kl. 16:00",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -943,7 +943,7 @@
         "previousPrices": [],
         "price": 4495000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": " 7. mar. kl. 14:00"
@@ -977,7 +977,7 @@
         "previousPrices": [],
         "price": 4850000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "11. feb. kl. 14:00"
@@ -994,7 +994,7 @@
         "previousPrices": [],
         "price": 1295000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -1011,7 +1011,7 @@
         "previousPrices": [],
         "price": 4300000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": " 5. feb. kl. 14:00"
@@ -1028,7 +1028,7 @@
         "previousPrices": [],
         "price": 1100000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -1062,7 +1062,7 @@
         "previousPrices": [],
         "price": 4500000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
@@ -1079,7 +1079,7 @@
         "previousPrices": [],
         "price": 4595000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Sethus",
         "validDate": "",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": "14. apr. kl. 15:00"
@@ -1096,7 +1096,7 @@
         "previousPrices": [],
         "price": 1595000,
         "rooms": 0,
-        "type": "Undefined",
+        "type": "Tvihus",
         "validDate": "18/03 kl. 12:00",
         "website": "https://www.meklarin.fo/",
         "yearBuilt": ""
