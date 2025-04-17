@@ -78,3 +78,5 @@ buildVS/
 buildNinja/
 build/
 vcpkg_installed/
+
+src/raw_images/*
