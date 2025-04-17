@@ -179,6 +179,13 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
         // update Agent
         it->agent = newProp.agent;
       }
+      // property found => check if img changed
+      if (it->img != newProp.img) {
+        std::cout << "img changed for: " << it->id << " from " << it->img
+                  << " to " << newProp.img << "\n";
+        // update img
+        it->img = newProp.img;
+      }
       // you can compare other fields (e.g., floors, rooms) similarly
     }
   }

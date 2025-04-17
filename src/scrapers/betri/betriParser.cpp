@@ -54,6 +54,31 @@ std::string getNodeText(GumboNode *node) {
   return "";
 }
 
+const char *findImgSrcRecursive(GumboNode *node) {
+  if (!node || node->type != GUMBO_NODE_ELEMENT)
+    return nullptr;
+
+  if (node->v.element.tag == GUMBO_TAG_IMG) {
+    GumboAttribute *src =
+        gumbo_get_attribute(&node->v.element.attributes, "src");
+    return src ? src->value : nullptr;
+  }
+  GumboVector *kids = &node->v.element.children;
+  for (unsigned i = 0; i < kids->length; ++i)
+    if (const char *s =
+            findImgSrcRecursive(static_cast<GumboNode *>(kids->data[i])))
+      return s;
+
+#if GUMBO_VERSION >= 0x000a03
+  if (node->v.element.template_contents) { // dive into <template>
+    if (const char *s = findImgSrcRecursive(
+            static_cast<GumboNode *>(node->v.element.template_contents)))
+      return s;
+  }
+#endif
+  return nullptr;
+}
+
 // Example function: parse an individual “Betri” property from a node that
 // corresponds to the <article class="c-property c-card grid"> block
 void parseBetriProperty(GumboNode *node, BetriProperty *p) {
@@ -94,25 +119,24 @@ void parseBetriProperty(GumboNode *node, BetriProperty *p) {
   // For the image: inside a <li class="slide"><img src="..."></li>
   // This might not be a direct child – you may need deeper recursion.
   // But if it is, do something like below:
-  if (node->v.element.tag == GUMBO_TAG_LI) {
-    const char *liClassAttr =
-        getAttribute(&node->v.element.attributes, "class");
-    if (liClassAttr && std::string(liClassAttr) == "slide") {
-      // find <img> inside
-      GumboVector *liChildren = &node->v.element.children;
-      for (unsigned int j = 0; j < liChildren->length; j++) {
-        GumboNode *liChild = static_cast<GumboNode *>(liChildren->data[j]);
-        if (liChild->type == GUMBO_NODE_ELEMENT &&
-            liChild->v.element.tag == GUMBO_TAG_IMG) {
-          const char *srcAttr =
-              getAttribute(&liChild->v.element.attributes, "src");
-          if (srcAttr) {
-            p->img = srcAttr;
+  bool gotImg = !p->img.empty(); // already set elsewhere?
+
+  if (!gotImg && node->v.element.tag == GUMBO_TAG_LI) {
+      const char* liClassAttr = getAttribute(&node->v.element.attributes, "class");
+
+      if (liClassAttr && std::string(liClassAttr) == "slide") {
+          // check data-slider-id="1" on this <li>
+          const char* sliderId = getAttribute(&node->v.element.attributes, "data-slider-id");
+          if (sliderId && std::strcmp(sliderId, "1") == 0) {
+              // Now scan children to find the first <img>
+              if (const char* src = findImgSrcRecursive(node)) {
+                  p->img = src;
+                  gotImg = true;
+              }
           }
-        }
       }
-    }
   }
+
   // Recurse on all children
   GumboVector *children = &node->v.element.children;
   for (unsigned int i = 0; i < children->length; i++) {
