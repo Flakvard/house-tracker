@@ -39,8 +39,9 @@ std::string buildPropertiesTableRows() {
     /* reconstruct the local filename exactly the same way
        you did when downloading */
     std::string fileName = HT::getFilenameFromUrl(imgUrl);
-    std::string localName =
-        HT::cleanAsciiFilename(item.value("id", "") + fileName);
+    std::string fullName = HT::cleanAsciiFilename(item.value("id", "") +
+                                                  item.value("validDate", ""));
+    std::string localName = fullName + "_" + fileName;
 
     /* assemble the public URL (matches addALocation above) */
     std::string servedPath = "/images/" + localName;

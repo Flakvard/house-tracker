@@ -77,6 +77,8 @@ int betriRun(bool downloadNewHtml) {
                                                      url);
 
   // 4. Write final results to properties.json
-  return HT::writeToPropertiesJsonFile(allProperties);
+  HT::writeToPropertiesJsonFile(allProperties);
+  HT::checkAndDownloadImages(allProperties);
+  return 0;
 }
 } // namespace HT

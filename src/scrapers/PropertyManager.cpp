@@ -269,4 +269,21 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
   }
 }
 
+std::string PropertyManager::cleanId(const std::string &raw) {
+  std::string result;
+  for (char c : raw) {
+    // Convert to lowercase
+    c = std::tolower(static_cast<unsigned char>(c));
+
+    // Keep only a–z, 0–9 (and optionally special letters like æ, ø, å)
+    if ((c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') ||
+        (static_cast<unsigned char>(c) >= 0xE0)) { // æøå in UTF-8
+      result += c;
+    }
+
+    // All else is skipped: whitespace, punctuation, symbols
+  }
+  return result;
+}
+
 } // namespace HT

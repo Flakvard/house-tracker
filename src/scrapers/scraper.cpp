@@ -162,6 +162,12 @@ std::string cleanAsciiFilename(const std::string &filename) {
     if (static_cast<unsigned char>(c) < 128) {
       if (c == ' ')
         result += '_';
+      else if (c == '.')
+        result += '-';
+      else if (c == '/')
+        result += '-';
+      else if (c == '\\')
+        result += '-';
       else
         result += c;
     }
@@ -171,15 +177,23 @@ std::string cleanAsciiFilename(const std::string &filename) {
 }
 
 std::string getFilenameFromUrl(const std::string &url) {
-  // just an example; in real code you might do robust checks
-  // or use a cross-platform path library
-  auto pos = url.find_last_of('/');
-  if (pos == std::string::npos) {
-    // fallback: everything is the filename if there's no slash
-    return url;
+  // Find last slash (start of the filename)
+  auto slashPos = url.find_last_of('/');
+  if (slashPos == std::string::npos) {
+    slashPos = 0; // fallback to start
+  } else {
+    slashPos += 1;
   }
-  // substring after the slash
-  return url.substr(pos + 1);
+
+  // Check for query string
+  auto queryPos = url.find('?', slashPos);
+
+  // Return the filename without query parameters
+  if (queryPos == std::string::npos) {
+    return url.substr(slashPos); // no query — return as-is
+  } else {
+    return url.substr(slashPos, queryPos - slashPos); // strip ? and beyond
+  }
 }
 
 bool alreadyDownloaded(const std::string &filename) {
@@ -198,8 +212,8 @@ void checkAndDownloadImages(const std::vector<Property> &allProperties) {
 
     // 1) Generate local filename
     std::string filename = getFilenameFromUrl(imgUrl);
-    std::string fullImgName = cleanAsciiFilename(prop.id + filename);
-    std::string fullLocalPath = imgFolder + fullImgName;
+    std::string fullImgName = prop.id;
+    std::string fullLocalPath = imgFolder + prop.id + "_" + filename;
 
     // 2) Check if file already exists
     if (alreadyDownloaded(fullLocalPath)) {

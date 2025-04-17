@@ -122,19 +122,21 @@ void parseBetriProperty(GumboNode *node, BetriProperty *p) {
   bool gotImg = !p->img.empty(); // already set elsewhere?
 
   if (!gotImg && node->v.element.tag == GUMBO_TAG_LI) {
-      const char* liClassAttr = getAttribute(&node->v.element.attributes, "class");
+    const char *liClassAttr =
+        getAttribute(&node->v.element.attributes, "class");
 
-      if (liClassAttr && std::string(liClassAttr) == "slide") {
-          // check data-slider-id="1" on this <li>
-          const char* sliderId = getAttribute(&node->v.element.attributes, "data-slider-id");
-          if (sliderId && std::strcmp(sliderId, "1") == 0) {
-              // Now scan children to find the first <img>
-              if (const char* src = findImgSrcRecursive(node)) {
-                  p->img = src;
-                  gotImg = true;
-              }
-          }
+    if (liClassAttr && std::string(liClassAttr) == "slide") {
+      // check data-slider-id="1" on this <li>
+      const char *sliderId =
+          getAttribute(&node->v.element.attributes, "data-slider-id");
+      if (sliderId && std::strcmp(sliderId, "1") == 0) {
+        // Now scan children to find the first <img>
+        if (const char *src = findImgSrcRecursive(node)) {
+          p->img = src;
+          gotImg = true;
+        }
       }
+    }
   }
 
   // Recurse on all children
@@ -181,7 +183,7 @@ mapBetriToRawProperty(std::vector<RawProperty> &rawProperties,
   for (auto &prop : betriProperties) {
     RawProperty p;
     prop.type = PropertyManager::propertyTypeToString(propType);
-    prop.id = prop.address + prop.city + prop.postNum;
+    prop.id = PropertyManager::cleanId(prop.address + prop.city + prop.postNum);
 
     p.id = prop.id;
     p.website = prop.website;

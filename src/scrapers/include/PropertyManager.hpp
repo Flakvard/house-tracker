@@ -18,5 +18,6 @@ public:
   static std::string extractPropertyTypeMeklarin(const std::string &s);
   static RealEstateAgent stringToAgent(const std::string &str);
   static PropertyType stringToPropertyType(const std::string &str);
+  static std::string cleanId(const std::string &raw);
 };
 } // namespace HT
