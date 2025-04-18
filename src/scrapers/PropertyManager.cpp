@@ -8,6 +8,7 @@
 #include <scrapers/include/parser.hpp>
 #include <scrapers/include/regexParser.hpp>
 #include <scrapers/meklarin/meklarinParser.hpp>
+#include <scrapers/skyn/skynParser.hpp>
 #include <unordered_map>
 #include <vector>
 
@@ -256,6 +257,10 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     size_t meklarinFound = website.find("meklarin");
     if (meklarinFound != std::string::npos)
       newRawProperties = HT::MEKLARIN::parseWithGumboMeklarin(rawHtml);
+
+    size_t skynFound = website.find("skyn");
+    if (skynFound != std::string::npos)
+      newRawProperties = HT::SKYN::parseWithGumboSkyn(rawHtml, propType);
 
     std::vector<Property> newProperties =
         mapRawPropertiesTilProperties(newRawProperties);
