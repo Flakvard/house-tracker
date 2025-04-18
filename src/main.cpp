@@ -5,10 +5,10 @@
 #include <webapi/webapi.hpp>
 
 int main() {
-  bool downloadNewHtml = false;
-  HT::betriRun(downloadNewHtml);
-  HT::meklarinRun(downloadNewHtml);
+  bool downloadNewHtml = true;
+  // HT::betriRun(downloadNewHtml);
+  // HT::meklarinRun(downloadNewHtml);
   HT::skynRun(downloadNewHtml);
-  HT::runServer();
+  // HT::runServer();
   return 0;
 }
