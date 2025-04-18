@@ -41,6 +41,7 @@ nlohmann::json propertyToJson(const Property &prop) {
   j["id"] = prop.id;
   j["website"] = prop.website;
   j["address"] = prop.address;
+  j["city"] = prop.city;
   j["price"] = prop.price;
   j["previousPrices"] = prop.previousPrices;
   j["latestOffer"] = prop.latestOffer;
@@ -62,6 +63,7 @@ Property jsonToProperty(const nlohmann::json &j) {
   p.id = j.value("id", "");
   p.website = j.value("website", "");
   p.address = j.value("address", "");
+  p.city = j.value("city", "");
   p.price = safeGetInt(j, "price");
 
   if (j.contains("previousPrices") && j["previousPrices"].is_array()) {

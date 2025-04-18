@@ -2,6 +2,7 @@
     {
         "address": "Eystanvegur 3  210 Sandur",
         "agent": "Betri",
+        "city": "",
         "floors": 1,
         "id": "eystanvegur3210sandur",
         "img": "https://betriheim.cdn.fo/savn/12clqc0p/2.jpg?width=400&height=233&rmode=max&quality=50&t=17034966&s=fesOdaC0_rf7Ef1qSOYDleSDKBM",
@@ -22,6 +23,7 @@
     {
         "address": "Mýrigøta 3  100 Tórshavn",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "mrigta3100trshavn",
         "img": "https://betriheim.cdn.fo/savn/tdxkdmlv/a-10.jpg?width=400&height=233&rmode=max&quality=50&t=185&s=GmBRtxpx1rz5VclUeFFNU4le87Q",
@@ -39,6 +41,7 @@
     {
         "address": "Toftanes 30  520 Leirvík",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "toftanes30520leirvk",
         "img": "https://betriheim.cdn.fo/savn/5r5bajme/1.jpg?width=400&height=233&rmode=max&quality=50&t=73&s=SPgVYfgWIoOMe_jU7o_amDMj8Lo",
@@ -56,6 +59,7 @@
     {
         "address": "Argjavegur 18  160 Argir",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "argjavegur18160argir",
         "img": "https://betriheim.cdn.fo/savn/o01ba230/1.jpg?width=400&height=233&rmode=max&quality=50&t=42&s=eJt9caHy47G9G0AH7ro2QrOJrzI",
@@ -73,6 +77,7 @@
     {
         "address": "Bakkavegur 151  350 Vestmanna",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "bakkavegur151350vestmanna",
         "img": "https://betriheim.cdn.fo/savn/q00fqxku/1.jpg?width=400&height=233&rmode=max&quality=50&t=78&s=KJYXHZN32W68JcwMwFQhZBu6DTk",
@@ -90,6 +95,7 @@
     {
         "address": "Heiðaravegur 11  220 Skálavík",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "heiaravegur11220sklavk",
         "img": "https://betriheim.cdn.fo/savn/melbfgwy/1.jpg?width=400&height=233&rmode=max&quality=50&t=113&s=P4F8FVur-spvaFtCqH02Kz_E7-4",
@@ -107,6 +113,7 @@
     {
         "address": "Skálavegur 185  480 Skála",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "sklavegur185480skla",
         "img": "https://betriheim.cdn.fo/savn/n2tfh1eb/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=42&s=JG_Cgk2jZdy8OevPKHTKKE7PKsI",
@@ -128,6 +135,7 @@
     {
         "address": "Tartarlág 6  690 Oyndarfjørður",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "tartarlg6690oyndarfjrur",
         "img": "https://betriheim.cdn.fo/savn/z00aevk0/1.jpg?width=400&height=233&rmode=max&quality=50&t=201&s=Qa0EcGca3Wla0KqlFg-Vd9Q62Vg",
@@ -145,6 +153,7 @@
     {
         "address": "Kongagøta 7,0 vm  100 Tórshavn",
         "agent": "Betri",
+        "city": "",
         "floors": 1,
         "id": "kongagta70vm100trshavn",
         "img": "https://betriheim.cdn.fo/savn/023feaia/d-3.jpg?width=400&height=233&rmode=max&quality=50&t=14923284&s=Mm371qDeoXHqF5vhM7dw9y361n0",
@@ -162,6 +171,7 @@
     {
         "address": "Søldarfjarðarvegur 32  660 Søldarfjørður",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "sldarfjararvegur32660sldarfjrur",
         "img": "https://betriheim.cdn.fo/savn/lreblphh/1.jpg?width=400&height=233&rmode=max&quality=50&t=87&s=S-igOOxR3JxgOd_l3W7_f-2arQ0",
@@ -179,6 +189,7 @@
     {
         "address": "Hoygarðsvegur 6  370 Miðvágur",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "hoygarsvegur6370mivgur",
         "img": "https://betriheim.cdn.fo/savn/kjohxpnn/1.jpg?width=400&height=233&rmode=max&quality=50&t=33&s=VuN9fh4fqat8uk0ASzzyhR7fORk",
@@ -196,6 +207,7 @@
     {
         "address": "Lynggøta 8  100 Tórshavn",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "lynggta8100trshavn",
         "img": "https://betriheim.cdn.fo/savn/ecsliteg/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=52&s=sMSTQOd4Z8M6Mr6n6jiulrKqtsw",
@@ -213,6 +225,7 @@
     {
         "address": "Undir Nesinum 10  650 Toftir",
         "agent": "Betri",
+        "city": "",
         "floors": 1,
         "id": "undirnesinum10650toftir",
         "img": "https://betriheim.cdn.fo/savn/bw3ecp45/1.jpg?width=400&height=233&rmode=max&quality=50&t=57&s=mPhja9AA-ah62bP1SNyraNXDhY0",
@@ -230,6 +243,7 @@
     {
         "address": "Undir Skorum matr nr 27a  825 Froðba",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "undirskorummatrnr27a825froba",
         "img": "https://betriheim.cdn.fo/savn/tzljrs43/1.jpg?width=400&height=233&rmode=max&quality=50&s=ZgDxsHaYGW1ZLwH4I8ryxvmZbEA",
@@ -247,6 +261,7 @@
     {
         "address": "Bøgøta 8  970 Sumba",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "bgta8970sumba",
         "img": "https://betriheim.cdn.fo/savn/hb4lwkca/0.jpg?width=400&height=233&rmode=max&quality=50&t=46&s=UNwjsUJg6uPJRhDfQHMb0rIByQY",
@@ -264,6 +279,7 @@
     {
         "address": "Bókbindaragøta 38  100 Tórshavn",
         "agent": "Betri",
+        "city": "",
         "floors": 4,
         "id": "bkbindaragta38100trshavn",
         "img": "https://betriheim.cdn.fo/savn/rz1hkayz/1.jpg?width=400&height=233&rmode=max&quality=50&t=244&s=fwaKlysDzNTILD1EkatBvoalD9s",
@@ -281,6 +297,7 @@
     {
         "address": "Lokkargarðsvegur 5  970 Sumba",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "lokkargarsvegur5970sumba",
         "img": "https://betriheim.cdn.fo/savn/oylbrw1w/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=58&s=tF5vd8Ne-JlmZs280R4EIPhL23k",
@@ -298,6 +315,7 @@
     {
         "address": "Raðhús í Brekkugerði 21  420 Hósvík",
         "agent": "Betri",
+        "city": "",
         "floors": 1,
         "id": "rahsbrekkugeri21420hsvk",
         "img": "https://betriheim.cdn.fo/savn/tb0fdt1v/02.jpg?width=400&height=233&rmode=max&quality=50&t=5184688&s=MrCzL4GB7m2pSmrKTn9Dj5GoWYg",
@@ -315,6 +333,7 @@
     {
         "address": "undir Kongavarða 27, 4 vm",
         "agent": "Meklarin",
+        "city": "Argir",
         "floors": 0,
         "id": "undirkongavara274vmargirstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-800x450.jpg",
@@ -337,6 +356,7 @@
     {
         "address": "Niðari Vegur 63",
         "agent": "Meklarin",
+        "city": "Vestmanna",
         "floors": 0,
         "id": "niarivegur63vestmannastreymoynor",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/a01-1-800x450.jpg",
@@ -354,6 +374,7 @@
     {
         "address": "Marknagilsvegur 50",
         "agent": "Meklarin",
+        "city": "Tórshavn",
         "floors": 0,
         "id": "marknagilsvegur50trshavnstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-4-800x533.jpg",
@@ -371,6 +392,7 @@
     {
         "address": "Jóan Karls gøta 11",
         "agent": "Meklarin",
+        "city": "Tórshavn",
         "floors": 0,
         "id": "jankarlsgta11trshavnstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/a01-2-800x450.jpg",
@@ -388,6 +410,7 @@
     {
         "address": "Liljuteigur 12",
         "agent": "Meklarin",
+        "city": "Sandavágur",
         "floors": 0,
         "id": "liljuteigur12sandavgurvgar",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-6-800x533.jpg",
@@ -405,6 +428,7 @@
     {
         "address": "við Todnestanga / á Miðgerði",
         "agent": "Meklarin",
+        "city": "Kollafjørður",
         "floors": 0,
         "id": "vitodnestangamigerikollafjrurstreymoynor",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/a01-1-800x450.jpg",
@@ -422,6 +446,7 @@
     {
         "address": "Lýðarsvegur 42",
         "agent": "Meklarin",
+        "city": "Toftir",
         "floors": 0,
         "id": "larsvegur42toftireysturoy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/a01-3-800x450.jpg",
@@ -439,6 +464,7 @@
     {
         "address": "Toftavegur 2",
         "agent": "Meklarin",
+        "city": "Vestmanna",
         "floors": 0,
         "id": "toftavegur2vestmannastreymoynor",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/10/05-2-800x533.jpg",
@@ -456,6 +482,7 @@
     {
         "address": "Stoffalág 35",
         "agent": "Meklarin",
+        "city": "Tórshavn",
         "floors": 0,
         "id": "stoffalg35trshavnstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-2-800x450.jpg",
@@ -473,6 +500,7 @@
     {
         "address": "Norðurhædd 1",
         "agent": "Meklarin",
+        "city": "Saltangará",
         "floors": 0,
         "id": "norurhdd1saltangareysturoy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-3-800x533.jpg",
@@ -490,6 +518,7 @@
     {
         "address": "Lyngvegur 7",
         "agent": "Meklarin",
+        "city": "Norðskáli",
         "floors": 0,
         "id": "lyngvegur7norsklistreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-1-800x533.jpg",
@@ -507,6 +536,7 @@
     {
         "address": "Smæruteigur 7",
         "agent": "Meklarin",
+        "city": "Sandavágur",
         "floors": 0,
         "id": "smruteigur7sandavgurvgar",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-5-800x450.jpg",
@@ -524,6 +554,7 @@
     {
         "address": "Brekkugøta 6",
         "agent": "Meklarin",
+        "city": "Tórshavn",
         "floors": 0,
         "id": "brekkugta6trshavnstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-4-800x533.jpg",
@@ -543,6 +574,7 @@
     {
         "address": "Í Pálsliða 4B",
         "agent": "Meklarin",
+        "city": "Norðragøta",
         "floors": 0,
         "id": "plslia4bnorragtaeysturoy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/01/01-800x534.jpg",
@@ -560,6 +592,7 @@
     {
         "address": "Inni í Firði 157",
         "agent": "Meklarin",
+        "city": "Kollafjørður",
         "floors": 0,
         "id": "innifiri157kollafjrurstreymoynor",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/a01-800x450.jpg",
@@ -577,6 +610,7 @@
     {
         "address": "Leitisvegur 70",
         "agent": "Meklarin",
+        "city": "Miðvágur",
         "floors": 0,
         "id": "leitisvegur70mivgurvgar",
         "img": "https://www.meklarin.fo/wp-content/uploads/2023/10/IMG_0429-800x450.jpg",
@@ -594,6 +628,7 @@
     {
         "address": "Líðartún 10A, Ørðavíkarlíð",
         "agent": "Meklarin",
+        "city": "Ørðavík",
         "floors": 0,
         "id": "lartn10aravkarlravksuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2022/06/a01_oravik-800x450.jpeg",
@@ -611,6 +646,7 @@
     {
         "address": "Jarðarstykki - 402d ",
         "agent": "Meklarin",
+        "city": "Kvívík",
         "floors": 0,
         "id": "jararstykki402dkvvkstreymoynor",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/11/mynd-3-800x542.png",
@@ -628,6 +664,7 @@
     {
         "address": "Grundstykki - matr.nr. 88e",
         "agent": "Meklarin",
+        "city": "Trongisvágur",
         "floors": 0,
         "id": "grundstykkimatrnr88etrongisvgursuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2023/05/01-1-800x600.jpg",
@@ -645,6 +682,7 @@
     {
         "address": "Bryggjan 6",
         "agent": "Meklarin",
+        "city": "Vágur",
         "floors": 0,
         "id": "bryggjan6vgursuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/02/a01-3-800x450.jpg",
@@ -662,6 +700,7 @@
     {
         "address": "Í Nesi 18",
         "agent": "Meklarin",
+        "city": "Sandur",
         "floors": 0,
         "id": "nesi18sandursandoy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/03/a01-800x450.jpeg",
@@ -679,6 +718,7 @@
     {
         "address": "Mainifløta 14",
         "agent": "Meklarin",
+        "city": "Eiði",
         "floors": 0,
         "id": "mainiflta14eiieysturoy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/01/a01-3-800x450.jpg",
@@ -696,6 +736,7 @@
     {
         "address": "Gerðisbreyt 22",
         "agent": "Meklarin",
+        "city": "Velbastaður",
         "floors": 0,
         "id": "gerisbreyt22velbastaurstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/04/01-2-800x533.jpg",
@@ -713,6 +754,7 @@
     {
         "address": "Karlamagnusarbreyt 14A, 0. hm",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "karlamagnusarbreyt14a0hmhoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/06/01-11-800x450.jpg",
@@ -730,6 +772,7 @@
     {
         "address": "við Skálaveg",
         "agent": "Meklarin",
+        "city": "Hvalba",
         "floors": 0,
         "id": "visklaveghvalbasuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2023/06/a01-1-800x450.jpg",
@@ -747,6 +790,7 @@
     {
         "address": "Trøð - matr.nr. 811",
         "agent": "Meklarin",
+        "city": "Froðba",
         "floors": 0,
         "id": "trmatrnr811frobasuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2023/08/01-1-800x450.jpg",
@@ -764,6 +808,7 @@
     {
         "address": "Líðartún 14, Líðin",
         "agent": "Meklarin",
+        "city": "Ørðavík",
         "floors": 0,
         "id": "lartn14linravksuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2022/07/a01-800x481.png",
@@ -781,6 +826,7 @@
     {
         "address": "Valabrekkan 3",
         "agent": "Meklarin",
+        "city": "Tvøroyri",
         "floors": 0,
         "id": "valabrekkan3tvroyrisuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2022/05/a01-3-scaled-2-800x450.jpg",
@@ -798,6 +844,7 @@
     {
         "address": "Langatrøð 12",
         "agent": "Meklarin",
+        "city": "Vágur",
         "floors": 0,
         "id": "langatr12vgursuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2022/05/a01-800x431.png",
@@ -815,6 +862,7 @@
     {
         "address": "Í Syðrutoftum 18",
         "agent": "Meklarin",
+        "city": "Trongisvágur",
         "floors": 0,
         "id": "syrutoftum18trongisvgursuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2022/05/06-1-scaled-1-800x450.jpg",
@@ -832,6 +880,7 @@
     {
         "address": "Karlamagnusarbreyt 5B 1.4",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "karlamagnusarbreyt5b14hoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-8-800x533.jpg",
@@ -849,6 +898,7 @@
     {
         "address": "Marknoyrarvegur 53",
         "agent": "Meklarin",
+        "city": "Vágur",
         "floors": 0,
         "id": "marknoyrarvegur53vgursuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/08/a01-1-800x450.jpg",
@@ -866,6 +916,7 @@
     {
         "address": "Gerðisbreyt 34",
         "agent": "Meklarin",
+        "city": "Velbastaður",
         "floors": 0,
         "id": "gerisbreyt34velbastaurstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-5-800x533.jpg",
@@ -883,6 +934,7 @@
     {
         "address": "Heinagøta 4",
         "agent": "Meklarin",
+        "city": "Tórshavn",
         "floors": 0,
         "id": "heinagta4trshavnstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/a01-800x450.jpg",
@@ -900,6 +952,7 @@
     {
         "address": "Torvheyggur",
         "agent": "Meklarin",
+        "city": "Froðba",
         "floors": 0,
         "id": "torvheyggurfrobasuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2022/05/a01-4-scaled-1-800x450.jpg",
@@ -917,6 +970,7 @@
     {
         "address": "Karlamagnusarbreyt 8 3.3",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "karlamagnusarbreyt833hoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-7-800x450.jpg",
@@ -934,6 +988,7 @@
     {
         "address": "Sivjugøta 7",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "sivjugta7hoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/03/01-800x533.jpg",
@@ -951,6 +1006,7 @@
     {
         "address": "Berjabrekka 99",
         "agent": "Meklarin",
+        "city": "Tórshavn",
         "floors": 0,
         "id": "berjabrekka99trshavnstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-3-800x533.jpg",
@@ -968,6 +1024,7 @@
     {
         "address": "við Myllutjørn 28",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "vimyllutjrn28hoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-1-800x502.jpg",
@@ -985,6 +1042,7 @@
     {
         "address": "Eiðisvegur 5",
         "agent": "Meklarin",
+        "city": "Vágur",
         "floors": 0,
         "id": "eiisvegur5vgursuuroy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/a01-1-800x450.jpg",
@@ -1002,6 +1060,7 @@
     {
         "address": "Varðabú 14",
         "agent": "Meklarin",
+        "city": "Tórshavn",
         "floors": 0,
         "id": "varab14trshavnstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/01/a01-800x450.jpg",
@@ -1019,6 +1078,7 @@
     {
         "address": "Lonarstræti 14",
         "agent": "Meklarin",
+        "city": "Sandavágur",
         "floors": 0,
         "id": "lonarstrti14sandavgurvgar",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-2-800x450.jpg",
@@ -1036,6 +1096,7 @@
     {
         "address": "Karlamagnusarbreyt 44 0 2",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "karlamagnusarbreyt4402hoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-800x450.jpg",
@@ -1053,6 +1114,7 @@
     {
         "address": "smiðjuvegur 1",
         "agent": "Meklarin",
+        "city": "Bøur",
         "floors": 0,
         "id": "smijuvegur1burvgar",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/05/01-1-800x450.jpg",
@@ -1070,6 +1132,7 @@
     {
         "address": "við Myllutjørn 62",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "vimyllutjrn62hoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-1-800x533.jpg",
@@ -1087,6 +1150,7 @@
     {
         "address": "Lýðarsvegur 38 B",
         "agent": "Meklarin",
+        "city": "Toftir",
         "floors": 0,
         "id": "larsvegur38btoftireysturoy",
         "img": "https://www.meklarin.fo/wp-content/uploads/2024/08/02-6-800x450.jpg",
@@ -1104,6 +1168,7 @@
     {
         "address": "\n        Heiðavegur 13 \n        600 Saltangará\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "heiavegur13600saltangar",
         "img": "https://betriheim.cdn.fo/savn/lqvnkyvw/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=54&s=QDk_bJjF8Gv1WF_gkRXlKtOg3yI",
@@ -1121,6 +1186,7 @@
     {
         "address": "\n        Eyðargøta 2 \n        512 Norðragøta\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "eyargta2512norragta",
         "img": "https://betriheim.cdn.fo/savn/j0onpf3r/1.jpg?width=400&height=233&rmode=max&quality=50&t=551&s=zXxYGGcdlH_A5UAsoBOBkzaV05s",
@@ -1138,6 +1204,7 @@
     {
         "address": "\n        Bókindaragøta 14 \n        100 Tórshavn\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "bkindaragta14100trshavn",
         "img": "https://betriheim.cdn.fo/savn/kenpyyjt/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=101&s=oSEGEoA9Er8vbAk-2-Xqxnf8wMA",
@@ -1155,6 +1222,7 @@
     {
         "address": "\n        Jákup Nolsøes gøta 37 \n        100 Tórshavn\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 3,
         "id": "jkupnolsesgta37100trshavn",
         "img": "https://betriheim.cdn.fo/savn/mflp0rek/1.jpg?width=400&height=233&rmode=max&quality=50&t=48&s=EiG7BFSlP74keDGHp-yF3dGS0Ys",
@@ -1172,6 +1240,7 @@
     {
         "address": "\n        Undir Grashjalla 50 \n        700 Klaksvík\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 1,
         "id": "undirgrashjalla50700klaksvk",
         "img": "https://betriheim.cdn.fo/savn/qsuilxvi/a.jpg?width=400&height=233&rmode=max&quality=50&t=25&s=Bir0KsyBKPjgvd0Ae9P7HzZDVRY",
@@ -1191,6 +1260,7 @@
     {
         "address": "\n        Matr.nr.992s \n        100 Tórshavn\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "matrnr992s100trshavn",
         "img": "https://betriheim.cdn.fo/savn/shwbzday/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=18&s=sAh9InnyjxgBAQbKrFz3bcUZrNI",
@@ -1208,6 +1278,7 @@
     {
         "address": "\n        í Heygnum 138 \n        826 Trongisvágur\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "heygnum138826trongisvgur",
         "img": "https://betriheim.cdn.fo/savn/jcvej0wx/01.jpg?width=400&height=233&rmode=max&quality=50&s=cTtEv51kCxfjv7NGoynK_81hj-E",
@@ -1225,6 +1296,7 @@
     {
         "address": "\n        Ápramsvegur \n        370 Miðvágur\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "pramsvegur370mivgur",
         "img": "https://betriheim.cdn.fo/savn/0a5bde5t/20240306_134158-2.jpg?width=400&height=233&rmode=max&quality=50&s=W6Ftz_Pcle6ILM24yqCpQ2jP4AU",
@@ -1242,6 +1314,7 @@
     {
         "address": "\n        Við Krossá 6 \n        180 Kaldbak\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "vikross6180kaldbak",
         "img": "https://betriheim.cdn.fo/savn/uyzcktzq/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=1647&s=sWK0WYbuvSVgtEQJImQhb83JvG0",
@@ -1259,6 +1332,7 @@
     {
         "address": "\n        Gerðisbreyt 21 \n        176 Velbastaður\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "gerisbreyt21176velbastaur",
         "img": "https://betriheim.cdn.fo/savn/o5fdwcul/a-1.jpg?width=400&height=233&rmode=max&quality=50&s=_LA2ax-12-071AntCo4ERP_QCxg",
@@ -1276,6 +1350,7 @@
     {
         "address": "\n        Hornavegur 4 \n        450 Oyri\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "hornavegur4450oyri",
         "img": "https://betriheim.cdn.fo/savn/r5dbsw3h/a-1.jpg?width=400&height=233&rmode=max&quality=50&s=7MihiJZrRcn5v4SgsWhwzg1EfjI",
@@ -1293,6 +1368,7 @@
     {
         "address": "\n        Matr nr 632 í Skopun \n        240 Skopun\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "matrnr632skopun240skopun",
         "img": "https://betriheim.cdn.fo/savn/2ojb5znk/kortal-1.png?width=400&height=233&rmode=max&bgcolor=fff&format=jpg&quality=50&s=qX_xb74DFWYQ0z9zCnHmr3I3JIE",
@@ -1310,6 +1386,7 @@
     {
         "address": "\n        Matr. nr. 111a Sørvágur \n        380 Sørvágur\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "matrnr111asrvgur380srvgur",
         "img": "https://betriheim.cdn.fo/savn/1b1nazkh/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=5722&s=8Xpb0-MFyYE5xlc0a_K1T1UJDtc",
@@ -1327,6 +1404,7 @@
     {
         "address": "\n        við Hornaveg, Oyri \n        400 Oyrarbakki\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "vihornavegoyri400oyrarbakki",
         "img": "https://betriheim.cdn.fo/savn/kjgdcfow/1.jpg?width=400&height=233&rmode=max&quality=50&s=vlS73hxTDxSZy3lpZUUC6en7k_0",
@@ -1344,6 +1422,7 @@
     {
         "address": "\n        Ovarivegur 11 \n        380 Sørvágur\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "ovarivegur11380srvgur",
         "img": "https://betriheim.cdn.fo/savn/q20gz03o/a-1.jpg?width=400&height=233&rmode=max&quality=50&t=97&s=QxP9_luFTjJEQHAabfSi6wCr_tk",
@@ -1361,6 +1440,7 @@
     {
         "address": "\n        Matr. 49, Elduvík \n        478 Elduvík\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "matr49elduvk478elduvk",
         "img": "https://betriheim.cdn.fo/savn/pjkd2u5r/11.jpg?width=400&height=233&rmode=max&quality=50&s=WWdJbTuero0m0D3QsY3E_TnH9C0",
@@ -1378,6 +1458,7 @@
     {
         "address": "Karlamagnusarbreyt 13B 1 1.2",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "karlamagnusarbreyt13b112hoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-2-800x450.jpg",
@@ -1395,6 +1476,7 @@
     {
         "address": "\n        Dalagøta 27 \n        100 Tórshavn\n      ",
         "agent": "Betri",
+        "city": "",
         "floors": 2,
         "id": "dalagta27100trshavn",
         "img": "https://betriheim.cdn.fo/savn/x2qhxw0a/1.jpg?width=400&height=233&rmode=max&quality=50&t=106&s=t_KokZPO6FhjtJNEEfWM-MM0f7g",
@@ -1412,6 +1494,7 @@
     {
         "address": "",
         "agent": "Betri",
+        "city": "",
         "floors": 0,
         "id": "",
         "img": "",
@@ -1429,6 +1512,7 @@
     {
         "address": "Dýrindalsgøta 62",
         "agent": "Meklarin",
+        "city": "Hoyvík",
         "floors": 0,
         "id": "drindalsgta62hoyvkstreymoysuur",
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-5-800x533.jpg",
@@ -1446,6 +1530,7 @@
     {
         "address": "Undir Grashjalla 11",
         "agent": "Skyn",
+        "city": "Klaksvík",
         "floors": 2,
         "id": "undirgrashjalla11klaksvk",
         "img": "",
@@ -1463,6 +1548,7 @@
     {
         "address": "Heiðavegur 24",
         "agent": "Skyn",
+        "city": "Norðskáli",
         "floors": 2,
         "id": "heiavegur24norskli",
         "img": "",
@@ -1480,6 +1566,7 @@
     {
         "address": "matr.nr. 65b",
         "agent": "Skyn",
+        "city": "Skálavík",
         "floors": 0,
         "id": "matrnr65bsklavk",
         "img": "",
@@ -1497,6 +1584,7 @@
     {
         "address": "Niels Finsens gøta 23A",
         "agent": "Skyn",
+        "city": "Tórshavn",
         "floors": 3,
         "id": "nielsfinsensgta23atrshavn",
         "img": "",
@@ -1514,6 +1602,7 @@
     {
         "address": "Ólavsvegur 10",
         "agent": "Skyn",
+        "city": "Toftir",
         "floors": 0,
         "id": "lavsvegur10toftir",
         "img": "",
@@ -1531,6 +1620,7 @@
     {
         "address": "matr.nr. 93a Skálavík",
         "agent": "Skyn",
+        "city": "Skálavík",
         "floors": 0,
         "id": "matrnr93asklavksklavk",
         "img": "",
@@ -1548,6 +1638,7 @@
     {
         "address": "matr. nr. 15h Norðoyri",
         "agent": "Skyn",
+        "city": "Norðoyri",
         "floors": 2,
         "id": "matrnr15hnoroyrinoroyri",
         "img": "",
