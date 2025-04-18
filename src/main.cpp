@@ -6,9 +6,9 @@
 
 int main() {
   bool downloadNewHtml = true;
-  // HT::betriRun(downloadNewHtml);
-  // HT::meklarinRun(downloadNewHtml);
+  HT::betriRun(downloadNewHtml);
+  HT::meklarinRun(downloadNewHtml);
   HT::skynRun(downloadNewHtml);
-  // HT::runServer();
+  HT::runServer();
   return 0;
 }

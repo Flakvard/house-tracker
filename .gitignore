@@ -80,3 +80,4 @@ build/
 vcpkg_installed/
 
 src/raw_images/*
+src/raw_html/*
