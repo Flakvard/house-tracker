@@ -1425,5 +1425,22 @@
         "validDate": "",
         "website": "Betri",
         "yearBuilt": ""
+    },
+    {
+        "address": "Dýrindalsgøta 62",
+        "agent": "Meklarin",
+        "floors": 0,
+        "id": "drindalsgta62hoyvkstreymoysuur",
+        "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-5-800x533.jpg",
+        "insideM2": 116,
+        "landM2": 135,
+        "latestOffer": 0,
+        "previousPrices": [],
+        "price": 4850000,
+        "rooms": 4,
+        "type": "Radhus",
+        "validDate": "",
+        "website": "https://www.meklarin.fo/",
+        "yearBuilt": ""
     }
 ]
