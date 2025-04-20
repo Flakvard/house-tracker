@@ -48,6 +48,8 @@ std::string buildPropertiesTableRows() {
 
     // Safely extract fields
     std::string address = item.value("address", "");
+    std::string id = item.value("id", "");
+    std::string city = item.value("city", "");
     std::string typeProperty = item.value("type", "");
     int floors = item.value("floors", 0);
     int price = item.value("price", 0);
@@ -62,17 +64,19 @@ std::string buildPropertiesTableRows() {
     rows << "<tr>\n"
          << "  <td><img class=\"w-32 h-auto\" src=\"" << servedPath
          << "\" alt=\"" << address << "\"></td>\n"
-         << "  <td>" << typeProperty << "</td>\n"
-         << "  <td>" << address << "</td>\n"
-         << "  <td>" << floors << "</td>\n"
-         << "  <td>" << price << "</td>\n"
-         << "  <td>" << latestOffer << "</td>\n"
-         << "  <td>" << yearBuilt << "</td>\n"
-         << "  <td>" << validDate << "</td>\n"
-         << "  <td>" << insideM2 << "</td>\n"
-         << "  <td>" << landM2 << "</td>\n"
-         << "  <td>" << rooms << "</td>\n"
-         << "  <td>" << website << "</td>\n"
+         << "  <td>" << id << "</td>\n"
+         << "  <td class=\"w-48\">" << typeProperty << "</td>\n"
+         << "  <td class=\"w-48\">" << city << "</td>\n"
+         << "  <td class=\"w-48\">" << address << "</td>\n"
+         << "  <td class=\"w-24\">" << floors << "</td>\n"
+         << "  <td class=\"w-32\">" << price << "</td>\n"
+         << "  <td class=\"w-32\">" << latestOffer << "</td>\n"
+         << "  <td class=\"w-32\">" << yearBuilt << "</td>\n"
+         << "  <td class=\"w-48\">" << validDate << "</td>\n"
+         << "  <td class=\"w-32\">" << insideM2 << "</td>\n"
+         << "  <td class=\"w-32\">" << landM2 << "</td>\n"
+         << "  <td class=\"w-24\">" << rooms << "</td>\n"
+         << "  <td class=\"w-48\">" << website << "</td>\n"
          << "</tr>\n";
   }
   return rows.str();
@@ -94,54 +98,65 @@ void runServer() {
         // (You could also host them locally or use a bundler if you prefer.)
         std::stringstream html;
         html << R"(<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Drogon + HTMX + DaisyUI Demo</title>
-  <!-- Include Tailwind + DaisyUI from a CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
-  <!-- HTMX -->
-  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-</head>
-<body class="m-4">
-  <h1 class="text-2xl font-bold mb-4">Properties</h1>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <title>Drogon + HTMX + DaisyUI Demo</title>
+            <!-- Include Tailwind + DaisyUI from a CDN -->
+            <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
+            <!-- HTMX -->
+            <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+          <style>
+            /* make every <th> in a “sticky-header” table stick */
+            .sticky-header th {
+              position: sticky;
+              top: 0;             /* stay glued to the top of the scroll‑box   */
+              z-index: 10;        /* sit above body rows, images, etc.        */
+            }
+          </style>
+          </head>
+          <body class="m-4">
+            <h1 class="text-2xl font-bold mb-4">Properties</h1>
 
-  <!-- A button that triggers an HTMX call to /propertiesRows 
-       and replaces the #props-tbody content with the response -->
-  <button class="btn btn-primary mb-4"
-          hx-get="/propertiesRows"
-          hx-target="#props-tbody"
-          hx-swap="innerHTML">
-    Load Properties
-  </button>
+            <!-- A button that triggers an HTMX call to /propertiesRows 
+                and replaces the #props-tbody content with the response -->
+            <button class="btn btn-primary mb-4"
+                    hx-get="/propertiesRows"
+                    hx-target="#props-tbody"
+                    hx-swap="innerHTML">
+              Load Properties
+            </button>
 
-  <!-- Our table (DaisyUI "table" style) -->
-  <div class="overflow-x-auto">
-    <table class="table w-full">
-      <thead>
-        <tr>
-          <th>Photo</th>
-          <th>Type of Property</th>
-          <th>Address</th>
-          <th>Floors</th>
-          <th>Price</th>
-          <th>Latest Offer</th>
-          <th>Year Built</th>
-          <th>Valid Date</th>
-          <th>Inside M2</th>
-          <th>Land M2</th>
-          <th>Rooms</th>
-          <th>Website</th>
-        </tr>
-      </thead>
-      <tbody id="props-tbody">
-        <!-- Initially empty, we'll fill it with HTMX -->
-      </tbody>
-    </table>
-  </div>
-</body>
-</html>
-)";
+            <!-- Our table (DaisyUI "table" style) -->
+            <div class="h-[600px] overflow-y-auto overflow-x-auto">
+              <table class="table w-full sticky-header">
+                <thead class="bg-base-200">
+                  <tr>
+                    <th class="bg-base-200">Photo</th>
+                    <th class="bg-base-200">Id</th>
+                    <th class="bg-base-200">Type</th>
+                    <th class="bg-base-200">City</th>
+                    <th class="bg-base-200">Address</th>
+                    <th class="bg-base-200">Floors</th>
+                    <th class="bg-base-200">Price</th>
+                    <th class="bg-base-200">Latest Offer</th>
+                    <th class="bg-base-200">Year Built</th>
+                    <th class="bg-base-200">Valid Date</th>
+                    <th class="bg-base-200">Inside m²</th>
+                    <th class="bg-base-200">Land m²</th>
+                    <th class="bg-base-200">Rooms</th>
+                    <th class="bg-base-200">Website</th>
+                  </tr>
+                </thead>
+
+                <!-- leave <tbody> exactly as you have it; HTMX will fill it -->
+                <tbody id="props-tbody">
+                </tbody>
+              </table>
+            </div>
+          </body>
+          </html>
+          )";
 
         auto resp = HttpResponse::newHttpResponse();
         resp->setContentTypeCode(CT_TEXT_HTML);
