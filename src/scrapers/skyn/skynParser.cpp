@@ -1,5 +1,6 @@
 
 #include <gumbo.h>
+#include <regex>
 #include <scrapers/include/PropertyManager.hpp>
 #include <scrapers/include/house_model.hpp>
 #include <scrapers/include/parser.hpp>
@@ -13,109 +14,129 @@ void parseSkynProperty(GumboNode *node, SkynProperty *p) {
     return;
 
   const char *classAttr = getClassAttr(node);
-  if (classAttr) {
-    std::string classStr = classAttr;
+  std::string cls = classAttr ? classAttr : "";
 
-    if (classStr.find("ogn_headline") != std::string::npos)
+  /* ---------- 1. pick up the picture wherever it is -------------- */
+  if (node->v.element.tag == GUMBO_TAG_IMG) {
+    const char *src = getAttribute(&node->v.element.attributes, "src");
+    if (src && std::strstr(src, "/admin/public/getimage") != nullptr) {
+      std::string imgstring = static_cast<std::string>(src);
+      p->img = "https://www.skyn.fo" + imgstring; // absolute URL already
+    }
+  }
+
+  /* ---------- 2. the ordinary class‑based fields ----------------- */
+  if (!cls.empty()) {
+    if (cls.find("ogn_headline") != std::string::npos)
       p->ogn_headline = getNodeText(node);
-    else if (classStr.find("ogn_adress") != std::string::npos)
+    else if (cls.find("ogn_adress") != std::string::npos)
       p->ogn_address = getNodeText(node);
-    else if (classStr.find("prop-size") != std::string::npos)
-      p->prop_size = getNodeText(node->parent); // text is in sibling <br>
-    else if (classStr.find("prop-ground-size") != std::string::npos)
+    else if (cls.find("prop-size") != std::string::npos)
+      p->prop_size = getNodeText(node->parent);
+    else if (cls.find("prop-ground") != std::string::npos)
       p->prop_ground_size = getNodeText(node->parent);
-    else if (classStr.find("prop-bedrooms") != std::string::npos)
+    else if (cls.find("prop-bedrooms") != std::string::npos)
       p->prop_bedrooms = getNodeText(node->parent);
-    else if (classStr.find("prop-floors") != std::string::npos)
+    else if (cls.find("prop-floors") != std::string::npos)
       p->prop_floors = getNodeText(node->parent);
-    else if (classStr.find("prop-buildyear") != std::string::npos)
+    else if (cls.find("prop-buildyear") != std::string::npos)
       p->prop_buildYear = getNodeText(node->parent);
-    else if (classStr.find("latestoffer") != std::string::npos)
+    else if (cls.find("latestoffer") != std::string::npos)
       p->prop_latestOffer = getNodeText(node);
-    else if (classStr.find("validto") != std::string::npos)
+    else if (cls.find("validto") != std::string::npos)
       p->prop_validToDate = getNodeText(node);
-    else if (classStr.find("listprice") != std::string::npos)
+    else if (cls.find("listprice") != std::string::npos)
       p->prop_listPrice = getNodeText(node);
   }
 
-  // Handle the image from ogn_thumb
-  if (classAttr &&
-      std::string(classAttr).find("ogn_thumb") != std::string::npos) {
-    GumboVector *children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; i++) {
-      GumboNode *child = static_cast<GumboNode *>(children->data[i]);
-      if (child->type == GUMBO_NODE_ELEMENT &&
-          child->v.element.tag == GUMBO_TAG_IMG) {
-        const char *src = getAttribute(&child->v.element.attributes, "src");
-        if (src) {
-          p->img = std::string("https://www.skyn.fo") + src; // fix relative URL
-        }
-      }
-    }
-  }
-
-  // Recurse
-  if (node->type == GUMBO_NODE_ELEMENT) {
-    GumboVector *children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-      GumboNode *child = static_cast<GumboNode *>(children->data[i]);
-      parseSkynProperty(child, p);
-    }
-  }
+  /* 3. recurse */
+  GumboVector *ch = &node->v.element.children;
+  for (unsigned int i = 0; i < ch->length; ++i)
+    parseSkynProperty(static_cast<GumboNode *>(ch->data[i]), p);
 }
 
 std::vector<RawProperty>
 mapBetriToRawProperty(std::vector<RawProperty> &rawProperties,
                       std::vector<SkynProperty> &skynProperties,
                       PropertyType propType) {
-  for (auto &prop : skynProperties) {
-    RawProperty p;
-    prop.type = PropertyManager::propertyTypeToString(propType);
-    prop.id = PropertyManager::cleanId(prop.ogn_headline + prop.ogn_address);
+  for (auto &sp : skynProperties) {
+    RawProperty rp;
+    sp.type = PropertyManager::propertyTypeToString(propType);
+    sp.id = PropertyManager::cleanId(sp.ogn_headline + sp.ogn_address);
 
-    p.id = prop.id;
-    p.website = prop.website;
-    p.address = prop.ogn_headline;
-    p.type = prop.type;
-    p.city = prop.ogn_address;
-    p.price = prop.prop_listPrice;
-    p.latestOffer = prop.prop_latestOffer;
-    p.validDate = prop.prop_validToDate;
-    p.buildingSize = prop.prop_size;
-    p.landSize = prop.prop_ground_size;
-    p.room = prop.prop_bedrooms;
-    p.floor = prop.prop_floors;
-    p.img = prop.img;
-    p.agent = PropertyManager::propertyAgentToString(RealEstateAgent::Skyn);
-    rawProperties.push_back(p);
+    rp.id = sp.id;
+    rp.website = sp.website;
+    rp.address = sp.ogn_headline;
+    rp.type = sp.type;
+    rp.city = sp.ogn_address;
+    rp.price = sp.prop_listPrice;
+    rp.latestOffer = sp.prop_latestOffer;
+    rp.validDate = sp.prop_validToDate;
+    rp.buildingSize = sp.prop_size;
+    rp.landSize = sp.prop_ground_size;
+    rp.room = sp.prop_bedrooms;
+    rp.floor = sp.prop_floors;
+    rp.img = sp.img;
+    rp.agent = PropertyManager::propertyAgentToString(RealEstateAgent::Skyn);
+    rawProperties.push_back(rp);
   }
   return rawProperties;
 }
 
+// helper: true if the class attribute contains the *word* "ogn"
+// (not just the substring)
+static bool classHasWordOgn(const char *cls) {
+  if (!cls)
+    return false;
+  // word boundaries: start/end or whitespace around "ogn"
+  static const std::regex re(R"((^|\s)ogn(\s|$))");
+  return std::regex_search(cls, re);
+}
+
 void findSkynProperties(GumboNode *node, std::vector<SkynProperty> &results) {
-  if (!node)
+  if (!node || node->type != GUMBO_NODE_ELEMENT)
     return;
 
-  if (node->type == GUMBO_NODE_ELEMENT) {
-    const char *classAttr = getClassAttr(node);
-    if (classAttr && std::string(classAttr).find("ogn") != std::string::npos) {
+  const char *cls = getClassAttr(node);
+
+  /* ------------------------------------------------------------
+     1. did we hit the outer wrapper  <div class="… ognlist"> ... ?
+     ------------------------------------------------------------ */
+  if (cls && std::strstr(cls, "ognlist") != nullptr) {
+
+    GumboVector *kids = &node->v.element.children;
+
+    for (unsigned i = 0; i < kids->length; ++i) {
+      GumboNode *child = static_cast<GumboNode *>(kids->data[i]);
+
+      /* look only at element nodes, skip the <script> tag */
+      if (child->type != GUMBO_NODE_ELEMENT)
+        continue;
+
+      const char *childCls = getClassAttr(child);
+      if (!classHasWordOgn(childCls))
+        continue; // not a property card
+
+      /* ---------------------------------------------------
+         2. parse one property card
+         --------------------------------------------------- */
       SkynProperty prop;
       prop.website = "Skyn";
 
-      parseSkynProperty(node, &prop);
+      parseSkynProperty(child, &prop);
 
-      // Make a unique-ish id (you can clean this with your cleanId function)
       prop.id = PropertyManager::cleanId(prop.ogn_headline + prop.ogn_address);
-
-      results.push_back(prop);
-      return; // Skip deeper traversal — already parsed this block
+      results.push_back(std::move(prop));
     }
-    // Continue looking through children
-    GumboVector *children = &node->v.element.children;
-    for (unsigned int i = 0; i < children->length; ++i) {
-      findSkynProperties(static_cast<GumboNode *>(children->data[i]), results);
-    }
+    return; // we’ve handled all properties; no recursion
   }
+
+  /* ------------------------------------------------------------
+     Otherwise keep searching for the wrapper further down
+     ------------------------------------------------------------ */
+  GumboVector *kids = &node->v.element.children;
+  for (unsigned i = 0; i < kids->length; ++i)
+    findSkynProperties(static_cast<GumboNode *>(kids->data[i]), results);
 }
 
 std::vector<RawProperty> parseWithGumboSkyn(std::string html,
