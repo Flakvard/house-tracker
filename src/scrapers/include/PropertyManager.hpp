@@ -6,7 +6,7 @@ class PropertyManager {
 public:
   static void traverseAllHtmlAndMergeProperties(
       std::vector<Property> &allProperties,
-      std::vector<std::filesystem::path> htmlFiles, std::string url);
+      std::vector<std::filesystem::path> htmlFiles);
 
   // Merges new properties into existing, tracking price changes
   static void mergeProperties(std::vector<Property> &existing,
@@ -19,5 +19,6 @@ public:
   static RealEstateAgent stringToAgent(const std::string &str);
   static PropertyType stringToPropertyType(const std::string &str);
   static std::string cleanId(const std::string &raw);
+  static int runPropertyParsers(bool downloadNewHtml);
 };
 } // namespace HT

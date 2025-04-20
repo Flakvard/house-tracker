@@ -3,12 +3,17 @@
 #include <iterator>
 #include <nlohmann/json.hpp>
 #include <scrapers/betri/betriParser.hpp>
+#include <scrapers/betri/betriScraper.hpp>
 #include <scrapers/include/PropertyManager.hpp>
+#include <scrapers/include/filesystem.hpp>
 #include <scrapers/include/house_model.hpp>
 #include <scrapers/include/parser.hpp>
 #include <scrapers/include/regexParser.hpp>
+#include <scrapers/include/scraper.hpp>
 #include <scrapers/meklarin/meklarinParser.hpp>
+#include <scrapers/meklarin/meklarinScraper.hpp>
 #include <scrapers/skyn/skynParser.hpp>
+#include <scrapers/skyn/skynScraper.hpp>
 #include <unordered_map>
 #include <vector>
 
@@ -236,7 +241,7 @@ mapRawPropertiesTilProperties(std::vector<RawProperty> newProperties) {
 
 void PropertyManager::traverseAllHtmlAndMergeProperties(
     std::vector<Property> &allProperties,
-    std::vector<std::filesystem::path> htmlFiles, std::string url) {
+    std::vector<std::filesystem::path> htmlFiles) {
   for (const auto &path : htmlFiles) {
     std::ifstream ifs(path);
     if (!ifs.is_open()) {
@@ -303,6 +308,31 @@ std::string PropertyManager::cleanId(const std::string &raw) {
     // All else is skipped: whitespace, punctuation, symbols
   }
   return result;
+}
+
+int PropertyManager::runPropertyParsers(bool downloadNewHtml) {
+
+  HT::betriRun(downloadNewHtml);
+  HT::meklarinRun(downloadNewHtml);
+  HT::skynRun(downloadNewHtml);
+
+  std::vector<Property> allProperties = HT::getAllPropertiesFromJson();
+
+  std::string rawHtmlDir = "../src/raw_html";
+
+  std::vector<std::filesystem::path> htmlFiles =
+      HT::gatherJsonFiles(rawHtmlDir);
+
+  if (htmlFiles.empty()) {
+    std::cerr << "No JSON files found in " << rawHtmlDir << "\n";
+    return 0;
+  }
+
+  PropertyManager::traverseAllHtmlAndMergeProperties(allProperties, htmlFiles);
+
+  HT::writeToPropertiesJsonFile(allProperties);
+  HT::checkAndDownloadImages(allProperties);
+  return 0;
 }
 
 } // namespace HT

@@ -20,26 +20,6 @@ int meklarinRun(bool downloadNewHtml) {
   std::string url = "https://www.meklarin.fo/";
   if (downloadNewHtml)
     std::string html = HT::downloadAndSaveHtml(url, RealEstateAgent::Meklarin);
-
-  std::vector<Property> allProperties = HT::getAllPropertiesFromJson();
-
-  // 2. Gather all timestamped .json files from ../src/raw_html
-  std::string rawHtmlDir = "../src/raw_html";
-
-  std::vector<std::filesystem::path> htmlFiles =
-      HT::gatherJsonFiles(rawHtmlDir);
-
-  if (htmlFiles.empty()) {
-    std::cerr << "No JSON files found in " << rawHtmlDir << "\n";
-    return 0;
-  }
-  // 3. For each file, read the JSON, extract "html", parse with Gumbo,
-  // merge
-  PropertyManager::traverseAllHtmlAndMergeProperties(allProperties, htmlFiles,
-                                                     url);
-
-  HT::writeToPropertiesJsonFile(allProperties);
-  HT::checkAndDownloadImages(allProperties);
   return 0;
 }
 

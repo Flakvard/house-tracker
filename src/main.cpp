@@ -1,14 +1,10 @@
 // main.cpp
-#include <scrapers/betri/betriScraper.hpp>
-#include <scrapers/meklarin/meklarinScraper.hpp>
-#include <scrapers/skyn/skynScraper.hpp>
+#include <scrapers/include/PropertyManager.hpp>
 #include <webapi/webapi.hpp>
 
 int main() {
-  bool downloadNewHtml = false;
-  // HT::betriRun(downloadNewHtml);
-  // HT::meklarinRun(downloadNewHtml);
-  HT::skynRun(downloadNewHtml);
+  bool downloadNewHtml = true;
+  HT::PropertyManager::runPropertyParsers(downloadNewHtml);
   HT::runServer();
   return 0;
 }

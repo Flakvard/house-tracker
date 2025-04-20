@@ -2466,5 +2466,23 @@
         "validDate": "",
         "website": "Skyn",
         "yearBuilt": ""
+    },
+    {
+        "address": "Ovari Vegur 13",
+        "agent": "Meklarin",
+        "city": "Vestmanna",
+        "floors": 0,
+        "id": "ovarivegur13vestmannastreymoynor",
+        "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-6-800x450.jpg",
+        "insideM2": 426,
+        "landM2": 80,
+        "latestOffer": 0,
+        "previousPrices": [],
+        "price": 995000,
+        "rooms": 2,
+        "type": "Sethus",
+        "validDate": "",
+        "website": "https://www.meklarin.fo/",
+        "yearBuilt": ""
     }
 ]
