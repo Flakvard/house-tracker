@@ -9,6 +9,18 @@
 
 namespace HT::SKYN {
 
+bool hasExactClass(const char *classAttr, const std::string &targetClass) {
+  if (!classAttr)
+    return false;
+  std::istringstream iss(classAttr);
+  std::string token;
+  while (iss >> token) {
+    if (token == targetClass)
+      return true;
+  }
+  return false;
+}
+
 void parseSkynProperty(GumboNode *node, SkynProperty *p) {
   if (!node || node->type != GUMBO_NODE_ELEMENT)
     return;
@@ -41,11 +53,11 @@ void parseSkynProperty(GumboNode *node, SkynProperty *p) {
       p->prop_floors = getNodeText(node->parent);
     else if (cls.find("prop-buildyear") != std::string::npos)
       p->prop_buildYear = getNodeText(node->parent);
-    else if (cls.find("latestoffer") != std::string::npos)
+    else if (hasExactClass(classAttr, "latestoffer"))
       p->prop_latestOffer = getNodeText(node);
     else if (cls.find("validto") != std::string::npos)
       p->prop_validToDate = getNodeText(node);
-    else if (cls.find("listprice") != std::string::npos)
+    else if (hasExactClass(classAttr, "listprice"))
       p->prop_listPrice = getNodeText(node);
   }
 

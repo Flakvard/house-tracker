@@ -162,6 +162,13 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
         // update type
         it->type = newProp.type;
       }
+      if (it->price < newProp.price) {
+        std::cout << "Price changed for: " << it->address << " from "
+                  << it->price << " to " << newProp.price << "\n";
+
+        // update the current price
+        it->price = newProp.price;
+      }
       if (it->latestOffer < newProp.latestOffer) {
         std::cout << "Price changed for: " << it->address << " from "
                   << it->latestOffer << " to " << newProp.latestOffer << "\n";
