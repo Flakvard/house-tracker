@@ -5,6 +5,11 @@
     "curl",
     "nlohmann-json",
     "gumbo",
-    "drogon"
+    {
+      "name": "drogon",
+      "features": [
+        "ctl"
+      ]
+    }
   ]
 }
