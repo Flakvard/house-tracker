@@ -339,12 +339,13 @@
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-800x450.jpg",
         "insideM2": 0,
         "landM2": 125,
-        "latestOffer": 4700000,
+        "latestOffer": 4725000,
         "previousPrices": [
             0,
             4400000,
             4525000,
-            4600000
+            4600000,
+            4700000
         ],
         "price": 3995000,
         "rooms": 0,
@@ -560,9 +561,10 @@
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/02/01-4-800x533.jpg",
         "insideM2": 136,
         "landM2": 183,
-        "latestOffer": 4000000,
+        "latestOffer": 4050000,
         "previousPrices": [
-            0
+            0,
+            4000000
         ],
         "price": 4395000,
         "rooms": 0,
@@ -1574,9 +1576,10 @@
         "img": "https://www.skyn.fo/admin/public/getimage.ashx?&Image=/Files/Images/Ognir/Sandoy-og-Skuvoy/matr.nr.65b_skalavik/01.JPG&Width=360&Height=248&Crop=6",
         "insideM2": 0,
         "landM2": 85152,
-        "latestOffer": 250000,
+        "latestOffer": 275000,
         "previousPrices": [
-            0
+            0,
+            250000
         ],
         "price": 250000,
         "rooms": 0,
@@ -2072,10 +2075,11 @@
         "img": "https://www.skyn.fo/admin/public/getimage.ashx?&Image=/Files/Images/Ognir/Nordoyggjar/Edmundstrod_12_Anirnar/01.JPG&Width=360&Height=248&Crop=6",
         "insideM2": 2292,
         "landM2": 2132,
-        "latestOffer": 2850000,
+        "latestOffer": 2900000,
         "previousPrices": [
             0,
-            2750000
+            2750000,
+            2850000
         ],
         "price": 2800000,
         "rooms": 0,
@@ -2504,6 +2508,42 @@
         "latestOffer": 0,
         "previousPrices": [],
         "price": 3395000,
+        "rooms": 0,
+        "type": "Sethus",
+        "validDate": "",
+        "website": "Skyn",
+        "yearBuilt": ""
+    },
+    {
+        "address": "Kvíggjarvegur 23",
+        "agent": "Skyn",
+        "city": "Oyndarfjørður",
+        "floors": 3,
+        "id": "kvggjarvegur23oyndarfjrur",
+        "img": "https://www.skyn.fo/admin/public/getimage.ashx?&Image=/Files/Images/Ognir/Eysturoy/Kviggjarvegur_23_Oyndarfjordur/01.JPG&Width=360&Height=248&Crop=6",
+        "insideM2": 2252,
+        "landM2": 3892,
+        "latestOffer": 0,
+        "previousPrices": [],
+        "price": 1100000,
+        "rooms": 4,
+        "type": "Sethus",
+        "validDate": "",
+        "website": "Skyn",
+        "yearBuilt": ""
+    },
+    {
+        "address": "Inni á Fjósi 2",
+        "agent": "Skyn",
+        "city": "Kirkjubøur",
+        "floors": 2,
+        "id": "innifjsi2kirkjubur",
+        "img": "https://www.skyn.fo/admin/public/getimage.ashx?&Image=/Files/Images/Ognir/Sudurstreymoy/kirkjubour/inni_a_fjosi_2/01.jpg&Width=360&Height=248&Crop=6",
+        "insideM2": 2142,
+        "landM2": 22302,
+        "latestOffer": 0,
+        "previousPrices": [],
+        "price": 4995000,
         "rooms": 5,
         "type": "Sethus",
         "validDate": "",
