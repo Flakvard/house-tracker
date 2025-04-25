@@ -4,6 +4,8 @@
 #include <scrapers/include/scraper.hpp>
 #include <sstream>
 #include <string>
+#include <trantor/net/EventLoop.h>
+#include <webapi/backgroundService.hpp>
 #include <webapi/webapi.hpp>
 
 namespace HT {
@@ -179,6 +181,11 @@ void runServer() {
         resp->setBody(rows);
         callback(resp);
       });
+
+  auto loop = app().getLoop();
+
+  // Schedule the scraper task
+  scheduleDailyScraper(loop);
 
   /* make everything in ../src/raw_images/ available under
    http://<host>:8080/images/<file> */
