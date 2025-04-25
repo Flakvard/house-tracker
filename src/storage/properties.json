@@ -1466,9 +1466,10 @@
         "img": "https://www.meklarin.fo/wp-content/uploads/2025/04/01-2-800x450.jpg",
         "insideM2": 0,
         "landM2": 70,
-        "latestOffer": 2600000,
+        "latestOffer": 2750000,
         "previousPrices": [
-            0
+            0,
+            2600000
         ],
         "price": 2750000,
         "rooms": 0,
@@ -1576,10 +1577,11 @@
         "img": "https://www.skyn.fo/admin/public/getimage.ashx?&Image=/Files/Images/Ognir/Sandoy-og-Skuvoy/matr.nr.65b_skalavik/01.JPG&Width=360&Height=248&Crop=6",
         "insideM2": 0,
         "landM2": 85152,
-        "latestOffer": 275000,
+        "latestOffer": 350000,
         "previousPrices": [
             0,
-            250000
+            250000,
+            275000
         ],
         "price": 250000,
         "rooms": 0,
@@ -1744,8 +1746,10 @@
         "img": "https://www.skyn.fo/admin/public/getimage.ashx?&Image=/Files/Images/Ognir/Eysturoy/toftanesvegur_12_fuglafjordur/01.JPEG&Width=360&Height=248&Crop=6",
         "insideM2": 1242,
         "landM2": 2862,
-        "latestOffer": 0,
-        "previousPrices": [],
+        "latestOffer": 2195000,
+        "previousPrices": [
+            0
+        ],
         "price": 2195000,
         "rooms": 0,
         "type": "Sethus",
@@ -2526,7 +2530,7 @@
         "latestOffer": 0,
         "previousPrices": [],
         "price": 1100000,
-        "rooms": 4,
+        "rooms": 0,
         "type": "Sethus",
         "validDate": "",
         "website": "Skyn",
@@ -2544,7 +2548,25 @@
         "latestOffer": 0,
         "previousPrices": [],
         "price": 4995000,
-        "rooms": 5,
+        "rooms": 0,
+        "type": "Sethus",
+        "validDate": "",
+        "website": "Skyn",
+        "yearBuilt": ""
+    },
+    {
+        "address": "í Garðinum 10",
+        "agent": "Skyn",
+        "city": "Klaksvík",
+        "floors": 2,
+        "id": "garinum10klaksvk",
+        "img": "https://www.skyn.fo/admin/public/getimage.ashx?&Image=/Files/Images/Ognir/Nordoyggjar/I_Gardinum_10_Klaksvík/01.JPG&Width=360&Height=248&Crop=6",
+        "insideM2": 2472,
+        "landM2": 4782,
+        "latestOffer": 0,
+        "previousPrices": [],
+        "price": 2795000,
+        "rooms": 0,
         "type": "Sethus",
         "validDate": "",
         "website": "Skyn",
