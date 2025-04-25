@@ -1,4 +1,6 @@
 #include <fstream>
+#include <format> 
+#include <chrono>
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <scrapers/include/filesystem.hpp>
@@ -30,7 +32,7 @@ std::string makeTimestampedFilename() {
   // Get the current time and time zone
   auto now = system_clock::now();
   auto tz = current_zone();
-  zoned_time zt{tz, now};
+  std::chrono::zoned_time zt{tz, now};
 
   // Format using std::format with chrono support (C++20)
   std::string timestamp = std::format("{:%Y-%m-%d_%H-%M-%S}", zt);

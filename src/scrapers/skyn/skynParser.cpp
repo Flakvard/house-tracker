@@ -1,4 +1,5 @@
 
+#include <cstring>
 #include <gumbo.h>
 #include <regex>
 #include <scrapers/include/PropertyManager.hpp>
@@ -31,7 +32,7 @@ void parseSkynProperty(GumboNode *node, SkynProperty *p) {
   /* ---------- 1. pick up the picture wherever it is -------------- */
   if (node->v.element.tag == GUMBO_TAG_IMG) {
     const char *src = getAttribute(&node->v.element.attributes, "src");
-    if (src && std::strstr(src, "/admin/public/getimage") != nullptr) {
+    if (src && strstr(src, "/admin/public/getimage") != nullptr) {
       std::string imgstring = static_cast<std::string>(src);
       p->img = "https://www.skyn.fo" + imgstring; // absolute URL already
     }
