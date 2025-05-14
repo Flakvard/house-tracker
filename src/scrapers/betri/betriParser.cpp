@@ -1,3 +1,4 @@
+#include <cstring>
 #include <gumbo.h>
 #include <iostream>
 #include <scrapers/betri/betriModel.hpp>
@@ -83,7 +84,7 @@ void parseBetriProperty(GumboNode *node, BetriProperty *p) {
       // check data-slider-id="1" on this <li>
       const char *sliderId =
           getAttribute(&node->v.element.attributes, "data-slider-id");
-      if (sliderId && std::strcmp(sliderId, "1") == 0) {
+      if (sliderId && strcmp(sliderId, "1") == 0) {
         // Now scan children to find the first <img>
         if (const char *src = findImgSrcRecursive(node)) {
           p->img = src;
