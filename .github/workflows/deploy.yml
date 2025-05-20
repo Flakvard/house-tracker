@@ -35,9 +35,8 @@ jobs:
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           ./vcpkg/bootstrap-vcpkg.sh
-          ./vcpkg/vcpkg install --triplet x64-linux-static
+          ./vcpkg/vcpkg install
           echo "VCPKG_TOOLCHAIN_FILE=$(pwd)/vcpkg/scripts/buildsystems/vcpkg.cmake" >> $GITHUB_ENV
-          echo "VCPKG_TARGET_TRIPLET=x64-linux-static" >> $GITHUB_ENV
 
       - name: 🔨 Build HouseTracker
         run: |
@@ -46,7 +45,6 @@ jobs:
           cmake .. \
             -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_TOOLCHAIN_FILE=${{ env.VCPKG_TOOLCHAIN_FILE }} \
-            -DVCPKG_TARGET_TRIPLET=${{ env.VCPKG_TARGET_TRIPLET }} \
             -DCMAKE_EXE_LINKER_FLAGS="-static -static-libgcc -static-libstdc++" \
             -DCMAKE_FIND_LIBRARY_SUFFIXES=".a" \
             -DBUILD_SHARED_LIBS=OFF \
