@@ -33,9 +33,9 @@ jobs:
 
       - name: 📦 Bootstrap vcpkg and install packages
         run: |
-          git clone https://github.com/microsoft/vcpkg.git /opt/vcpkg
-          /opt/vcpkg/bootstrap-vcpkg.sh
-          /opt/vcpkg/vcpkg install
+          git clone https://github.com/microsoft/vcpkg.git
+          ./vcpkg/bootstrap-vcpkg.sh
+          ./vcpkg/vcpkg install
           echo "VCPKG_TOOLCHAIN_FILE=$(pwd)/vcpkg/scripts/buildsystems/vcpkg.cmake" >> $GITHUB_ENV
 
       - name: 🔨 Build HouseTracker
