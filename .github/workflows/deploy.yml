@@ -48,7 +48,10 @@ jobs:
 
       - name: 🗜 Package binary
         run: |
-          tar -czf HouseTracker.tar.gz -C build src
+          mkdir deploy
+          cp build/HouseTracker deploy/
+          cp -r src/ deploy/src
+          tar -czf HouseTracker.tar.gz -C deploy .
 
       - name: 🚚 Upload to VPS
         uses: appleboy/scp-action@master
@@ -68,6 +71,7 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            ls ~/deployments
             cd ~/deployments
             tar -xzf HouseTracker.tar.gz
             pkill -f HouseTracker || true
