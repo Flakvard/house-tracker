@@ -1,0 +1,74 @@
+name: Build and Deploy HouseTracker
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🛠 Install GCC 13 and dependencies
+        run: |
+          sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+          sudo apt-get update
+          sudo apt-get install -y gcc-13 g++-13 zip unzip pkg-config curl git software-properties-common ninja-build
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 100
+          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
+
+      - name: 🧱 Install latest CMake (from Kitware)
+        run: |
+          sudo apt-get purge -y cmake || true
+          sudo apt-get install -y wget gpg lsb-release
+          wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc \
+            | gpg --dearmor -o /usr/share/keyrings/kitware-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main" \
+            | sudo tee /etc/apt/sources.list.d/kitware.list > /dev/null
+          sudo apt-get update
+          sudo apt-get install -y cmake
+
+      - name: 📦 Bootstrap vcpkg and install packages
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          ./vcpkg/bootstrap-vcpkg.sh
+          ./vcpkg/vcpkg install curl nlohmann-json drogon
+          echo "VCPKG_TOOLCHAIN_FILE=$(pwd)/vcpkg/scripts/buildsystems/vcpkg.cmake" >> $GITHUB_ENV
+
+      - name: 🔨 Build HouseTracker
+        run: |
+          mkdir -p build
+          cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${{ env.VCPKG_TOOLCHAIN_FILE }}
+          cmake --build . --config Release
+          cd ..
+
+      - name: 🗜 Package binary
+        run: |
+          tar -czf HouseTracker.tar.gz -C build src
+
+      - name: 🚚 Upload to VPS
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USERNAME }}
+          port: ${{ secrets.VPS_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "HouseTracker.tar.gz"
+          target: "/home/${{ secrets.VPS_USERNAME }}/deployments"
+
+      - name: 🚀 Restart Binary on VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USERNAME }}
+          port: ${{ secrets.VPS_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/deployments
+            tar -xzf HouseTracker.tar.gz
+            pkill -f HouseTracker || true
+            nohup ./HouseTracker > output.log 2>&1 &
