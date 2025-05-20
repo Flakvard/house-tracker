@@ -71,7 +71,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/house-tracker/build
-            if [ -f HouseTracker.new ]; then
+            if [ -d HouseTracker.new ]; then
               sudo systemctl stop house-tracker
               mv ./HouseTracker.new/build/HouseTracker HouseTracker
               chmod +x HouseTracker
