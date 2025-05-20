@@ -42,7 +42,7 @@ std::chrono::steady_clock::duration getTimeUntilNextRun() {
   auto nowTimeT = system_clock::to_time_t(now);
   std::tm nowTm = safeLocaltime(nowTimeT);
 
-  nowTm.tm_hour = 19;
+  nowTm.tm_hour = 14;
   nowTm.tm_min = 0;
   nowTm.tm_sec = 0;
 

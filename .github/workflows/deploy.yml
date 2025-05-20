@@ -46,12 +46,9 @@ jobs:
           cmake --build . --config Release
           cd ..
 
-      - name: 🗜 Package binary
+      - name: 🗜 Confirm binary is ready
         run: |
-          mkdir deploy
-          cp build/HouseTracker deploy/
-          cp -r src/ deploy/src
-          tar -czf HouseTracker.tar.gz -C deploy .
+          ls -lh build/HouseTracker
 
       - name: 🚚 Upload to VPS
         uses: appleboy/scp-action@master
@@ -60,8 +57,8 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           port: ${{ secrets.VPS_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "HouseTracker.tar.gz"
-          target: "/home/${{ secrets.VPS_USERNAME }}/deployments"
+          source: "build/HouseTracker"
+          target: "/home/${{ secrets.VPS_USERNAME }}/house-tracker/build/HouseTracker.new"
 
       - name: 🚀 Restart Binary on VPS
         uses: appleboy/ssh-action@master
@@ -71,8 +68,10 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            ls ~/deployments
-            cd ~/deployments
-            tar -xzf HouseTracker.tar.gz
-            pkill -f HouseTracker || true
-            nohup ./HouseTracker > output.log 2>&1 &
+            cd ~/house-tracker/build
+            if [ -f HouseTracker.new ]; then
+              sudo systemctl stop house-tracker
+              mv HouseTracker.new HouseTracker
+              chmod +x HouseTracker
+              sudo systemctl start house-tracker
+            fi
