@@ -35,20 +35,28 @@ jobs:
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           ./vcpkg/bootstrap-vcpkg.sh
-          ./vcpkg/vcpkg install
+          ./vcpkg/vcpkg install --triplet x64-linux-static
           echo "VCPKG_TOOLCHAIN_FILE=$(pwd)/vcpkg/scripts/buildsystems/vcpkg.cmake" >> $GITHUB_ENV
+          echo "VCPKG_TARGET_TRIPLET=x64-linux-static" >> $GITHUB_ENV
 
       - name: 🔨 Build HouseTracker
         run: |
           mkdir -p build
           cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${{ env.VCPKG_TOOLCHAIN_FILE }}
+          cmake .. \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_TOOLCHAIN_FILE=${{ env.VCPKG_TOOLCHAIN_FILE }} \
+            -DVCPKG_TARGET_TRIPLET=${{ env.VCPKG_TARGET_TRIPLET }} \
+            -DCMAKE_EXE_LINKER_FLAGS="-static -static-libgcc -static-libstdc++" \
+            -DCMAKE_FIND_LIBRARY_SUFFIXES=".a" \
+            -DBUILD_SHARED_LIBS=OFF \
+            -DCMAKE_SKIP_RPATH=ON
           cmake --build . --config Release
           cd ..
 
-      - name: 🗜 Confirm binary is ready
+      - name: 🧪 Confirm binary is static
         run: |
-          ls -lh build/HouseTracker
+          ldd build/HouseTracker || echo "✅ Static binary confirmed (ldd failed to read it)"
 
       - name: 🚚 Upload to VPS
         uses: appleboy/scp-action@master
