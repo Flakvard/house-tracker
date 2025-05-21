@@ -103,7 +103,7 @@ void runServer() {
           <html lang="en">
           <head>
             <meta charset="UTF-8">
-            <title>Drogon + HTMX + DaisyUI Demo</title>
+            <title>Faroese house tracker</title>
             <!-- Include Tailwind + DaisyUI from a CDN -->
             <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
             <!-- HTMX -->
@@ -129,37 +129,72 @@ void runServer() {
               Load Properties
             </button>
 
-            <!-- Our table (DaisyUI "table" style) -->
-            <div class="h-[600px] overflow-y-auto overflow-x-auto">
-              <table class="table w-full sticky-header">
-                <thead class="bg-base-200">
-                  <tr>
-                    <th class="bg-base-200">Photo</th>
-                    <th class="bg-base-200">Id</th>
-                    <th class="bg-base-200">Type</th>
-                    <th class="bg-base-200">City</th>
-                    <th class="bg-base-200">Address</th>
-                    <th class="bg-base-200">Floors</th>
-                    <th class="bg-base-200">Price</th>
-                    <th class="bg-base-200">Latest Offer</th>
-                    <th class="bg-base-200">Year Built</th>
-                    <th class="bg-base-200">Valid Date</th>
-                    <th class="bg-base-200">Inside m²</th>
-                    <th class="bg-base-200">Land m²</th>
-                    <th class="bg-base-200">Rooms</th>
-                    <th class="bg-base-200">Website</th>
-                  </tr>
-                </thead>
-
-                <!-- leave <tbody> exactly as you have it; HTMX will fill it -->
-                <tbody id="props-tbody">
-                </tbody>
-              </table>
-            </div>
-          </body>
-          </html>
-          )";
-
+          <!-- Our table (DaisyUI "table" style) -->
+          <div class="h-[600px] overflow-y-auto overflow-x-auto">
+            <table class="table w-full sticky-header">
+              <thead class="bg-base-200">
+                <tr>
+                  <th class="bg-base-200">Photo</th>
+                  <th class="bg-base-200">Id</th>
+                  <th class="bg-base-200">Type</th>
+                  <th class="bg-base-200">City</th>
+                  <th class="bg-base-200">Address</th>
+                  <th class="bg-base-200">Floors</th>
+                  <th class="bg-base-200">Price</th>
+                  <th class="bg-base-200">Latest&nbsp;Offer</th>
+                  <th class="bg-base-200">Year&nbsp;Built</th>
+                  <th class="bg-base-200">Valid&nbsp;Date</th>
+                  <th class="bg-base-200">Inside&nbsp;m²</th>
+                  <th class="bg-base-200">Land&nbsp;m²</th>
+                  <th class="bg-base-200">Rooms</th>
+                  <th class="bg-base-200">Website</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Filter Id" data-filter-col="1"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Filter Type" data-filter-col="2"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Filter City" data-filter-col="3"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Filter Address" data-filter-col="4"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Floors" data-filter-col="5"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Price" data-filter-col="6"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Offer" data-filter-col="7"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Year Built" data-filter-col="8"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Valid Date" data-filter-col="9"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Inside m²" data-filter-col="10"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Land m²" data-filter-col="11"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Rooms" data-filter-col="12"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Website" data-filter-col="13"></th>
+                </tr>
+              </thead>
+              <!-- leave <tbody> exactly as you have it; HTMX will fill it -->
+              <tbody id="props-tbody"></tbody>
+            </table>
+          </div>
+          <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const filterInputs = document.querySelectorAll('input[data-filter-col]');
+            const tbody = document.getElementById('props-tbody');
+            function filterTable() {
+              const filters = Array.from(filterInputs).map(input => input.value.trim().toLowerCase());
+              Array.from(tbody.rows).forEach(row => {
+                let show = true;
+                filters.forEach((filter, idx) => {
+                  if (filter !== '') {
+                    const cell = row.cells[idx + 1]; // +1 to skip Photo column
+                    if (cell && !cell.textContent.toLowerCase().includes(filter)) {
+                      show = false;
+                    }
+                  }
+                });
+                row.style.display = show ? '' : 'none';
+              });
+            }
+            filterInputs.forEach(input => input.addEventListener('input', filterTable));
+          });
+          </script>
+        </body>
+        </html>
+      )";
         auto resp = HttpResponse::newHttpResponse();
         resp->setContentTypeCode(CT_TEXT_HTML);
         resp->setBody(html.str());
