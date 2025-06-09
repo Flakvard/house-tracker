@@ -66,6 +66,7 @@ std::vector<RawProperty> parseWithGumboMeklarin(std::string html) {
   GumboOutput *output = gumbo_parse(html.c_str());
   if (!output) {
     std::cerr << "Failed to parse HTML.\n";
+    return {};
   }
 
   // 3) Find script content with "var ALL_PROPERTIES"
@@ -76,6 +77,7 @@ std::vector<RawProperty> parseWithGumboMeklarin(std::string html) {
 
   if (scriptText.empty()) {
     std::cerr << "Could not find script with 'var ALL_PROPERTIES'!\n";
+    return {};
   }
 
   // We have something like:
@@ -89,75 +91,84 @@ std::vector<RawProperty> parseWithGumboMeklarin(std::string html) {
   // Example pattern:  JSON.parse('some stuff between single quotes');
   // We'll do a lazy capture of everything between the single quotes after
   // JSON.parse('
-  std::regex re(R"(JSON\.parse\('([^']*)'\))");
-  std::smatch match;
 
   std::vector<MeklarinProperty> properties;
 
-  if (std::regex_search(scriptText, match, re)) {
-    // match[1] should be the JSON array: '[{"ID":29032,"areas":"Streymoy...},
-    // {...}]'
-    std::string rawJson = match[1].str();
+  const std::string needle = "JSON.parse('";
+  auto start = html.find(needle);
+  if (start == std::string::npos) {
+    std::cerr << "No JSON.parse found.\n";
+    return {};
+  }
+  start += needle.length();
+  auto end = html.find("')", start);
+  if (end == std::string::npos) {
+    std::cerr << "No closing ') found after JSON.parse\n";
+    return {};
+  }
 
-    // Now parse that with nlohmann::json
-    // (Make sure you have #include <nlohmann/json.hpp> and linked it
-    // properly)
-    try {
-      // 5) Parse the string as JSON
-      nlohmann::json j = nlohmann::json::parse(rawJson);
+  // match[1] should be the JSON array: '[{"ID":29032,"areas":"Streymoy...},
+  // {...}]'
+  std::string rawJson = html.substr(start, end - start);
 
-      // 'j' should now be an array of objects
-      // e.g. j[0]["ID"], j[0]["areas"], ...
+  // Now parse that with nlohmann::json
+  // (Make sure you have #include <nlohmann/json.hpp> and linked it
+  // properly)
+  try {
+    // 5) Parse the string as JSON
+    nlohmann::json j = nlohmann::json::parse(rawJson);
 
-      // 7) Loop over array elements
-      for (auto &item : j) {
-        MeklarinProperty prop;
-        // note: some fields might be numeric or boolean; handle carefully
-        // We'll do a naive .get<std::string>() where it's obviously a string:
-        prop.ID = item.contains("ID") ? toString(item["ID"]) : ""; // integer
-        prop.areas = item.contains("areas") ? toString(item["areas"]) : "";
-        prop.types = item.contains("types") ? toString(item["types"]) : "";
-        prop.featured_image = item.contains("featured_image")
-                                  ? toString(item["featured_image"])
+    // 'j' should now be an array of objects
+    // e.g. j[0]["ID"], j[0]["areas"], ...
+
+    // 7) Loop over array elements
+    for (auto &item : j) {
+      MeklarinProperty prop;
+      // note: some fields might be numeric or boolean; handle carefully
+      // We'll do a naive .get<std::string>() where it's obviously a string:
+      prop.ID = item.contains("ID") ? toString(item["ID"]) : ""; // integer
+      prop.areas = item.contains("areas") ? toString(item["areas"]) : "";
+      prop.types = item.contains("types") ? toString(item["types"]) : "";
+      prop.featured_image = item.contains("featured_image")
+                                ? toString(item["featured_image"])
+                                : "";
+      prop.permalink =
+          item.contains("permalink") ? toString(item["permalink"]) : "";
+      prop.build = item.contains("build") ? toString(item["build"]) : "";
+      prop.address =
+          item.contains("address") ? toString(item["address"]) : "";
+      prop.city = item.contains("city") ? toString(item["city"]) : "";
+      prop.bedrooms =
+          item.contains("bedrooms") ? HT::parseInt(item["bedrooms"]) : 0;
+      prop.house_area =
+          item.contains("house_area") ? HT::parseInt(item["house_area"]) : 0;
+      prop.area_size =
+          item.contains("area_size") ? HT::parseInt(item["area_size"]) : 0;
+      prop.isNew = item.contains("new") ? (bool)item["new"] : false;
+      prop.featured =
+          item.contains("featured") ? (bool)item["featured"] : false;
+      prop.sold = item.contains("sold") ? (bool)item["sold"] : false;
+      prop.open_house =
+          item.contains("open_house") ? (bool)item["open_house"] : false;
+      prop.open_house_start_date =
+          item.contains("open_house_start_date")
+              ? toString(item["open_house_start_date"])
+              : "";
+      prop.price =
+          item.contains("price") ? HT::parsePriceToInt(item["price"]) : 0;
+      prop.bid = item.contains("bid") ? HT::parsePriceToInt(item["bid"]) : 0;
+      prop.new_bid = item.contains("new_bid") ? (bool)item["new_bid"] : false;
+      prop.bid_valid_until = item.contains("bid_valid_until")
+                                  ? toString(item["bid_valid_until"])
                                   : "";
-        prop.permalink =
-            item.contains("permalink") ? toString(item["permalink"]) : "";
-        prop.build = item.contains("build") ? toString(item["build"]) : "";
-        prop.address =
-            item.contains("address") ? toString(item["address"]) : "";
-        prop.city = item.contains("city") ? toString(item["city"]) : "";
-        prop.bedrooms =
-            item.contains("bedrooms") ? HT::parseInt(item["bedrooms"]) : 0;
-        prop.house_area =
-            item.contains("house_area") ? HT::parseInt(item["house_area"]) : 0;
-        prop.area_size =
-            item.contains("area_size") ? HT::parseInt(item["area_size"]) : 0;
-        prop.isNew = item.contains("new") ? (bool)item["new"] : false;
-        prop.featured =
-            item.contains("featured") ? (bool)item["featured"] : false;
-        prop.sold = item.contains("sold") ? (bool)item["sold"] : false;
-        prop.open_house =
-            item.contains("open_house") ? (bool)item["open_house"] : false;
-        prop.open_house_start_date =
-            item.contains("open_house_start_date")
-                ? toString(item["open_house_start_date"])
-                : "";
-        prop.price =
-            item.contains("price") ? HT::parsePriceToInt(item["price"]) : 0;
-        prop.bid = item.contains("bid") ? HT::parsePriceToInt(item["bid"]) : 0;
-        prop.new_bid = item.contains("new_bid") ? (bool)item["new_bid"] : false;
-        prop.bid_valid_until = item.contains("bid_valid_until")
-                                   ? toString(item["bid_valid_until"])
-                                   : "";
-        prop.new_price =
-            item.contains("new_price") ? toString(item["new_price"]) : "";
+      prop.new_price =
+          item.contains("new_price") ? toString(item["new_price"]) : "";
 
-        properties.push_back(std::move(prop));
-      }
-
-    } catch (std::exception &e) {
-      std::cerr << "JSON parse error: " << e.what() << "\n";
+      properties.push_back(std::move(prop));
     }
+
+  } catch (std::exception &e) {
+    std::cerr << "JSON parse error: " << e.what() << "\n";
   }
 
   std::vector<RawProperty> allProperties;
