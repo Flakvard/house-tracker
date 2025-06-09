@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.30)
 
 # The toolchain file setup should ideally be in a CMakePresets.json file,
 # but we'll keep it here for simplicity
-#set(CMAKE_TOOLCHAIN_FILE "C:/Users/MarniFalkvardJoensen/scoop/apps/vcpkg/current/scripts/buildsystems/vcpkg.cmake"
-#    CACHE STRING "Vcpkg toolchain file")
-
 project(HouseTracker VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 20)
