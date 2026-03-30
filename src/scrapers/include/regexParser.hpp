@@ -10,6 +10,7 @@ int parsePriceToInt(const std::string &s);
 
 // parse an integer field that might be wrapped in quotes, empty, etc.
 int parseInt(const std::string &s);
+int parseAreaToInt(const std::string &s);
 
 // parse the "id" field which looks like: "\"Marknagilsvegur 50\"\"Streymoy
 // suður\""

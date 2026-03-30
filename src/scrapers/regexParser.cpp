@@ -53,6 +53,32 @@ int parseInt(const std::string &s) {
   return std::stoi(digitsOnly);
 }
 
+int parseAreaToInt(const std::string &s) {
+  std::string tmp = stripOuterQuotes(s);
+  if (tmp.empty()) {
+    return 0;
+  }
+
+  static const std::regex firstNumber(R"((\d[\d\.,]*))");
+  std::smatch match;
+  if (!std::regex_search(tmp, match, firstNumber)) {
+    return 0;
+  }
+
+  std::string numberToken = match[1].str();
+  std::string digitsOnly;
+  for (char c : numberToken) {
+    if (std::isdigit(static_cast<unsigned char>(c))) {
+      digitsOnly.push_back(c);
+    }
+  }
+
+  if (digitsOnly.empty()) {
+    return 0;
+  }
+  return std::stoi(digitsOnly);
+}
+
 // parse the "id" field which looks like: "\"Marknagilsvegur 50\"\"Streymoy
 // suður\""
 std::string parseId(const std::string &s) {
@@ -108,3 +134,4 @@ std::string toString(const nlohmann::json &val) {
 }
 
 } // namespace HT
+

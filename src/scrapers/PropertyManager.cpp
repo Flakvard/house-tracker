@@ -205,6 +205,12 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
         // update city
         it->city = newProp.city;
       }
+      if (newProp.buildingSize > 0 && it->buildingSize != newProp.buildingSize) {
+        it->buildingSize = newProp.buildingSize;
+      }
+      if (newProp.landSize > 0 && it->landSize != newProp.landSize) {
+        it->landSize = newProp.landSize;
+      }
       // you can compare other fields (e.g., floors, rooms) similarly
     }
   }
@@ -226,8 +232,8 @@ mapRawPropertiesTilProperties(std::vector<RawProperty> newProperties) {
     prop.latestOffer = parsePriceToInt(newProp.latestOffer);
     prop.validDate = stripOuterQuotes(newProp.validDate);
     prop.date = stripOuterQuotes(newProp.date);
-    prop.buildingSize = parseInt(newProp.buildingSize);
-    prop.landSize = parseInt(newProp.landSize);
+    prop.buildingSize = parseAreaToInt(newProp.buildingSize);
+    prop.landSize = parseAreaToInt(newProp.landSize);
     prop.room = parseInt(newProp.room);
     prop.floor = parseInt(newProp.floor);
     prop.img = stripOuterQuotes(newProp.img);
