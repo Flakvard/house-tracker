@@ -6,7 +6,7 @@ REM 1) Where vcpkg.exe actually lives on Windows:
 set VCPKG_ROOT=C:/Users/marni/scoop/apps/vcpkg/current
 
 cmake ^
-  -G "Visual Studio 17 2022" ^
+  -G "Visual Studio 16 2019" ^
   -A x64 ^
   -DCMAKE_TOOLCHAIN_FILE=%VCPKG_ROOT%/scripts/buildsystems/vcpkg.cmake ^
   -DVCPKG_TARGET_TRIPLET=x64-windows ^

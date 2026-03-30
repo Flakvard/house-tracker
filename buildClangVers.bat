@@ -9,7 +9,7 @@ cmake -G Ninja ^
   -DCMAKE_C_COMPILER=%CC% ^
   -DCMAKE_CXX_COMPILER=%CXX% ^
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ^
-  -DCMAKE_TOOLCHAIN_FILE="C:/Users/MarniFalkvardJoensen/scoop/apps/vcpkg/current/scripts/buildsystems/vcpkg.cmake" ^
+  -DCMAKE_TOOLCHAIN_FILE="C:/Users/marni/scoop/apps/vcpkg/current/scripts/buildsystems/vcpkg.cmake" ^
   -B build -S .
 
 ninja -C build         
