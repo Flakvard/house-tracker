@@ -126,7 +126,7 @@ std::string downloadAndSaveHtml(const std::string &url, PropertyType propType,
   // 1) Download
   std::string html;
   bool success = HT::downloadToString(url, html);
-  extractHtmlFromJson(html);
+  html = extractHtmlFromJson(html);
   if (html.empty() || !success) {
     std::cerr << "Download failed\n";
     return "";

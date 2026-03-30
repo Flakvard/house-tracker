@@ -1,6 +1,7 @@
 #include <cstring>
 #include <gumbo.h>
 #include <iostream>
+#include <nlohmann/json.hpp>
 #include <scrapers/betri/betriModel.hpp>
 #include <scrapers/betri/betriParser.hpp>
 #include <scrapers/include/PropertyManager.hpp>
@@ -8,6 +9,26 @@
 #include <scrapers/include/parser.hpp>
 #include <string>
 namespace HT::BETRI {
+namespace {
+
+std::string extractBetriHtmlPayload(const std::string &payload) {
+  if (payload.empty()) {
+    return payload;
+  }
+
+  try {
+    const auto j = nlohmann::json::parse(payload);
+    if (j.contains("html") && j["html"].is_string()) {
+      return j["html"].get<std::string>();
+    }
+  } catch (...) {
+    // Not a JSON payload; treat as plain HTML.
+  }
+
+  return payload;
+}
+
+} // namespace
 
 const char *findImgSrcRecursive(GumboNode *node) {
   if (!node || node->type != GUMBO_NODE_ELEMENT)
@@ -168,6 +189,7 @@ std::vector<RawProperty> parseHtmlWithGumboBetri(std::string html,
                                                  PropertyType propType) {
   std::vector<BetriProperty> betriProperties;
   std::vector<RawProperty> rawProperties;
+  html = extractBetriHtmlPayload(html);
 
   if (html.empty()) {
     std::cerr << "Failed to load or download HTML.\n";
