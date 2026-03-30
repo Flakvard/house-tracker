@@ -161,9 +161,9 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
     } else {
       // property found => check if price changed
       if (it->type != newProp.type) {
-        std::cout << "Type changed for: " << it->id << " from "
-                  << propertyTypeToString(it->type) << " to "
-                  << propertyTypeToString(newProp.type) << "\n";
+      //  std::cout << "Type changed for: " << it->id << " from "
+      //            << propertyTypeToString(it->type) << " to "
+      //            << propertyTypeToString(newProp.type) << "\n";
         // update type
         it->type = newProp.type;
       }
@@ -193,8 +193,8 @@ void PropertyManager::mergeProperties(std::vector<Property> &existing,
       }
       // property found => check if img changed
       if (it->img != newProp.img) {
-        std::cout << "img changed for: " << it->id << " from " << it->img
-                  << " to " << newProp.img << "\n";
+      //  std::cout << "img changed for: " << it->id << " from " << it->img
+      //            << " to " << newProp.img << "\n";
         // update img
         it->img = newProp.img;
       }
@@ -288,8 +288,8 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     // Merge
     PropertyManager::mergeProperties(allProperties, newProperties);
 
-    std::cout << "Processed file: " << path.filename().string() << " => found "
-              << newProperties.size() << " properties.\n";
+    //std::cout << "Processed file: " << path.filename().string() << " => found "
+    //          << newProperties.size() << " properties.\n";
   }
 }
 
