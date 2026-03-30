@@ -2,6 +2,7 @@
 #include <gumbo.h>
 #include <iostream>
 #include <nlohmann/json.hpp>
+#include <regex>
 #include <scrapers/betri/betriModel.hpp>
 #include <scrapers/betri/betriParser.hpp>
 #include <scrapers/include/PropertyManager.hpp>
@@ -26,6 +27,48 @@ std::string extractBetriHtmlPayload(const std::string &payload) {
   }
 
   return payload;
+}
+
+std::string trim(const std::string &s) {
+  const auto first = s.find_first_not_of(" \t\r\n");
+  if (first == std::string::npos) {
+    return "";
+  }
+  const auto last = s.find_last_not_of(" \t\r\n");
+  return s.substr(first, last - first + 1);
+}
+
+void normalizeAndSplitBetriAddress(BetriProperty &prop) {
+  std::string addr = prop.address;
+  if (addr.empty()) {
+    return;
+  }
+
+  // Flatten line breaks/tabs and collapse repeated whitespace.
+  for (char &c : addr) {
+    if (c == '\r' || c == '\n' || c == '\t') {
+      c = ' ';
+    }
+  }
+  addr = std::regex_replace(addr, std::regex("\\s+"), " ");
+  addr = trim(addr);
+  prop.address = addr;
+
+  if (!prop.city.empty()) {
+    return;
+  }
+
+  // Typical Betri format in one field: "<street> <postnum> <city>"
+  static const std::regex cityAtEnd(R"(^(.*)\s+(\d{3})\s+(.+)$)");
+  std::smatch m;
+  if (std::regex_match(addr, m, cityAtEnd)) {
+    const std::string street = trim(m[1].str());
+    const std::string postNum = trim(m[2].str());
+    const std::string cityName = trim(m[3].str());
+    prop.address = street.empty() ? addr : street;
+    prop.postNum = postNum;
+    prop.city = cityName;
+  }
 }
 
 } // namespace
@@ -158,8 +201,10 @@ mapBetriToRawProperty(std::vector<RawProperty> &rawProperties,
                       PropertyType propType) {
   for (auto &prop : betriProperties) {
     RawProperty p;
+    normalizeAndSplitBetriAddress(prop);
     prop.type = PropertyManager::propertyTypeToString(propType);
-    prop.id = PropertyManager::cleanId(prop.address + prop.city + prop.postNum);
+    // Keep ID composition stable with old Betri IDs: address + post + city.
+    prop.id = PropertyManager::cleanId(prop.address + prop.postNum + prop.city);
 
     p.id = prop.id;
     p.website = prop.website;

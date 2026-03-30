@@ -14,11 +14,73 @@
 #include <scrapers/meklarin/meklarinScraper.hpp>
 #include <scrapers/skyn/skynParser.hpp>
 #include <scrapers/skyn/skynScraper.hpp>
+#include <regex>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
 namespace HT {
+namespace {
+
+std::string trim(const std::string &s) {
+  const auto first = s.find_first_not_of(" \t\r\n");
+  if (first == std::string::npos) {
+    return "";
+  }
+  const auto last = s.find_last_not_of(" \t\r\n");
+  return s.substr(first, last - first + 1);
+}
+
+void normalizeBetriCityAndAddress(Property &prop) {
+  if (prop.agent != RealEstateAgent::Betri) {
+    return;
+  }
+
+  std::string address = prop.address;
+  std::string city = prop.city;
+
+  for (char &c : address) {
+    if (c == '\r' || c == '\n' || c == '\t') {
+      c = ' ';
+    }
+  }
+  address = std::regex_replace(address, std::regex("\\s+"), " ");
+  address = trim(address);
+  prop.address = address;
+
+  // If city is empty, extract "<postnum> <city>" from the end of address.
+  if (city.empty()) {
+    static const std::regex fromAddress(R"(^(.*)\s+(\d{3})\s+(.+)$)");
+    std::smatch m;
+    if (std::regex_match(address, m, fromAddress)) {
+      const std::string street = trim(m[1].str());
+      const std::string postNum = trim(m[2].str());
+      const std::string cityName = trim(m[3].str());
+      prop.address = street.empty() ? address : street;
+      if (prop.postNum.empty()) {
+        prop.postNum = postNum;
+      }
+      prop.city = cityName;
+      return;
+    }
+  }
+
+  // If city is "123 Tórshavn", keep only "Tórshavn" and preserve postnum.
+  static const std::regex cityWithPost(R"(^(\d{3})\s+(.+)$)");
+  std::smatch cm;
+  if (std::regex_match(city, cm, cityWithPost)) {
+    const std::string postNum = trim(cm[1].str());
+    const std::string cityName = trim(cm[2].str());
+    if (prop.postNum.empty()) {
+      prop.postNum = postNum;
+    }
+    prop.city = cityName;
+  } else {
+    prop.city = trim(city);
+  }
+}
+
+} // namespace
 
 std::string PropertyManager::propertyAgentToString(RealEstateAgent agent) {
   switch (agent) {
@@ -337,6 +399,7 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
   }
 
   for (auto &prop : allProperties) {
+    normalizeBetriCityAndAddress(prop);
     if (activePropertyIds.find(prop.id) != activePropertyIds.end()) {
       prop.status = "active";
     } else {
