@@ -15,6 +15,7 @@
 #include <scrapers/skyn/skynParser.hpp>
 #include <scrapers/skyn/skynScraper.hpp>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 namespace HT {
@@ -237,6 +238,7 @@ mapRawPropertiesTilProperties(std::vector<RawProperty> newProperties) {
     prop.room = parseInt(newProp.room);
     prop.floor = parseInt(newProp.floor);
     prop.img = stripOuterQuotes(newProp.img);
+    prop.status = "active";
     prop.type = PropertyManager::stringToPropertyType(newProp.type);
     prop.agent = PropertyManager::stringToAgent(newProp.agent);
     properties.push_back(prop);
@@ -248,6 +250,35 @@ mapRawPropertiesTilProperties(std::vector<RawProperty> newProperties) {
 void PropertyManager::traverseAllHtmlAndMergeProperties(
     std::vector<Property> &allProperties,
     std::vector<std::filesystem::path> htmlFiles) {
+  std::unordered_map<std::string, long long> latestTimestampByUrl;
+  std::unordered_map<std::string, std::filesystem::path> latestPathByUrl;
+
+  for (const auto &path : htmlFiles) {
+    std::ifstream ifs(path);
+    if (!ifs.is_open()) {
+      continue;
+    }
+    nlohmann::json j;
+    try {
+      ifs >> j;
+    } catch (...) {
+      continue;
+    }
+    const std::string website = j.value("url", "");
+    const long long timestamp = j.value("timestamp", 0LL);
+    if (website.empty()) {
+      continue;
+    }
+
+    auto it = latestTimestampByUrl.find(website);
+    if (it == latestTimestampByUrl.end() || timestamp >= it->second) {
+      latestTimestampByUrl[website] = timestamp;
+      latestPathByUrl[website] = path;
+    }
+  }
+
+  std::unordered_set<std::string> activePropertyIds;
+
   for (const auto &path : htmlFiles) {
     std::ifstream ifs(path);
     if (!ifs.is_open()) {
@@ -291,11 +322,26 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     std::vector<Property> newProperties =
         mapRawPropertiesTilProperties(newRawProperties);
 
+    auto latestIt = latestPathByUrl.find(website);
+    if (latestIt != latestPathByUrl.end() && path == latestIt->second) {
+      for (const auto &prop : newProperties) {
+        activePropertyIds.insert(prop.id);
+      }
+    }
+
     // Merge
     PropertyManager::mergeProperties(allProperties, newProperties);
 
     //std::cout << "Processed file: " << path.filename().string() << " => found "
     //          << newProperties.size() << " properties.\n";
+  }
+
+  for (auto &prop : allProperties) {
+    if (activePropertyIds.find(prop.id) != activePropertyIds.end()) {
+      prop.status = "active";
+    } else {
+      prop.status = "archived";
+    }
   }
 }
 

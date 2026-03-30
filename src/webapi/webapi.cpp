@@ -21,14 +21,14 @@ using json = nlohmann::json;
 std::string buildPropertiesTableRows() {
   std::ifstream ifs("../src/storage/properties.json");
   if (!ifs.is_open()) {
-    return "<tr><td colspan='10'>Could not open properties.json</td></tr>";
+    return "<tr><td colspan='15'>Could not open properties.json</td></tr>";
   }
 
   json j;
   try {
     ifs >> j;
   } catch (std::exception &e) {
-    return std::string("<tr><td colspan='10'>JSON parse error: ") + e.what() +
+    return std::string("<tr><td colspan='15'>JSON parse error: ") + e.what() +
            "</td></tr>";
   }
 
@@ -62,6 +62,7 @@ std::string buildPropertiesTableRows() {
     int landM2 = item.value("landM2", 0);
     int rooms = item.value("rooms", 0);
     std::string website = item.value("website", "");
+    std::string status = item.value("status", "active");
 
     rows << "<tr>\n"
          << "  <td><img class=\"w-32 h-auto\" src=\"" << servedPath
@@ -79,6 +80,7 @@ std::string buildPropertiesTableRows() {
          << "  <td class=\"w-32\">" << landM2 << "</td>\n"
          << "  <td class=\"w-24\">" << rooms << "</td>\n"
          << "  <td class=\"w-48\">" << website << "</td>\n"
+         << "  <td class=\"w-32\">" << status << "</td>\n"
          << "</tr>\n";
   }
   return rows.str();
@@ -148,6 +150,7 @@ void runServer() {
                   <th class="bg-base-200">Land&nbsp;m²</th>
                   <th class="bg-base-200">Rooms</th>
                   <th class="bg-base-200">Website</th>
+                  <th class="bg-base-200">Status</th>
                 </tr>
                 <tr>
                   <th></th>
@@ -164,6 +167,7 @@ void runServer() {
                   <th><input type="text" class="input input-xs w-full" placeholder="Land m²" data-filter-col="11"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Rooms" data-filter-col="12"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Website" data-filter-col="13"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Status" data-filter-col="14"></th>
                 </tr>
               </thead>
               <!-- leave <tbody> exactly as you have it; HTMX will fill it -->
@@ -236,3 +240,5 @@ void runServer() {
 
 } // namespace HT
   // namespace HT
+
+

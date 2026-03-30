@@ -56,6 +56,7 @@ struct Property {
   int room;
   int floor;
   std::string img;
+  std::string status;
   PropertyType type;
   RealEstateAgent agent;
 };

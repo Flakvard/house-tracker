@@ -52,6 +52,7 @@ nlohmann::json propertyToJson(const Property &prop) {
   j["rooms"] = prop.room;
   j["floors"] = prop.floor;
   j["img"] = prop.img;
+  j["status"] = prop.status.empty() ? "active" : prop.status;
   j["type"] = PropertyManager::propertyTypeToString(prop.type);
   j["agent"] = PropertyManager::propertyAgentToString(prop.agent);
   return j;
@@ -80,6 +81,7 @@ Property jsonToProperty(const nlohmann::json &j) {
   p.floor = safeGetInt(j, "floors");
 
   p.img = j.value("img", "");
+  p.status = j.value("status", "active");
   p.type = PropertyManager::stringToPropertyType(j.value("type", ""));
   p.agent = PropertyManager::stringToAgent(j.value("agent", ""));
   return p;
