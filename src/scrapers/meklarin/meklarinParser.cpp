@@ -185,8 +185,8 @@ std::vector<RawProperty> parseWithGumboMeklarin(std::string html) {
     property.latestOffer = std::to_string(p.bid);
     property.validDate = p.bid_valid_until;
     property.date = p.open_house_start_date;
-    property.buildingSize = std::to_string(p.house_area);
-    property.landSize = std::to_string(p.area_size);
+    property.buildingSize = std::to_string(p.area_size);
+    property.landSize = std::to_string(p.house_area);
     property.room = std::to_string(p.bedrooms);
     property.floor = "0";
     property.img = p.featured_image;
