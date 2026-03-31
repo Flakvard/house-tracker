@@ -13,42 +13,30 @@ namespace HT {
 using namespace drogon;
 using json = nlohmann::json;
 
-/**
- * Returns a partial HTML snippet (a <tbody>) containing the properties
- * read from src/storage/properties.json. We'll then let HTMX swap this
- * into the existing table in the browser.
- */
 std::string buildPropertiesTableRows() {
   std::ifstream ifs("../src/storage/properties.json");
   if (!ifs.is_open()) {
-    return "<tr><td colspan='15'>Could not open properties.json</td></tr>";
+    return "<tr><td colspan='19'>Could not open properties.json</td></tr>";
   }
 
   json j;
   try {
     ifs >> j;
   } catch (std::exception &e) {
-    return std::string("<tr><td colspan='15'>JSON parse error: ") + e.what() +
+    return std::string("<tr><td colspan='19'>JSON parse error: ") + e.what() +
            "</td></tr>";
   }
 
   std::stringstream rows;
   for (auto &item : j) {
-
-    /* …existing extraction… */
     std::string imgUrl = item.value("img", "");
 
-    /* reconstruct the local filename exactly the same way
-       you did when downloading */
     std::string fileName = HT::getFilenameFromUrl(imgUrl);
     std::string fullName = HT::cleanAsciiFilename(item.value("id", "") +
                                                   item.value("validDate", ""));
     std::string localName = fullName + "_" + fileName;
-
-    /* assemble the public URL (matches addALocation above) */
     std::string servedPath = "/images/" + localName;
 
-    // Safely extract fields
     std::string address = item.value("address", "");
     std::string id = item.value("id", "");
     std::string city = item.value("city", "");
@@ -63,6 +51,10 @@ std::string buildPropertiesTableRows() {
     int rooms = item.value("rooms", 0);
     std::string website = item.value("website", "");
     std::string status = item.value("status", "active");
+    int offerPerInsideM2 = (insideM2 > 0) ? (latestOffer / insideM2) : 0;
+    int offerPerLandM2 = (landM2 > 0) ? (latestOffer / landM2) : 0;
+    int pricePerInsideM2 = (insideM2 > 0) ? (price / insideM2) : 0;
+    int pricePerLandM2 = (landM2 > 0) ? (price / landM2) : 0;
 
     rows << "<tr>\n"
          << "  <td><img class=\"w-32 h-auto\" src=\"" << servedPath
@@ -81,76 +73,80 @@ std::string buildPropertiesTableRows() {
          << "  <td class=\"w-24\">" << rooms << "</td>\n"
          << "  <td class=\"w-48\">" << website << "</td>\n"
          << "  <td class=\"w-32\">" << status << "</td>\n"
+         << "  <td class=\"w-32\">" << offerPerInsideM2 << "</td>\n"
+         << "  <td class=\"w-32\">" << offerPerLandM2 << "</td>\n"
+         << "  <td class=\"w-32\">" << pricePerInsideM2 << "</td>\n"
+         << "  <td class=\"w-32\">" << pricePerLandM2 << "</td>\n"
          << "</tr>\n";
   }
   return rows.str();
 }
 
 void runServer() {
-  /**
-   * 1) Serve a main page at GET "/"
-   *    - This page includes references to DaisyUI (via a Tailwind CDN) and
-   * HTMX.
-   *    - We have a table with an empty <tbody>.
-   *    - A button or link triggers HTMX to GET "/propertiesRows" and swap the
-   * <tbody>.
-   */
   app().registerHandler(
       "/", [](const HttpRequestPtr &req,
               std::function<void(const HttpResponsePtr &)> &&callback) {
-        // We embed the DaisyUI+HTMX references via CDN
-        // (You could also host them locally or use a bundler if you prefer.)
         std::stringstream html;
         html << R"(<!DOCTYPE html>
           <html lang="en">
           <head>
             <meta charset="UTF-8">
             <title>Faroese house tracker</title>
-            <!-- Include Tailwind + DaisyUI from a CDN -->
             <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
-            <!-- HTMX -->
             <script src="https://unpkg.com/htmx.org@1.9.2"></script>
           <style>
-            /* make every <th> in a “sticky-header” table stick */
             .sticky-header th {
               position: sticky;
-              top: 0;             /* stay glued to the top of the scroll‑box   */
-              z-index: 10;        /* sit above body rows, images, etc.        */
+              top: 0;
+              z-index: 10;
+            }
+            .col-toggle {
+              cursor: pointer;
+              user-select: none;
             }
           </style>
           </head>
           <body class="m-4">
             <h1 class="text-2xl font-bold mb-4">Properties</h1>
 
-            <!-- A button that triggers an HTMX call to /propertiesRows 
-                and replaces the #props-tbody content with the response -->
             <button class="btn btn-primary mb-4"
                     hx-get="/propertiesRows"
                     hx-target="#props-tbody"
                     hx-swap="innerHTML">
               Load Properties
             </button>
+            <div class="flex flex-wrap gap-2 mb-2 items-center">
+              <button id="reset-columns" class="btn btn-sm">Reset Columns</button>
+              <label class="label cursor-pointer gap-2">
+                <span class="label-text">Compact</span>
+                <input id="compact-toggle" type="checkbox" class="toggle toggle-sm" />
+              </label>
+              <span class="text-xs opacity-70">Tap a column header to hide/show it</span>
+            </div>
 
-          <!-- Our table (DaisyUI "table" style) -->
           <div class="h-[600px] overflow-y-auto overflow-x-auto">
-            <table class="table w-full sticky-header">
+            <table id="properties-table" class="table w-full sticky-header">
               <thead class="bg-base-200">
                 <tr>
-                  <th class="bg-base-200">Photo</th>
-                  <th class="bg-base-200">Id</th>
-                  <th class="bg-base-200">Type</th>
-                  <th class="bg-base-200">City</th>
-                  <th class="bg-base-200">Address</th>
-                  <th class="bg-base-200">Floors</th>
-                  <th class="bg-base-200">Price</th>
-                  <th class="bg-base-200">Latest&nbsp;Offer</th>
-                  <th class="bg-base-200">Year&nbsp;Built</th>
-                  <th class="bg-base-200">Valid&nbsp;Date</th>
-                  <th class="bg-base-200">Inside&nbsp;m²</th>
-                  <th class="bg-base-200">Land&nbsp;m²</th>
-                  <th class="bg-base-200">Rooms</th>
-                  <th class="bg-base-200">Website</th>
-                  <th class="bg-base-200">Status</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="0">Photo</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="1">Id</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="2">Type</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="3">City</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="4">Address</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="5">Floors</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="6">Price</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="7">Latest Offer</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="8">Year Built</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="9">Valid Date</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="10">Inside m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="11">Land m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="12">Rooms</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="13">Website</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="14">Status</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="15">Offer/Inside m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="16">Offer/Land m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="17">Price/Inside m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="18">Price/Land m2</th>
                 </tr>
                 <tr>
                   <th></th>
@@ -163,14 +159,17 @@ void runServer() {
                   <th><input type="text" class="input input-xs w-full" placeholder="Offer" data-filter-col="7"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Year Built" data-filter-col="8"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Valid Date" data-filter-col="9"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Inside m²" data-filter-col="10"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Land m²" data-filter-col="11"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Inside m2" data-filter-col="10"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Land m2" data-filter-col="11"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Rooms" data-filter-col="12"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Website" data-filter-col="13"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Status" data-filter-col="14"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Offer/Inside" data-filter-col="15"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Offer/Land" data-filter-col="16"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Price/Inside" data-filter-col="17"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Price/Land" data-filter-col="18"></th>
                 </tr>
               </thead>
-              <!-- leave <tbody> exactly as you have it; HTMX will fill it -->
               <tbody id="props-tbody"></tbody>
             </table>
           </div>
@@ -178,22 +177,93 @@ void runServer() {
           document.addEventListener('DOMContentLoaded', function() {
             const filterInputs = document.querySelectorAll('input[data-filter-col]');
             const tbody = document.getElementById('props-tbody');
+            const table = document.getElementById('properties-table');
+            const resetBtn = document.getElementById('reset-columns');
+            const compactToggle = document.getElementById('compact-toggle');
+            const colHeaders = document.querySelectorAll('thead tr:first-child th[data-col-index]');
+            const hiddenColsKey = 'houseTracker_hiddenColumns';
+            const compactKey = 'houseTracker_compactTable';
+
+            function getHiddenCols() {
+              try {
+                const raw = localStorage.getItem(hiddenColsKey);
+                const arr = raw ? JSON.parse(raw) : [];
+                return new Set(arr.map(Number));
+              } catch (e) {
+                return new Set();
+              }
+            }
+
+            function saveHiddenCols(set) {
+              localStorage.setItem(hiddenColsKey, JSON.stringify(Array.from(set)));
+            }
+
+            function setColumnVisible(colIdx, visible) {
+              Array.from(table.rows).forEach(row => {
+                if (row.cells[colIdx]) row.cells[colIdx].style.display = visible ? '' : 'none';
+              });
+            }
+
+            function applyColumnVisibility() {
+              const hidden = getHiddenCols();
+              colHeaders.forEach(header => {
+                const idx = Number(header.dataset.colIndex);
+                const isHidden = hidden.has(idx);
+                setColumnVisible(idx, !isHidden);
+                header.classList.toggle('opacity-40', isHidden);
+              });
+            }
+
             function filterTable() {
               const filters = Array.from(filterInputs).map(input => input.value.trim().toLowerCase());
               Array.from(tbody.rows).forEach(row => {
                 let show = true;
                 filters.forEach((filter, idx) => {
                   if (filter !== '') {
-                    const cell = row.cells[idx + 1]; // +1 to skip Photo column
-                    if (cell && !cell.textContent.toLowerCase().includes(filter)) {
-                      show = false;
-                    }
+                    const cell = row.cells[idx + 1];
+                    if (cell && !cell.textContent.toLowerCase().includes(filter)) show = false;
                   }
                 });
                 row.style.display = show ? '' : 'none';
               });
             }
+
+            colHeaders.forEach(header => {
+              header.addEventListener('click', () => {
+                const idx = Number(header.dataset.colIndex);
+                const hidden = getHiddenCols();
+                if (hidden.has(idx)) hidden.delete(idx);
+                else hidden.add(idx);
+                saveHiddenCols(hidden);
+                applyColumnVisibility();
+              });
+            });
+
+            if (resetBtn) {
+              resetBtn.addEventListener('click', () => {
+                localStorage.removeItem(hiddenColsKey);
+                applyColumnVisibility();
+              });
+            }
+
+            if (compactToggle) {
+              compactToggle.checked = localStorage.getItem(compactKey) === '1';
+              table.classList.toggle('table-xs', compactToggle.checked);
+              compactToggle.addEventListener('change', () => {
+                localStorage.setItem(compactKey, compactToggle.checked ? '1' : '0');
+                table.classList.toggle('table-xs', compactToggle.checked);
+              });
+            }
+
             filterInputs.forEach(input => input.addEventListener('input', filterTable));
+            document.body.addEventListener('htmx:afterSwap', function(evt) {
+              if (evt.target && evt.target.id === 'props-tbody') {
+                applyColumnVisibility();
+                filterTable();
+              }
+            });
+
+            applyColumnVisibility();
           });
           </script>
         </body>
@@ -205,40 +275,23 @@ void runServer() {
         callback(resp);
       });
 
-  /**
-   * 2) Serve a partial <tbody> at GET "/propertiesRows"
-   *    - We'll read properties.json, build <tr> rows, and return them.
-   */
   app().registerHandler(
       "/propertiesRows",
       [](const HttpRequestPtr &req,
          std::function<void(const HttpResponsePtr &)> &&callback) {
         std::string rows = buildPropertiesTableRows();
         auto resp = HttpResponse::newHttpResponse();
-        // We return just the rows (partial HTML)
         resp->setContentTypeCode(CT_TEXT_HTML);
         resp->setBody(rows);
         callback(resp);
       });
 
   auto loop = app().getLoop();
-
-  // Schedule the scraper task
   scheduleDailyScraper(loop);
 
-  /* make everything in ../src/raw_images/ available under
-   http://<host>:8080/images/<file> */
-  app().addALocation("/images", // URI prefix
-                     "",        // default mime‑type (auto)
-                     "../src/raw_images", true,
-                     true); // the real folder on disk
-
-  // Start Drogon server (on port 8080 by default if no config)
+  app().addALocation("/images", "", "../src/raw_images", true, true);
   app().addListener("0.0.0.0", 8080);
   app().run();
 }
 
 } // namespace HT
-  // namespace HT
-
-
