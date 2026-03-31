@@ -214,14 +214,56 @@ void runServer() {
               });
             }
 
+            const numericFilterIdx = new Set([4, 5, 6, 9, 10, 11, 14, 15, 16, 17]);
+
+            function parseCellNumber(text) {
+              const cleaned = (text || '').replace(/[^0-9.-]/g, '');
+              if (cleaned === '' || cleaned === '-' || cleaned === '.') return NaN;
+              return Number(cleaned);
+            }
+
+            function matchesNumericFilter(filterText, cellText) {
+              const cellNumber = parseCellNumber(cellText);
+              if (Number.isNaN(cellNumber)) return false;
+
+              const m = filterText.match(/^(>=|<=|>|<|=|!=)\s*(-?\d+(?:\.\d+)?)$/);
+              if (m) {
+                const op = m[1];
+                const value = Number(m[2]);
+                if (op === '>') return cellNumber > value;
+                if (op === '<') return cellNumber < value;
+                if (op === '>=') return cellNumber >= value;
+                if (op === '<=') return cellNumber <= value;
+                if (op === '=') return cellNumber === value;
+                if (op === '!=') return cellNumber !== value;
+              }
+
+              const numericOnly = filterText.match(/^-?\d+(?:\.\d+)?$/);
+              if (numericOnly) {
+                return cellNumber === Number(filterText);
+              }
+
+              return null;
+            }
+
             function filterTable() {
-              const filters = Array.from(filterInputs).map(input => input.value.trim().toLowerCase());
+              const filters = Array.from(filterInputs).map(input => input.value.trim());
               Array.from(tbody.rows).forEach(row => {
                 let show = true;
                 filters.forEach((filter, idx) => {
                   if (filter !== '') {
                     const cell = row.cells[idx + 1];
-                    if (cell && !cell.textContent.toLowerCase().includes(filter)) show = false;
+                    if (!cell) return;
+
+                    if (numericFilterIdx.has(idx)) {
+                      const numericMatch = matchesNumericFilter(filter, cell.textContent);
+                      if (numericMatch !== null) {
+                        if (!numericMatch) show = false;
+                        return;
+                      }
+                    }
+
+                    if (!cell.textContent.toLowerCase().includes(filter.toLowerCase())) show = false;
                   }
                 });
                 row.style.display = show ? '' : 'none';
