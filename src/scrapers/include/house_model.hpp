@@ -52,6 +52,7 @@ struct Property {
   std::string validDate;
   std::string date;
   std::string addedDate;
+  std::string archivedDate;
   int buildingSize;
   int landSize;
   int room;

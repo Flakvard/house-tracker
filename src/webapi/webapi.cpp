@@ -16,14 +16,14 @@ using json = nlohmann::json;
 std::string buildPropertiesTableRows() {
   std::ifstream ifs("../src/storage/properties.json");
   if (!ifs.is_open()) {
-    return "<tr><td colspan='20'>Could not open properties.json</td></tr>";
+    return "<tr><td colspan='23'>Could not open properties.json</td></tr>";
   }
 
   json j;
   try {
     ifs >> j;
   } catch (std::exception &e) {
-    return std::string("<tr><td colspan='20'>JSON parse error: ") + e.what() +
+    return std::string("<tr><td colspan='23'>JSON parse error: ") + e.what() +
            "</td></tr>";
   }
 
@@ -46,6 +46,7 @@ std::string buildPropertiesTableRows() {
     int latestOffer = item.value("latestOffer", 0);
     std::string yearBuilt = item.value("yearBuilt", "");
     std::string addedDate = item.value("addedDate", "");
+    std::string archivedDate = item.value("archivedDate", "");
     std::string validDate = item.value("validDate", "");
     int insideM2 = item.value("insideM2", 0);
     int landM2 = item.value("landM2", 0);
@@ -69,6 +70,10 @@ std::string buildPropertiesTableRows() {
          << "  <td class=\"w-32\">" << latestOffer << "</td>\n"
          << "  <td class=\"w-32\">" << yearBuilt << "</td>\n"
          << "  <td class=\"w-32\">" << addedDate << "</td>\n"
+         << "  <td class=\"w-32 archived-date-cell\">" << archivedDate
+         << "</td>\n"
+         << "  <td class=\"w-24 days-listed-cell\"></td>\n"
+         << "  <td class=\"w-24 days-until-sold-cell\"></td>\n"
          << "  <td class=\"w-48\">" << validDate << "</td>\n"
          << "  <td class=\"w-32\">" << insideM2 << "</td>\n"
          << "  <td class=\"w-32\">" << landM2 << "</td>\n"
@@ -140,16 +145,19 @@ void runServer() {
                   <th class="bg-base-200 col-toggle" data-col-index="7">Latest Offer</th>
                   <th class="bg-base-200 col-toggle" data-col-index="8">Year Built</th>
                   <th class="bg-base-200 col-toggle" data-col-index="9">Added Date</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="10">Valid Date</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="11">Inside m2</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="12">Land m2</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="13">Rooms</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="14">Website</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="15">Status</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="16">Offer/Inside m2</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="17">Offer/Land m2</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="18">Price/Inside m2</th>
-                  <th class="bg-base-200 col-toggle" data-col-index="19">Price/Land m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="10">Archived Date</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="11">Days Listed</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="12">Days Until Sold</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="13">Valid Date</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="14">Inside m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="15">Land m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="16">Rooms</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="17">Website</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="18">Status</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="19">Offer/Inside m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="20">Offer/Land m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="21">Price/Inside m2</th>
+                  <th class="bg-base-200 col-toggle" data-col-index="22">Price/Land m2</th>
                 </tr>
                 <tr>
                   <th></th>
@@ -162,16 +170,19 @@ void runServer() {
                   <th><input type="text" class="input input-xs w-full" placeholder="Offer" data-filter-col="7"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Year Built" data-filter-col="8"></th>
                   <th><input type="text" class="input input-xs w-full" placeholder="Added Date" data-filter-col="9"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Valid Date" data-filter-col="10"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Inside m2" data-filter-col="11"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Land m2" data-filter-col="12"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Rooms" data-filter-col="13"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Website" data-filter-col="14"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Status" data-filter-col="15"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Offer/Inside" data-filter-col="16"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Offer/Land" data-filter-col="17"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Price/Inside" data-filter-col="18"></th>
-                  <th><input type="text" class="input input-xs w-full" placeholder="Price/Land" data-filter-col="19"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Archived Date" data-filter-col="10"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Days Listed" data-filter-col="11"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Days Until Sold" data-filter-col="12"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Valid Date" data-filter-col="13"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Inside m2" data-filter-col="14"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Land m2" data-filter-col="15"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Rooms" data-filter-col="16"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Website" data-filter-col="17"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Status" data-filter-col="18"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Offer/Inside" data-filter-col="19"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Offer/Land" data-filter-col="20"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Price/Inside" data-filter-col="21"></th>
+                  <th><input type="text" class="input input-xs w-full" placeholder="Price/Land" data-filter-col="22"></th>
                 </tr>
               </thead>
               <tbody id="props-tbody"></tbody>
@@ -218,7 +229,38 @@ void runServer() {
               });
             }
 
-            const numericFilterIdx = new Set([4, 5, 6, 10, 11, 12, 15, 16, 17, 18, 19]);
+            const numericFilterIdx = new Set([4, 5, 6, 11, 12, 14, 15, 16, 19, 20, 21, 22]);
+
+            function parseIsoDate(text) {
+              if (!text) return null;
+              const trimmed = text.trim();
+              if (!/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) return null;
+              const date = new Date(trimmed + 'T00:00:00');
+              return Number.isNaN(date.getTime()) ? null : date;
+            }
+
+            function diffDays(startDate, endDate) {
+              if (!startDate || !endDate) return '';
+              const msPerDay = 24 * 60 * 60 * 1000;
+              return Math.floor((endDate - startDate) / msPerDay);
+            }
+
+            function updateDerivedDayColumns() {
+              const today = new Date();
+              today.setHours(0, 0, 0, 0);
+
+              Array.from(tbody.rows).forEach(row => {
+                const addedDate = parseIsoDate(row.cells[9] ? row.cells[9].textContent : '');
+                const archivedDate = parseIsoDate(row.cells[10] ? row.cells[10].textContent : '');
+                if (row.cells[11]) {
+                  row.cells[11].textContent = addedDate ? String(diffDays(addedDate, today)) : '';
+                }
+                if (row.cells[12]) {
+                  row.cells[12].textContent =
+                      addedDate && archivedDate ? String(diffDays(addedDate, archivedDate)) : '';
+                }
+              });
+            }
 
             function parseCellNumber(text) {
               const cleaned = (text || '').replace(/[^0-9.-]/g, '');
@@ -304,11 +346,13 @@ void runServer() {
             filterInputs.forEach(input => input.addEventListener('input', filterTable));
             document.body.addEventListener('htmx:afterSwap', function(evt) {
               if (evt.target && evt.target.id === 'props-tbody') {
+                updateDerivedDayColumns();
                 applyColumnVisibility();
                 filterTable();
               }
             });
 
+            updateDerivedDayColumns();
             applyColumnVisibility();
           });
           </script>

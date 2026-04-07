@@ -335,6 +335,7 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
   std::unordered_map<std::string, long long> latestTimestampByUrl;
   std::unordered_map<std::string, std::filesystem::path> latestPathByUrl;
   std::unordered_map<std::string, long long> firstSeenTimestampById;
+  std::unordered_map<std::string, long long> lastSeenTimestampById;
 
   for (const auto &path : htmlFiles) {
     std::ifstream ifs(path);
@@ -411,6 +412,11 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
       if (seenIt == firstSeenTimestampById.end() || timestamp < seenIt->second) {
         firstSeenTimestampById[prop.id] = timestamp;
       }
+      auto lastSeenIt = lastSeenTimestampById.find(prop.id);
+      if (lastSeenIt == lastSeenTimestampById.end() ||
+          timestamp > lastSeenIt->second) {
+        lastSeenTimestampById[prop.id] = timestamp;
+      }
     }
 
     auto latestIt = latestPathByUrl.find(website);
@@ -437,8 +443,13 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     }
     if (activePropertyIds.find(prop.id) != activePropertyIds.end()) {
       prop.status = "active";
+      prop.archivedDate.clear();
     } else {
       prop.status = "archived";
+      auto lastSeenIt = lastSeenTimestampById.find(prop.id);
+      if (lastSeenIt != lastSeenTimestampById.end()) {
+        prop.archivedDate = formatTimestampAsDate(lastSeenIt->second);
+      }
     }
   }
 }

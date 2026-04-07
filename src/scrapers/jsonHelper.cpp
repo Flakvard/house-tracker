@@ -48,6 +48,7 @@ nlohmann::json propertyToJson(const Property &prop) {
   j["validDate"] = prop.validDate;
   j["yearBuilt"] = prop.date;
   j["addedDate"] = prop.addedDate;
+  j["archivedDate"] = prop.archivedDate;
   j["insideM2"] = prop.buildingSize;
   j["landM2"] = prop.landSize;
   j["rooms"] = prop.room;
@@ -76,6 +77,7 @@ Property jsonToProperty(const nlohmann::json &j) {
   p.validDate = j.value("validDate", "");
   p.date = j.value("yearBuilt", "");
   p.addedDate = j.value("addedDate", "");
+  p.archivedDate = j.value("archivedDate", "");
 
   p.buildingSize = safeGetInt(j, "insideM2");
   p.landSize = safeGetInt(j, "landM2");
