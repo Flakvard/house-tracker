@@ -1,4 +1,6 @@
+#include <ctime>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <iterator>
 #include <nlohmann/json.hpp>
@@ -15,6 +17,7 @@
 #include <scrapers/skyn/skynParser.hpp>
 #include <scrapers/skyn/skynScraper.hpp>
 #include <regex>
+#include <sstream>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
@@ -29,6 +32,23 @@ std::string trim(const std::string &s) {
   }
   const auto last = s.find_last_not_of(" \t\r\n");
   return s.substr(first, last - first + 1);
+}
+
+std::string formatTimestampAsDate(long long timestamp) {
+  if (timestamp <= 0) {
+    return "";
+  }
+
+  std::time_t t = static_cast<std::time_t>(timestamp);
+  std::tm tm{};
+#ifdef _WIN32
+  localtime_s(&tm, &t);
+#else
+  localtime_r(&t, &tm);
+#endif
+  std::ostringstream oss;
+  oss << std::put_time(&tm, "%Y-%m-%d");
+  return oss.str();
 }
 
 void normalizeBetriCityAndAddress(Property &prop) {
@@ -314,6 +334,7 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     std::vector<std::filesystem::path> htmlFiles) {
   std::unordered_map<std::string, long long> latestTimestampByUrl;
   std::unordered_map<std::string, std::filesystem::path> latestPathByUrl;
+  std::unordered_map<std::string, long long> firstSeenTimestampById;
 
   for (const auto &path : htmlFiles) {
     std::ifstream ifs(path);
@@ -358,6 +379,7 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
         PropertyManager::stringToPropertyType(j.value("type", ""));
 
     std::string website = j.value("url", "");
+    const long long timestamp = j.value("timestamp", 0LL);
     // if (website != url || website.empty())
     //   continue;
 
@@ -384,6 +406,13 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
     std::vector<Property> newProperties =
         mapRawPropertiesTilProperties(newRawProperties);
 
+    for (const auto &prop : newProperties) {
+      auto seenIt = firstSeenTimestampById.find(prop.id);
+      if (seenIt == firstSeenTimestampById.end() || timestamp < seenIt->second) {
+        firstSeenTimestampById[prop.id] = timestamp;
+      }
+    }
+
     auto latestIt = latestPathByUrl.find(website);
     if (latestIt != latestPathByUrl.end() && path == latestIt->second) {
       for (const auto &prop : newProperties) {
@@ -400,6 +429,12 @@ void PropertyManager::traverseAllHtmlAndMergeProperties(
 
   for (auto &prop : allProperties) {
     normalizeBetriCityAndAddress(prop);
+    if (prop.addedDate.empty()) {
+      auto firstSeenIt = firstSeenTimestampById.find(prop.id);
+      if (firstSeenIt != firstSeenTimestampById.end()) {
+        prop.addedDate = formatTimestampAsDate(firstSeenIt->second);
+      }
+    }
     if (activePropertyIds.find(prop.id) != activePropertyIds.end()) {
       prop.status = "active";
     } else {

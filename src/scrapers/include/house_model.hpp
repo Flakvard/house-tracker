@@ -51,6 +51,7 @@ struct Property {
   int latestOffer;                 // or convert to int if you want
   std::string validDate;
   std::string date;
+  std::string addedDate;
   int buildingSize;
   int landSize;
   int room;

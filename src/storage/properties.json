@@ -1,5 +1,6 @@
 [
     {
+        "addedDate": "2025-04-03",
         "address": "Eystanvegur 3 210 Sandur",
         "agent": "Betri",
         "city": "Sandur",
@@ -22,6 +23,7 @@
         "yearBuilt": "Bygd Uml. 1996"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Mýrigøta 3 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -41,6 +43,7 @@
         "yearBuilt": "Bygd 1954"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Toftanes 30 520 Leirvík",
         "agent": "Betri",
         "city": "Leirvík",
@@ -60,6 +63,7 @@
         "yearBuilt": "Bygd 1958"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Argjavegur 18 160 Argir",
         "agent": "Betri",
         "city": "Argir",
@@ -79,6 +83,7 @@
         "yearBuilt": "Bygd 1932"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Bakkavegur 151 350 Vestmanna",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -101,6 +106,7 @@
         "yearBuilt": "Bygd 1989"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Heiðaravegur 11 220 Skálavík",
         "agent": "Betri",
         "city": "Skálavík",
@@ -122,6 +128,7 @@
         "yearBuilt": "Bygd 1968"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Skálavegur 185 480 Skála",
         "agent": "Betri",
         "city": "Skála",
@@ -146,6 +153,7 @@
         "yearBuilt": "Bygd 1928"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Tartarlág 6 690 Oyndarfjørður",
         "agent": "Betri",
         "city": "Oyndarfjørður",
@@ -165,6 +173,7 @@
         "yearBuilt": "Bygd 1999"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Kongagøta 7,0 vm 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -184,6 +193,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Søldarfjarðarvegur 32 660 Søldarfjørður",
         "agent": "Betri",
         "city": "Søldarfjørður",
@@ -203,6 +213,7 @@
         "yearBuilt": "Bygd 1978"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Hoygarðsvegur 6 370 Miðvágur",
         "agent": "Betri",
         "city": "Miðvágur",
@@ -224,6 +235,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Lynggøta 8 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -243,6 +255,7 @@
         "yearBuilt": "Bygd 1966"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Undir Nesinum 10 650 Toftir",
         "agent": "Betri",
         "city": "Toftir",
@@ -266,6 +279,7 @@
         "yearBuilt": "Bygd 2001"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Undir Skorum matr nr 27a 825 Froðba",
         "agent": "Betri",
         "city": "Froðba",
@@ -285,6 +299,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Bøgøta 8 970 Sumba",
         "agent": "Betri",
         "city": "Sumba",
@@ -304,6 +319,7 @@
         "yearBuilt": "Bygd 1936"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Bókbindaragøta 38 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -325,6 +341,7 @@
         "yearBuilt": "Bygd 1971"
     },
     {
+        "addedDate": "2025-04-03",
         "address": "Lokkargarðsvegur 5 970 Sumba",
         "agent": "Betri",
         "city": "Sumba",
@@ -344,6 +361,7 @@
         "yearBuilt": "Bygd 1950"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Raðhús í Brekkugerði 21 420 Hósvík",
         "agent": "Betri",
         "city": "Hósvík",
@@ -363,6 +381,7 @@
         "yearBuilt": "Bygd 2024"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "undir Kongavarða 27, 4 vm",
         "agent": "Meklarin",
         "city": "Argir",
@@ -388,6 +407,7 @@
         "yearBuilt": " 7. apr. kl. 14:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Niðari Vegur 63",
         "agent": "Meklarin",
         "city": "Vestmanna",
@@ -411,6 +431,7 @@
         "yearBuilt": " 8. apr. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Marknagilsvegur 50",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -430,6 +451,7 @@
         "yearBuilt": "14. mar. kl. 14:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Jóan Karls gøta 11",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -451,6 +473,7 @@
         "yearBuilt": "26. mar. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Liljuteigur 12",
         "agent": "Meklarin",
         "city": "Sandavágur",
@@ -473,6 +496,7 @@
         "yearBuilt": "21. mar. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "við Todnestanga / á Miðgerði",
         "agent": "Meklarin",
         "city": "Kollafjørður",
@@ -494,6 +518,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Lýðarsvegur 42",
         "agent": "Meklarin",
         "city": "Toftir",
@@ -517,6 +542,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Toftavegur 2",
         "agent": "Meklarin",
         "city": "Vestmanna",
@@ -538,6 +564,7 @@
         "yearBuilt": "16. okt. kl. 14:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Stoffalág 35",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -557,6 +584,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Norðurhædd 1",
         "agent": "Meklarin",
         "city": "Saltangará",
@@ -576,6 +604,7 @@
         "yearBuilt": "12. mar. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Lyngvegur 7",
         "agent": "Meklarin",
         "city": "Norðskáli",
@@ -598,6 +627,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Smæruteigur 7",
         "agent": "Meklarin",
         "city": "Sandavágur",
@@ -617,6 +647,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Brekkugøta 6",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -639,6 +670,7 @@
         "yearBuilt": " 3. mar. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Í Pálsliða 4B",
         "agent": "Meklarin",
         "city": "Norðragøta",
@@ -660,6 +692,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Inni í Firði 157",
         "agent": "Meklarin",
         "city": "Kollafjørður",
@@ -682,6 +715,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Leitisvegur 70",
         "agent": "Meklarin",
         "city": "Miðvágur",
@@ -701,6 +735,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Líðartún 10A, Ørðavíkarlíð",
         "agent": "Meklarin",
         "city": "Ørðavík",
@@ -720,6 +755,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Jarðarstykki - 402d ",
         "agent": "Meklarin",
         "city": "Kvívík",
@@ -739,6 +775,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Grundstykki - matr.nr. 88e",
         "agent": "Meklarin",
         "city": "Trongisvágur",
@@ -761,6 +798,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Bryggjan 6",
         "agent": "Meklarin",
         "city": "Vágur",
@@ -782,6 +820,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Í Nesi 18",
         "agent": "Meklarin",
         "city": "Sandur",
@@ -801,6 +840,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Mainifløta 14",
         "agent": "Meklarin",
         "city": "Eiði",
@@ -822,6 +862,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Gerðisbreyt 22",
         "agent": "Meklarin",
         "city": "Velbastaður",
@@ -841,6 +882,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Karlamagnusarbreyt 14A, 0. hm",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -860,6 +902,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "við Skálaveg",
         "agent": "Meklarin",
         "city": "Hvalba",
@@ -879,6 +922,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Trøð - matr.nr. 811",
         "agent": "Meklarin",
         "city": "Froðba",
@@ -898,6 +942,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Líðartún 14, Líðin",
         "agent": "Meklarin",
         "city": "Ørðavík",
@@ -917,6 +962,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Valabrekkan 3",
         "agent": "Meklarin",
         "city": "Tvøroyri",
@@ -936,6 +982,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Langatrøð 12",
         "agent": "Meklarin",
         "city": "Vágur",
@@ -957,6 +1004,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Í Syðrutoftum 18",
         "agent": "Meklarin",
         "city": "Trongisvágur",
@@ -976,6 +1024,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Karlamagnusarbreyt 5B 1.4",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -995,6 +1044,7 @@
         "yearBuilt": "24. mar. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Marknoyrarvegur 53",
         "agent": "Meklarin",
         "city": "Vágur",
@@ -1014,6 +1064,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Gerðisbreyt 34",
         "agent": "Meklarin",
         "city": "Velbastaður",
@@ -1033,6 +1084,7 @@
         "yearBuilt": "18. mar. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Heinagøta 4",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -1052,6 +1104,7 @@
         "yearBuilt": "17. mar. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Torvheyggur",
         "agent": "Meklarin",
         "city": "Froðba",
@@ -1071,6 +1124,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Karlamagnusarbreyt 8 3.3",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -1090,6 +1144,7 @@
         "yearBuilt": " 5. mar. kl. 14:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Sivjugøta 7",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -1109,6 +1164,7 @@
         "yearBuilt": " 7. mar. kl. 14:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Berjabrekka 99",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -1128,6 +1184,7 @@
         "yearBuilt": "24. feb. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "við Myllutjørn 28",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -1147,6 +1204,7 @@
         "yearBuilt": "11. feb. kl. 14:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Eiðisvegur 5",
         "agent": "Meklarin",
         "city": "Vágur",
@@ -1166,6 +1224,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Varðabú 14",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -1185,6 +1244,7 @@
         "yearBuilt": " 5. feb. kl. 14:00"
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Lonarstræti 14",
         "agent": "Meklarin",
         "city": "Sandavágur",
@@ -1204,6 +1264,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "Karlamagnusarbreyt 44 0 2",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -1223,6 +1284,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-05",
         "address": "smiðjuvegur 1",
         "agent": "Meklarin",
         "city": "Bøur",
@@ -1242,6 +1304,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-09",
         "address": "við Myllutjørn 62",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -1263,6 +1326,7 @@
         "yearBuilt": "14. apr. kl. 15:00"
     },
     {
+        "addedDate": "2025-04-09",
         "address": "Lýðarsvegur 38 B",
         "agent": "Meklarin",
         "city": "Toftir",
@@ -1282,6 +1346,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Heiðavegur 13 600 Saltangará",
         "agent": "Betri",
         "city": "Saltangará",
@@ -1301,6 +1366,7 @@
         "yearBuilt": "Bygd\n            1987\n          "
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Eyðargøta 2 512 Norðragøta",
         "agent": "Betri",
         "city": "Norðragøta",
@@ -1327,6 +1393,7 @@
         "yearBuilt": "Bygd\n            1932\n          "
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Bókindaragøta 14 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -1346,6 +1413,7 @@
         "yearBuilt": "Bygd\n            1957\n          "
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Jákup Nolsøes gøta 37 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -1367,6 +1435,7 @@
         "yearBuilt": "Bygd\n            1964\n          "
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Undir Grashjalla 50 700 Klaksvík",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -1390,6 +1459,7 @@
         "yearBuilt": "Bygd\n            2022\n          "
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Matr.nr.992s 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -1411,6 +1481,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "í Heygnum 138 826 Trongisvágur",
         "agent": "Betri",
         "city": "Trongisvágur",
@@ -1430,6 +1501,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Ápramsvegur 370 Miðvágur",
         "agent": "Betri",
         "city": "Miðvágur",
@@ -1449,6 +1521,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Við Krossá 6 180 Kaldbak",
         "agent": "Betri",
         "city": "Kaldbak",
@@ -1468,6 +1541,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Gerðisbreyt 21 176 Velbastaður",
         "agent": "Betri",
         "city": "Velbastaður",
@@ -1487,6 +1561,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Hornavegur 4 450 Oyri",
         "agent": "Betri",
         "city": "Oyri",
@@ -1506,6 +1581,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Matr nr 632 í Skopun 240 Skopun",
         "agent": "Betri",
         "city": "Skopun",
@@ -1525,6 +1601,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "Matr. nr. 111a Sørvágur 380 Sørvágur",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -1544,6 +1621,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-10",
         "address": "við Hornaveg, Oyri 400 Oyrarbakki",
         "agent": "Betri",
         "city": "Oyrarbakki",
@@ -1563,6 +1641,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-14",
         "address": "Ovarivegur 11 380 Sørvágur",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -1584,6 +1663,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-14",
         "address": "Matr. 49, Elduvík 478 Elduvík",
         "agent": "Betri",
         "city": "Elduvík",
@@ -1603,6 +1683,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-14",
         "address": "Karlamagnusarbreyt 13B 1 1.2",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -1625,6 +1706,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-15",
         "address": "Dalagøta 27 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -1646,6 +1728,7 @@
         "yearBuilt": "Bygd\n            1973\n          "
     },
     {
+        "addedDate": "",
         "address": "",
         "agent": "Betri",
         "city": "",
@@ -1665,6 +1748,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Dýrindalsgøta 62",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -1684,6 +1768,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Undir Grashjalla 11",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -1703,6 +1788,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Heiðavegur 24",
         "agent": "Skyn",
         "city": "Norðskáli",
@@ -1722,6 +1808,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "matr.nr. 65b",
         "agent": "Skyn",
         "city": "Skálavík",
@@ -1746,6 +1833,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Niels Finsens gøta 23A",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -1765,6 +1853,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Ólavsvegur 10",
         "agent": "Skyn",
         "city": "Toftir",
@@ -1784,6 +1873,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "matr.nr. 93a Skálavík",
         "agent": "Skyn",
         "city": "Skálavík",
@@ -1803,6 +1893,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "matr. nr. 15h Norðoyri",
         "agent": "Skyn",
         "city": "Norðoyri",
@@ -1824,6 +1915,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Heimastivegur 4",
         "agent": "Skyn",
         "city": "Skálavík",
@@ -1846,6 +1938,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Kirkjatún 1",
         "agent": "Skyn",
         "city": "Miðvágur",
@@ -1865,6 +1958,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Heiðavegur 91",
         "agent": "Skyn",
         "city": "Saltangará",
@@ -1890,6 +1984,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Tungugøta 3",
         "agent": "Skyn",
         "city": "Fuglafjørður",
@@ -1916,6 +2011,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Toftanesvegur 12",
         "agent": "Skyn",
         "city": "Fuglafjørður",
@@ -1942,6 +2038,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Skúlavegur 17",
         "agent": "Skyn",
         "city": "Oyrarbakki",
@@ -1961,6 +2058,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Víkarvegur 40",
         "agent": "Skyn",
         "city": "Kvívík",
@@ -1982,6 +2080,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Smillavegur 10",
         "agent": "Skyn",
         "city": "Vágur",
@@ -2004,6 +2103,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Tinghúsvegur 34",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -2027,6 +2127,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Skipara Hansens gøta 6",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -2046,6 +2147,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Høganesvegur 42",
         "agent": "Skyn",
         "city": "Toftir",
@@ -2065,6 +2167,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Froðbiarvegur 20",
         "agent": "Skyn",
         "city": "Froðba",
@@ -2087,6 +2190,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Uppsalagøta 45",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -2109,6 +2213,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Gjógvarávegur 41",
         "agent": "Skyn",
         "city": "Vágur",
@@ -2128,6 +2233,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "í Túni 16",
         "agent": "Skyn",
         "city": "Nólsoy",
@@ -2149,6 +2255,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Uppi á Váli 12",
         "agent": "Skyn",
         "city": "Svínoy",
@@ -2170,6 +2277,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Niðari Vegur 78",
         "agent": "Skyn",
         "city": "Skipanes",
@@ -2189,6 +2297,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Eiðisvegur 16",
         "agent": "Skyn",
         "city": "Vágur",
@@ -2211,6 +2320,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Torkilskrókur 8",
         "agent": "Skyn",
         "city": "Fuglafjørður",
@@ -2230,6 +2340,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Dalsvegur 20",
         "agent": "Skyn",
         "city": "Dalur",
@@ -2251,6 +2362,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Billugøta 8",
         "agent": "Skyn",
         "city": "Argir",
@@ -2270,6 +2382,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Leitisvegur 9",
         "agent": "Skyn",
         "city": "Saltangará",
@@ -2289,6 +2402,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Edmundstrøð 12",
         "agent": "Skyn",
         "city": "Ánirnar",
@@ -2312,6 +2426,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Kommunubrekka 10A",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -2331,6 +2446,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Á Høvdanum 53",
         "agent": "Skyn",
         "city": "Froðba",
@@ -2350,6 +2466,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "J.C. Svabos gøta 10",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -2369,6 +2486,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Undir Borgarhálsi 44",
         "agent": "Skyn",
         "city": "Velbastaður",
@@ -2390,6 +2508,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Myllágøta 7",
         "agent": "Skyn",
         "city": "Langasandur",
@@ -2409,6 +2528,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Við Grástein 3",
         "agent": "Skyn",
         "city": "Hvalvík",
@@ -2428,6 +2548,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Hornavegur 12",
         "agent": "Skyn",
         "city": "Oyri",
@@ -2447,6 +2568,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "við Krossá 5",
         "agent": "Skyn",
         "city": "Kaldbak",
@@ -2468,6 +2590,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Høganesvegur 26",
         "agent": "Skyn",
         "city": "Toftir",
@@ -2492,6 +2615,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "við Høgnaheyggj 2",
         "agent": "Skyn",
         "city": "Glyvrar",
@@ -2513,6 +2637,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Matr. nr. 263b",
         "agent": "Skyn",
         "city": "Strendur",
@@ -2534,6 +2659,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "matr. nr. 255s",
         "agent": "Skyn",
         "city": "Vestmanna",
@@ -2555,6 +2681,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Heiðatrøðin 24",
         "agent": "Skyn",
         "city": "Tvøroyri",
@@ -2576,6 +2703,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "matr.nr. 21f",
         "agent": "Skyn",
         "city": "Leynar",
@@ -2597,6 +2725,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Klaksvíksvegur 59",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -2616,6 +2745,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "matr.nr. 1350a",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -2635,6 +2765,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "matr.nr. 159d",
         "agent": "Skyn",
         "city": "Nólsoy",
@@ -2654,6 +2785,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Matr.nr. 12",
         "agent": "Skyn",
         "city": "Funningur",
@@ -2675,6 +2807,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Matr. nr. 34a Húsavík",
         "agent": "Skyn",
         "city": "Húsavík",
@@ -2696,6 +2829,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "matr.nr. 31",
         "agent": "Skyn",
         "city": "Ørðavík",
@@ -2715,6 +2849,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-17",
         "address": "Jørð til grundøkir omanfyri Múlaklett",
         "agent": "Skyn",
         "city": "Eiði",
@@ -2734,6 +2869,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-21",
         "address": "Ovari Vegur 13",
         "agent": "Meklarin",
         "city": "Vestmanna",
@@ -2757,6 +2893,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-23",
         "address": "Høganesvegur 52",
         "agent": "Skyn",
         "city": "Toftir",
@@ -2779,6 +2916,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-24",
         "address": "Kvíggjarvegur 23",
         "agent": "Skyn",
         "city": "Oyndarfjørður",
@@ -2803,6 +2941,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-24",
         "address": "Inni á Fjósi 2",
         "agent": "Skyn",
         "city": "Kirkjubøur",
@@ -2822,6 +2961,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-25",
         "address": "í Garðinum 10",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -2843,6 +2983,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-28",
         "address": "Stoffalág 68",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -2862,6 +3003,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-29",
         "address": "Oyrarbakkavegur",
         "agent": "Meklarin",
         "city": "Oyrarbakki",
@@ -2881,6 +3023,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-29",
         "address": "Niðari Vegur 6",
         "agent": "Skyn",
         "city": "Søldarfjørður",
@@ -2904,6 +3047,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-29",
         "address": "Einarsvegur 1",
         "agent": "Skyn",
         "city": "Skúvoy",
@@ -2925,6 +3069,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-29",
         "address": "Jatnavegur 77",
         "agent": "Skyn",
         "city": "Miðvágur",
@@ -2953,6 +3098,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-30",
         "address": "Lyngvegur 15",
         "agent": "Skyn",
         "city": "Norðskáli",
@@ -2977,6 +3123,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-01",
         "address": "Kvíggjartún 8",
         "agent": "Meklarin",
         "city": "Argir",
@@ -2996,6 +3143,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-02",
         "address": "Gaddavegur 50",
         "agent": "Skyn",
         "city": "Nes",
@@ -3019,6 +3167,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-02",
         "address": "Yviri við Strond 33",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -3040,6 +3189,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-05",
         "address": "Baraldsgøta 14",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -3067,6 +3217,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-07",
         "address": "Kulibakki 7",
         "agent": "Meklarin",
         "city": "Leirvík",
@@ -3086,6 +3237,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-07",
         "address": "Matr.nr. 877f Tórshavn",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -3112,6 +3264,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-08",
         "address": "matr.nr. 244a",
         "agent": "Skyn",
         "city": "Sandavágur",
@@ -3135,6 +3288,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-09",
         "address": "undir Kongavarða 30",
         "agent": "Meklarin",
         "city": "Argir",
@@ -3154,6 +3308,7 @@
         "yearBuilt": "13. mai. kl. 14:00"
     },
     {
+        "addedDate": "2025-05-09",
         "address": "Biskupsstøðgøta 12 / Marknavegur 1",
         "agent": "Meklarin",
         "city": "Klaksvík",
@@ -3177,6 +3332,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-09",
         "address": "Ingibjargargøta 2C",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -3198,6 +3354,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-09",
         "address": "Ovarivegur 36",
         "agent": "Skyn",
         "city": "Sumba",
@@ -3217,6 +3374,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-13",
         "address": "Kvíggjartún 14",
         "agent": "Meklarin",
         "city": "Argir",
@@ -3236,6 +3394,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-19",
         "address": "Heinagøta 8",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -3264,6 +3423,7 @@
         "yearBuilt": "21. mai. kl. 14:00"
     },
     {
+        "addedDate": "2025-05-19",
         "address": "á Hvítanesi 41",
         "agent": "Meklarin",
         "city": "Hvítanes",
@@ -3285,6 +3445,7 @@
         "yearBuilt": "20. mai. kl. 16:00"
     },
     {
+        "addedDate": "2025-05-20",
         "address": "Breiðablik 3",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -3304,6 +3465,7 @@
         "yearBuilt": "22. mai. kl. 14:00"
     },
     {
+        "addedDate": "2025-05-21",
         "address": "Jústabrekka 1",
         "agent": "Meklarin",
         "city": "Klaksvík",
@@ -3326,6 +3488,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-23",
         "address": "á Fløtti 2",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -3347,6 +3510,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-26",
         "address": "Hvalvíksvegur 57",
         "agent": "Meklarin",
         "city": "Hvalvík",
@@ -3370,6 +3534,7 @@
         "yearBuilt": "30. mai. kl. 15:00"
     },
     {
+        "addedDate": "2025-05-26",
         "address": "matr.nr. 518",
         "agent": "Skyn",
         "city": "Skála",
@@ -3393,6 +3558,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-28",
         "address": "Ingibjargargæta 4E",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -3414,6 +3580,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-28",
         "address": "Heimasandsvegur 21",
         "agent": "Skyn",
         "city": "Sandur",
@@ -3433,6 +3600,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-29",
         "address": "Djóna í Geil gøta 42,1.th.",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -3455,6 +3623,7 @@
         "yearBuilt": " 3. jun. kl. 15:00"
     },
     {
+        "addedDate": "2025-05-29",
         "address": "Trappugøta 1",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -3474,6 +3643,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-29",
         "address": "Við Marknoyrarveg",
         "agent": "Meklarin",
         "city": "Vágur",
@@ -3495,6 +3665,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-30",
         "address": "Í Pálsliða 2A",
         "agent": "Meklarin",
         "city": "Norðragøta",
@@ -3517,6 +3688,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-02",
         "address": "Gerðisvegur 41",
         "agent": "Skyn",
         "city": "Saltangará",
@@ -3541,6 +3713,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-09",
         "address": "Søldarfjarðarvegur 33",
         "agent": "Meklarin",
         "city": "Søldarfjørður",
@@ -3562,6 +3735,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-09",
         "address": "Karlamagnusarbreyt 27K",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -3581,6 +3755,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-10",
         "address": "Blómubrekka 20",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -3604,6 +3779,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-10",
         "address": "Sjógøta 10",
         "agent": "Skyn",
         "city": "Sumba",
@@ -3627,6 +3803,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-11",
         "address": "Úti í Bø 21",
         "agent": "Skyn",
         "city": "Syðrugøta",
@@ -3655,6 +3832,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-12",
         "address": "Karlamagnusarbreyt 13B 1.3",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -3674,6 +3852,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-12",
         "address": "Neyst - Álaker",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -3693,6 +3872,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-12",
         "address": "Karlamagnusarbreyt 39,1.2",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -3715,6 +3895,7 @@
         "yearBuilt": "16. jun. kl. 15:00"
     },
     {
+        "addedDate": "2025-06-13",
         "address": "Rættarvegur 14",
         "agent": "Meklarin",
         "city": "Hósvík",
@@ -3742,6 +3923,7 @@
         "yearBuilt": "18. jun. kl. 15:00"
     },
     {
+        "addedDate": "2025-06-13",
         "address": "Polatrøð 5",
         "agent": "Meklarin",
         "city": "Kollafjørður",
@@ -3763,6 +3945,7 @@
         "yearBuilt": "17. jun. kl. 15:00"
     },
     {
+        "addedDate": "2025-06-13",
         "address": "Korndalsvegur 20",
         "agent": "Skyn",
         "city": "Eiði",
@@ -3789,6 +3972,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-16",
         "address": "undir Kongavarða 130",
         "agent": "Meklarin",
         "city": "Argir",
@@ -3808,6 +3992,7 @@
         "yearBuilt": "18. jun. kl. 15:00"
     },
     {
+        "addedDate": "2025-06-16",
         "address": "Hoyvíksvegur 12",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -3830,6 +4015,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-16",
         "address": "Toftanes 46",
         "agent": "Skyn",
         "city": "Leirvík",
@@ -3851,6 +4037,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-17",
         "address": "Torvheyggjur 37",
         "agent": "Meklarin",
         "city": "Tvøroyri - Froðba",
@@ -3874,6 +4061,7 @@
         "yearBuilt": "19. jun. kl. 15:00"
     },
     {
+        "addedDate": "2025-06-23",
         "address": "Matr.nr. 165a",
         "agent": "Meklarin",
         "city": "Sandavágur",
@@ -3898,6 +4086,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-23",
         "address": "Karlamagnusarbreyt 42, 2.4",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -3919,6 +4108,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-23",
         "address": "Argjavegur 22",
         "agent": "Skyn",
         "city": "Argir",
@@ -3938,6 +4128,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-24",
         "address": "Kongabrekkan 17 ",
         "agent": "Meklarin",
         "city": "Tvøroyri",
@@ -3960,6 +4151,7 @@
         "yearBuilt": "26. jun. kl. 15:00"
     },
     {
+        "addedDate": "2025-06-24",
         "address": "Múlheiðar 29",
         "agent": "Skyn",
         "city": "Leynar",
@@ -3979,6 +4171,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-25",
         "address": "í Lambabyrgi 8",
         "agent": "Skyn",
         "city": "Trongisvágur",
@@ -4004,6 +4197,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-26",
         "address": "Bakkavegur 86",
         "agent": "Meklarin",
         "city": "Vestmanna",
@@ -4029,6 +4223,7 @@
         "yearBuilt": "30. jun. kl. 16:00"
     },
     {
+        "addedDate": "2025-06-26",
         "address": "Bakkavegur 84",
         "agent": "Meklarin",
         "city": "Vestmanna",
@@ -4052,6 +4247,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-26",
         "address": "á Sondum 18",
         "agent": "Skyn",
         "city": "Sandavágur",
@@ -4076,6 +4272,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-27",
         "address": "Klovavegur 6",
         "agent": "Skyn",
         "city": "Søldarfjørður",
@@ -4099,6 +4296,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-27",
         "address": "matr.nr. 94a og matr.nr. 214",
         "agent": "Skyn",
         "city": "Porkeri",
@@ -4120,6 +4318,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-06-30",
         "address": "",
         "agent": "Meklarin",
         "city": "Skála",
@@ -4141,6 +4340,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-04",
         "address": "Rituvíkarvegur 29",
         "agent": "Skyn",
         "city": "Rituvík",
@@ -4162,6 +4362,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-04",
         "address": "Salvarávegur 9",
         "agent": "Skyn",
         "city": "Syðrugøta",
@@ -4183,6 +4384,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-07",
         "address": "Agnið 15",
         "agent": "Skyn",
         "city": "Nes",
@@ -4202,6 +4404,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-09",
         "address": "Undir Hamri 23",
         "agent": "Meklarin",
         "city": "Hvalvík ",
@@ -4221,6 +4424,7 @@
         "yearBuilt": "14. jul. kl. 16:00"
     },
     {
+        "addedDate": "2025-07-09",
         "address": "Símunargøta 4",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -4242,6 +4446,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-09",
         "address": "matr.nr. 109a",
         "agent": "Skyn",
         "city": "Strendur",
@@ -4266,6 +4471,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-14",
         "address": "Regnavegur 33",
         "agent": "Skyn",
         "city": "Toftir",
@@ -4287,6 +4493,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-16",
         "address": "Skrivaragøta 5",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -4314,6 +4521,7 @@
         "yearBuilt": "18. jul. kl. 16:00"
     },
     {
+        "addedDate": "2025-07-18",
         "address": "Undir Hamri 23",
         "agent": "Meklarin",
         "city": "Hvalvík ",
@@ -4333,6 +4541,7 @@
         "yearBuilt": "14. jul. kl. 16:00"
     },
     {
+        "addedDate": "2025-07-18",
         "address": "Kráarvegur 13, Kambsdalur",
         "agent": "Skyn",
         "city": "Fuglafjørður",
@@ -4361,6 +4570,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-21",
         "address": "Á Eystaru Hellu 14",
         "agent": "Meklarin",
         "city": "Kvívík",
@@ -4383,6 +4593,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-22",
         "address": "Á Svartafossi 4",
         "agent": "Meklarin",
         "city": "Sørvágur",
@@ -4416,6 +4627,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-22",
         "address": "Válagøta 23",
         "agent": "Skyn",
         "city": "Nólsoy",
@@ -4435,6 +4647,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-23",
         "address": "við Leitisstein 2 og 4",
         "agent": "Meklarin",
         "city": "Norðragøta",
@@ -4454,6 +4667,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-23",
         "address": "í Mýrunum við Smærugøtu",
         "agent": "Meklarin",
         "city": "Trongisvágur",
@@ -4473,6 +4687,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-23",
         "address": "Guðrunartún 6 og matr.nr. 45p",
         "agent": "Skyn",
         "city": "Vestmanna",
@@ -4498,6 +4713,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-24",
         "address": "við Leitisstein 4",
         "agent": "Meklarin",
         "city": "Norðragøta",
@@ -4517,6 +4733,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-24",
         "address": "Vágsvegur 17",
         "agent": "Skyn",
         "city": "Vágur",
@@ -4538,6 +4755,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-07-25",
         "address": "Bumshamarsvegur 7",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -4560,6 +4778,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-04",
         "address": "Tvørgøta 3",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -4588,6 +4807,7 @@
         "yearBuilt": " 6. aug. kl. 15:00"
     },
     {
+        "addedDate": "2025-08-04",
         "address": "á Byrgi 23",
         "agent": "Skyn",
         "city": "Strendur",
@@ -4609,6 +4829,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-04",
         "address": "Brattabrekka 4",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -4634,6 +4855,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-05",
         "address": "Uppsalagøta 2",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -4653,6 +4875,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-06",
         "address": "Gróvargøta 26",
         "agent": "Skyn",
         "city": "Syðrugøta",
@@ -4674,6 +4897,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-11",
         "address": "Leitisvegur 50",
         "agent": "Skyn",
         "city": "Miðvágur",
@@ -4696,6 +4920,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-11",
         "address": "Langatrøð 6",
         "agent": "Skyn",
         "city": "Vágur",
@@ -4719,6 +4944,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-11",
         "address": "Sjúkrahúsbrekkan 32",
         "agent": "Skyn",
         "city": "Tvøroyri",
@@ -4749,6 +4975,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-12",
         "address": "Leitisvegur 3",
         "agent": "Skyn",
         "city": "Miðvágur",
@@ -4768,6 +4995,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-14",
         "address": "Trongisvágsvegur",
         "agent": "Meklarin",
         "city": "Trongisvágur",
@@ -4787,6 +5015,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-18",
         "address": "á Oyrareingjum 109",
         "agent": "Meklarin",
         "city": "Oyrareingir",
@@ -4806,6 +5035,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-18",
         "address": "Øksnagerði 7",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -4831,6 +5061,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-18",
         "address": "Vágsvegur 28",
         "agent": "Skyn",
         "city": "Vágur",
@@ -4850,6 +5081,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-18",
         "address": "Mørkin 9",
         "agent": "Skyn",
         "city": "Fuglafjørður",
@@ -4871,6 +5103,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-19",
         "address": "Sævareingir",
         "agent": "Meklarin",
         "city": "Skálavík",
@@ -4893,6 +5126,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-19",
         "address": "Skálavegur 232",
         "agent": "Skyn",
         "city": "Skála",
@@ -4916,6 +5150,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-20",
         "address": "Karlamagnusarbreyt 27M",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -4937,6 +5172,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-20",
         "address": "Hagabrekka 23",
         "agent": "Meklarin",
         "city": "Skálavík",
@@ -4959,6 +5195,7 @@
         "yearBuilt": "22. aug. kl. 15:00"
     },
     {
+        "addedDate": "2025-08-21",
         "address": "Eystan Heyg 17",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -4978,6 +5215,7 @@
         "yearBuilt": "25. aug. kl. 14:00"
     },
     {
+        "addedDate": "2025-08-22",
         "address": "Líðarvegur 13B",
         "agent": "Meklarin",
         "city": "Vágur",
@@ -5000,6 +5238,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-22",
         "address": "Rituvíkarvegur 87",
         "agent": "Skyn",
         "city": "Rituvík",
@@ -5019,6 +5258,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-25",
         "address": "Kirkjubrekkan 19",
         "agent": "Skyn",
         "city": "Tvøroyri",
@@ -5043,6 +5283,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-08-27",
         "address": "Grundstykki - Stoffalág 68",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5064,6 +5305,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-01",
         "address": "Heygalíð 13",
         "agent": "Meklarin",
         "city": "Vestmanna",
@@ -5083,6 +5325,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-04",
         "address": "matr.nr. 82",
         "agent": "Skyn",
         "city": "Selatrað",
@@ -5107,6 +5350,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-05",
         "address": "í Svanga 24",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5135,6 +5379,7 @@
         "yearBuilt": " 8. sept. kl. 14:00"
     },
     {
+        "addedDate": "2025-09-09",
         "address": "Neystagrundstykki í Borðoyavík",
         "agent": "Meklarin",
         "city": "Klaksvík",
@@ -5160,6 +5405,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-10",
         "address": "Maritugøta 127",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -5187,6 +5433,7 @@
         "yearBuilt": "15. sept. kl. 14:00"
     },
     {
+        "addedDate": "2025-09-10",
         "address": "Neyst á Strond",
         "agent": "Meklarin",
         "city": "Klaksvík",
@@ -5219,6 +5466,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-11",
         "address": "Dalavegur 2",
         "agent": "Skyn",
         "city": "Saltangará",
@@ -5243,6 +5491,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-12",
         "address": "Matr.nr. 105c Vágur",
         "agent": "Skyn",
         "city": "Vágur",
@@ -5264,6 +5513,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-15",
         "address": "Høgabólsvegur 2",
         "agent": "Meklarin",
         "city": "Saltangará",
@@ -5285,6 +5535,7 @@
         "yearBuilt": "17. sept. kl. 14:00"
     },
     {
+        "addedDate": "2025-09-15",
         "address": "Grønlandsvegur 32",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5311,6 +5562,7 @@
         "yearBuilt": "16. sept. kl. 15:00"
     },
     {
+        "addedDate": "2025-09-15",
         "address": "Torvgøta 22",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -5333,6 +5585,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-16",
         "address": "Ryskigøta 54",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5357,6 +5610,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-18",
         "address": "Stangavegur 142",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -5378,6 +5632,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-18",
         "address": "Abbatrøð 6",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -5401,6 +5656,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-18",
         "address": "Grunnlendisgøta 4",
         "agent": "Skyn",
         "city": "Oyndarfjørður",
@@ -5420,6 +5676,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-19",
         "address": "Toftagøtan 14",
         "agent": "Skyn",
         "city": "Fuglafjørður",
@@ -5441,6 +5698,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-19",
         "address": "Dungabrekka 7",
         "agent": "Skyn",
         "city": "Sandavágur",
@@ -5462,6 +5720,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-22",
         "address": "Eggjarvegur 32",
         "agent": "Skyn",
         "city": "Viðareiði",
@@ -5481,6 +5740,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-23",
         "address": "Áarrás 12",
         "agent": "Meklarin",
         "city": "Argir",
@@ -5508,6 +5768,7 @@
         "yearBuilt": "25. sept. kl. 15:00"
     },
     {
+        "addedDate": "2025-09-25",
         "address": "Heimasandsvegur 94",
         "agent": "Skyn",
         "city": "Sandur",
@@ -5529,6 +5790,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-25",
         "address": "Klaksvíksvegur 28",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -5548,6 +5810,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-01",
         "address": "undir Heygnum 27",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5572,6 +5835,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-02",
         "address": "Lýðarvegur 46",
         "agent": "Meklarin",
         "city": "Toftir",
@@ -5591,6 +5855,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-02",
         "address": "Bryggjan",
         "agent": "Meklarin",
         "city": "Hósvík",
@@ -5615,6 +5880,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-02",
         "address": "Guðrunartún 9 og matr.nr. 45p",
         "agent": "Skyn",
         "city": "Vestmanna",
@@ -5637,6 +5903,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-03",
         "address": "Billugøta 2",
         "agent": "Skyn",
         "city": "Argir",
@@ -5661,6 +5928,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-03",
         "address": "Norðuri í Sondum 35",
         "agent": "Skyn",
         "city": "Kollafjørður",
@@ -5680,6 +5948,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-03",
         "address": "Traðarvegur 183",
         "agent": "Skyn",
         "city": "Trongisvágur",
@@ -5702,6 +5971,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-03",
         "address": "Ovari Vegur 14",
         "agent": "Skyn",
         "city": "Vestmanna",
@@ -5723,6 +5993,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-06",
         "address": "Ravnsoyargøta 4B",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5748,6 +6019,7 @@
         "yearBuilt": " 7. okt. kl. 15:00"
     },
     {
+        "addedDate": "2025-10-06",
         "address": "Skálavegur 49",
         "agent": "Skyn",
         "city": "Vágur",
@@ -5767,6 +6039,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-08",
         "address": "Norðuri í Sundum 35",
         "agent": "Skyn",
         "city": "Kollafjørður",
@@ -5791,6 +6064,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-09",
         "address": "Giljavegur 44",
         "agent": "Skyn",
         "city": "Sandavágur",
@@ -5812,6 +6086,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-13",
         "address": "Karlamagnusarbreyt 27G",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -5831,6 +6106,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-13",
         "address": "Hjaltarók 17",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5850,6 +6126,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-15",
         "address": "Sundsvegur 13",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5869,6 +6146,7 @@
         "yearBuilt": "20. okt. kl. 14:00"
     },
     {
+        "addedDate": "2025-10-15",
         "address": "Garðavegur 54",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -5890,6 +6168,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-15",
         "address": "Lynggøta 4",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -5914,6 +6193,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-16",
         "address": "Yviri við Strond 99",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -5935,6 +6215,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-17",
         "address": "Ovari Vegur 8",
         "agent": "Meklarin",
         "city": "Leynar",
@@ -5957,6 +6238,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-17",
         "address": "Bøgøta 29",
         "agent": "Skyn",
         "city": "Vestmanna",
@@ -5979,6 +6261,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-20",
         "address": "Vesturgøta 11, 1. vm",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -6000,6 +6283,7 @@
         "yearBuilt": "23. okt. kl. 15:00"
     },
     {
+        "addedDate": "2025-10-20",
         "address": "Skálavegur 258",
         "agent": "Skyn",
         "city": "Skála",
@@ -6021,6 +6305,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-20",
         "address": "Antarvegur 1",
         "agent": "Skyn",
         "city": "Runavík",
@@ -6042,6 +6327,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-21",
         "address": "Gerðagøta 23",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -6063,6 +6349,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-24",
         "address": "Lágarvegur 32",
         "agent": "Skyn",
         "city": "Strendur",
@@ -6085,6 +6372,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-24",
         "address": "Víkavegur 51",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -6107,6 +6395,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-27",
         "address": "Láarvegur 30",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -6132,6 +6421,7 @@
         "yearBuilt": "29. okt. kl. 14:00"
     },
     {
+        "addedDate": "2025-10-27",
         "address": "Matr.nr. 57b Árnafjørður",
         "agent": "Skyn",
         "city": "Árnafjørður",
@@ -6151,6 +6441,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-28",
         "address": "Kirkjubrekkan 4",
         "agent": "Meklarin",
         "city": "Tvøroyri",
@@ -6170,6 +6461,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-29",
         "address": "Hellutún 13",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -6197,6 +6489,7 @@
         "yearBuilt": "31. okt. kl. 15:00"
     },
     {
+        "addedDate": "2025-10-29",
         "address": "Kirkjubrekka 2",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -6222,6 +6515,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-03",
         "address": "Írarók 6",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -6241,6 +6535,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-03",
         "address": "á Giljatrøðni 8",
         "agent": "Skyn",
         "city": "Sandavágur",
@@ -6262,6 +6557,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-04",
         "address": "Landavegur 94A 0.21",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -6284,6 +6580,7 @@
         "yearBuilt": " 7. nov. kl. 12:00"
     },
     {
+        "addedDate": "2025-11-06",
         "address": "Sundsvegur 17",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -6307,6 +6604,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-07",
         "address": "Stoksoyrarvegur 5",
         "agent": "Meklarin",
         "city": "Klaksvík",
@@ -6326,6 +6624,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-10",
         "address": "Sýrugøta 1",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -6348,6 +6647,7 @@
         "yearBuilt": "12. nov. kl. 14:00"
     },
     {
+        "addedDate": "2025-11-10",
         "address": "matr.nr. 604",
         "agent": "Skyn",
         "city": "Tvøroyri",
@@ -6372,6 +6672,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-11",
         "address": "á Túni 2",
         "agent": "Meklarin",
         "city": "Kvívík",
@@ -6393,6 +6694,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-13",
         "address": "Matr.nr. 521c Sandur-Skopun",
         "agent": "Skyn",
         "city": "Skopun",
@@ -6414,6 +6716,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-17",
         "address": "Traðavegur 7",
         "agent": "Meklarin",
         "city": "Vágur",
@@ -6435,6 +6738,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-17",
         "address": "á Brekku 14",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -6459,6 +6763,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-19",
         "address": "Norðuri á Heyggi 3",
         "agent": "Meklarin",
         "city": "Velbastaður",
@@ -6493,6 +6798,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-20",
         "address": "Ovari vegur 26A-B-C",
         "agent": "Meklarin",
         "city": "Vestmanna",
@@ -6512,6 +6818,7 @@
         "yearBuilt": "24. nov. kl. 15:00"
     },
     {
+        "addedDate": "2025-11-20",
         "address": "við Krossá 3",
         "agent": "Meklarin",
         "city": "Kaldbak",
@@ -6536,6 +6843,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-24",
         "address": "Mýrigøta 6",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -6561,6 +6869,7 @@
         "yearBuilt": "26. nov. kl. 12:00"
     },
     {
+        "addedDate": "2025-11-24",
         "address": "Sjógøta 24",
         "agent": "Meklarin",
         "city": "Tvøroyri",
@@ -6580,6 +6889,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-24",
         "address": "Sjógøta 266",
         "agent": "Skyn",
         "city": "Tvøroyri",
@@ -6608,6 +6918,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-11-27",
         "address": "Sævareingir 19",
         "agent": "Skyn",
         "city": "Skálavík",
@@ -6632,6 +6943,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-12-04",
         "address": "J.C. Svabos gøta 52",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -6656,6 +6968,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-12-12",
         "address": "Karlamagnusarbreyt 27L",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -6677,6 +6990,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-12-29",
         "address": "á Flatabø 7",
         "agent": "Meklarin",
         "city": "Eiði ",
@@ -6702,6 +7016,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-06",
         "address": "Undir Grótheyggi 8",
         "agent": "Skyn",
         "city": "Oyrarbakki",
@@ -6721,6 +7036,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-06",
         "address": "Undir Grótheyggi 3",
         "agent": "Skyn",
         "city": "Oyrarbakki",
@@ -6740,6 +7056,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-06",
         "address": "Undir Ólastovuheygnum 3",
         "agent": "Skyn",
         "city": "Gjógv",
@@ -6759,6 +7076,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-06",
         "address": "Matr.nr. 70h Oyri",
         "agent": "Skyn",
         "city": "Oyrarbakki",
@@ -6778,6 +7096,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-06",
         "address": "Heinagerði 16",
         "agent": "Skyn",
         "city": "Streymnes",
@@ -6797,6 +7116,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-06",
         "address": "Gerðisvegur 13",
         "agent": "Skyn",
         "city": "Hvalvík",
@@ -6816,6 +7136,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-06",
         "address": "Brekkugerði 13",
         "agent": "Skyn",
         "city": "Hósvík",
@@ -6835,6 +7156,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-06",
         "address": "Brekkugerði 15",
         "agent": "Skyn",
         "city": "Hósvík",
@@ -6854,6 +7176,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-07",
         "address": "Hornavegur 9",
         "agent": "Skyn",
         "city": "Oyri",
@@ -6873,6 +7196,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-07",
         "address": "Hornavegur 18",
         "agent": "Skyn",
         "city": "Oyri",
@@ -6892,6 +7216,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-07",
         "address": "Lyngvegur 4",
         "agent": "Skyn",
         "city": "Norðskáli",
@@ -6911,6 +7236,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-07",
         "address": "Traðavegur 49",
         "agent": "Skyn",
         "city": "Streymnes",
@@ -6930,6 +7256,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-07",
         "address": "Traðavegur 54",
         "agent": "Skyn",
         "city": "Streymnes",
@@ -6949,6 +7276,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-08",
         "address": "Sornhústún 11",
         "agent": "Skyn",
         "city": "Tvøroyri",
@@ -6968,6 +7296,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-09",
         "address": "Matr.nr. 70g, Oyri",
         "agent": "Skyn",
         "city": "Oyrarbakki",
@@ -6987,6 +7316,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-09",
         "address": "Matr.nr. 70f, Oyri",
         "agent": "Skyn",
         "city": "Oyrarbakki",
@@ -7006,6 +7336,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-09",
         "address": "Matr.nr. 70e, Oyri",
         "agent": "Skyn",
         "city": "Oyrarbakki",
@@ -7025,6 +7356,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-13",
         "address": "á Fløtti 5",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7050,6 +7382,7 @@
         "yearBuilt": "15. jan. kl. 15:00"
     },
     {
+        "addedDate": "2026-01-13",
         "address": "Hagagerði 27",
         "agent": "Skyn",
         "city": "Sørvágur",
@@ -7073,6 +7406,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-20",
         "address": "Matr.nr. 546, Froðba",
         "agent": "Skyn",
         "city": "Froðba",
@@ -7092,6 +7426,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-21",
         "address": "Stóragerði 24",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7111,6 +7446,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-21",
         "address": "undir Gráasteini 7A",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7139,6 +7475,7 @@
         "yearBuilt": "26. jan. kl. 14:00"
     },
     {
+        "addedDate": "2026-01-23",
         "address": "Sílagøta 7",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7162,6 +7499,7 @@
         "yearBuilt": "27. jan. kl. 15:00"
     },
     {
+        "addedDate": "2026-01-27",
         "address": "Langatún 18",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7185,6 +7523,7 @@
         "yearBuilt": "30. jan. kl. 14:00"
     },
     {
+        "addedDate": "2026-01-27",
         "address": "Tinghúsvegur 36",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -7206,6 +7545,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-28",
         "address": "Ólivantsgøta 1",
         "agent": "Skyn",
         "city": "Hoyvík",
@@ -7228,6 +7568,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-29",
         "address": "Leitisvegur 70, íbúð nr. 6",
         "agent": "Meklarin",
         "city": "Saltangará",
@@ -7247,6 +7588,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-29",
         "address": "Leitisvegur 70, íbúð nr. 2",
         "agent": "Meklarin",
         "city": "Saltangará",
@@ -7266,6 +7608,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-29",
         "address": "Korkagøta 7",
         "agent": "Skyn",
         "city": "Tórshavn",
@@ -7285,6 +7628,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-05",
         "address": "matr.nr. 2",
         "agent": "Skyn",
         "city": "Sund",
@@ -7304,6 +7648,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-06",
         "address": "",
         "agent": "Meklarin",
         "city": "Froðba",
@@ -7323,6 +7668,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-09",
         "address": "Tróndargøta 27-29",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7346,6 +7692,7 @@
         "yearBuilt": "11. feb. kl. 14:00"
     },
     {
+        "addedDate": "2026-02-11",
         "address": "",
         "agent": "Meklarin",
         "city": "Klaksvík",
@@ -7373,6 +7720,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-11",
         "address": "Reynsgøta 35",
         "agent": "Meklarin",
         "city": "Argir",
@@ -7396,6 +7744,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-11",
         "address": "Brattalíð 7",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7420,6 +7769,7 @@
         "yearBuilt": "13. feb. kl. 14:00"
     },
     {
+        "addedDate": "2026-02-11",
         "address": "Onundarvegur 4",
         "agent": "Skyn",
         "city": "Sandavágur",
@@ -7446,6 +7796,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-18",
         "address": "á Heygnum 4",
         "agent": "Meklarin",
         "city": "Glyvrar",
@@ -7471,6 +7822,7 @@
         "yearBuilt": "20. feb. kl. 12:00"
     },
     {
+        "addedDate": "2026-02-19",
         "address": "Jatnavegur 31",
         "agent": "Skyn",
         "city": "Miðvágur",
@@ -7490,6 +7842,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-23",
         "address": "Bøgøta 24",
         "agent": "Meklarin",
         "city": "Vestmanna",
@@ -7509,6 +7862,7 @@
         "yearBuilt": " 2. mar. kl. 15:00"
     },
     {
+        "addedDate": "2026-02-23",
         "address": "Søltuvíkarvegur 8",
         "agent": "Meklarin",
         "city": "210",
@@ -7528,6 +7882,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-26",
         "address": "Áargarður 11",
         "agent": "Skyn",
         "city": "Leirvík",
@@ -7553,6 +7908,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-27",
         "address": "Kommunubrekka 11",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -7572,6 +7928,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-27",
         "address": "Ovari Vegur 40",
         "agent": "Skyn",
         "city": "Tvøroyri",
@@ -7593,6 +7950,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-02",
         "address": "Søltuvíkarvegur 8",
         "agent": "Meklarin",
         "city": "Sandur",
@@ -7612,6 +7970,7 @@
         "yearBuilt": " 3. mar. kl. 15:00"
     },
     {
+        "addedDate": "2026-03-03",
         "address": "Liðabrekkan 21",
         "agent": "Meklarin",
         "city": "Sørvágur",
@@ -7634,6 +7993,7 @@
         "yearBuilt": " 6. mar. kl. 15:00"
     },
     {
+        "addedDate": "2026-03-04",
         "address": "Torvheyggjur 7",
         "agent": "Skyn",
         "city": "Froðba",
@@ -7653,6 +8013,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-05",
         "address": "Gaddavegur 54",
         "agent": "Skyn",
         "city": "Nes",
@@ -7672,6 +8033,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-06",
         "address": "Onnugøta 15",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -7694,6 +8056,7 @@
         "yearBuilt": "10. mar. kl. 14:00"
     },
     {
+        "addedDate": "2026-03-09",
         "address": "Tróndargøta 25",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7715,6 +8078,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-11",
         "address": "Faktorsvegur 23 og 25",
         "agent": "Skyn",
         "city": "Klaksvík",
@@ -7734,6 +8098,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-12",
         "address": "Langatún 30",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7758,6 +8123,7 @@
         "yearBuilt": "13. mar. kl. 16:00"
     },
     {
+        "addedDate": "2026-03-12",
         "address": "Sundsvegur 20C",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7779,6 +8145,7 @@
         "yearBuilt": "13. mar. kl. 12:00"
     },
     {
+        "addedDate": "2026-03-12",
         "address": "Í Geilini 12",
         "agent": "Skyn",
         "city": "Sørvágur",
@@ -7804,6 +8171,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-13",
         "address": "Gerðisvegur 33",
         "agent": "Skyn",
         "city": "Vestmanna",
@@ -7823,6 +8191,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-17",
         "address": "Vesturgøta 22,1.1",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7846,6 +8215,7 @@
         "yearBuilt": "19. mar. kl. 15:00"
     },
     {
+        "addedDate": "2026-03-17",
         "address": "undir Halgheyggi ",
         "agent": "Meklarin",
         "city": "Sandavágur",
@@ -7872,6 +8242,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-18",
         "address": "Matr.nr. 62a Froðba",
         "agent": "Meklarin",
         "city": "Froðba",
@@ -7891,6 +8262,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-18",
         "address": "Matr.nr. 793a-b-c-d-e-f Froðba",
         "agent": "Meklarin",
         "city": "Froðba",
@@ -7910,6 +8282,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-19",
         "address": "undir Gráasteini 7B",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7929,6 +8302,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-19",
         "address": "Bøgøta 10",
         "agent": "Meklarin",
         "city": "Vágur",
@@ -7950,6 +8324,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-25",
         "address": "Lavagøta 6",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -7969,6 +8344,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-25",
         "address": "Maritugøta 52, 1. vm",
         "agent": "Meklarin",
         "city": "Hoyvík",
@@ -7990,6 +8366,7 @@
         "yearBuilt": "30. mar. kl. 15:00"
     },
     {
+        "addedDate": "2026-03-25",
         "address": "Í Lágni 10",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -8009,6 +8386,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-26",
         "address": "Froðbiarvegur 208",
         "agent": "Skyn",
         "city": "Froðba",
@@ -8028,6 +8406,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-27",
         "address": "Óluvugøta 16",
         "agent": "Meklarin",
         "city": "Tórshavn",
@@ -8047,6 +8426,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-27",
         "address": "Á Sondum 25",
         "agent": "Skyn",
         "city": "Sandavágur",
@@ -8066,6 +8446,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-04-16",
         "address": "Glyvravegur 15/17 625 Glyvrar",
         "agent": "Betri",
         "city": "Glyvrar",
@@ -8085,6 +8466,7 @@
         "yearBuilt": "Bygd\n            1959\n          "
     },
     {
+        "addedDate": "2025-04-28",
         "address": "Heygavegur 1b 700 Klaksvík",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -8109,6 +8491,7 @@
         "yearBuilt": "Bygd\n            1958\n          "
     },
     {
+        "addedDate": "2025-04-29",
         "address": "Undir Klakki 41 700 Klaksvík",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -8130,6 +8513,7 @@
         "yearBuilt": "Bygd\n            1985\n          "
     },
     {
+        "addedDate": "2025-04-30",
         "address": "Oyggjarvegur 42, 3.2 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -8149,6 +8533,7 @@
         "yearBuilt": "Bygd\n            2022\n          "
     },
     {
+        "addedDate": "2025-05-01",
         "address": "Garðavegur 66 700 Klaksvík",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -8173,6 +8558,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-01",
         "address": "Undir Kongavarða 5B 160 Argir",
         "agent": "Betri",
         "city": "Argir",
@@ -8194,6 +8580,7 @@
         "yearBuilt": "Bygd\n            2021\n          "
     },
     {
+        "addedDate": "2025-05-07",
         "address": "Skúlagøta 6 497 Selatrað",
         "agent": "Betri",
         "city": "Selatrað",
@@ -8213,6 +8600,7 @@
         "yearBuilt": "Bygd\n            1981\n          "
     },
     {
+        "addedDate": "2025-05-12",
         "address": "Á Sondum 19 360 Sandavágur",
         "agent": "Betri",
         "city": "Sandavágur",
@@ -8232,6 +8620,7 @@
         "yearBuilt": "Bygd\n            1860/70 inum\n          "
     },
     {
+        "addedDate": "2025-05-12",
         "address": "Lýðarsvegur 36 650 Toftir",
         "agent": "Betri",
         "city": "Toftir",
@@ -8251,6 +8640,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-05-15",
         "address": "Ovara Gerðisbrekka 11 380 Sørvágur",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -8270,6 +8660,7 @@
         "yearBuilt": "Bygd\n            2004\n          "
     },
     {
+        "addedDate": "2025-05-15",
         "address": "Berjabrekka 171 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -8289,6 +8680,7 @@
         "yearBuilt": "Bygd\n            1987\n          "
     },
     {
+        "addedDate": "2025-05-21",
         "address": "Ægishædd 8 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -8315,6 +8707,7 @@
         "yearBuilt": "Bygd\n            1981\n          "
     },
     {
+        "addedDate": "2025-05-22",
         "address": "Vágsvegur 76 900 Vágur",
         "agent": "Betri",
         "city": "Vágur",
@@ -8342,6 +8735,7 @@
         "yearBuilt": "Bygd\n            1950\n          "
     },
     {
+        "addedDate": "2025-05-22",
         "address": "Skálavegur 12 350 Vestmanna",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -8366,6 +8760,7 @@
         "yearBuilt": "Bygd\n            1963\n          "
     },
     {
+        "addedDate": "2025-05-22",
         "address": "Rasmusargøta 5 370 Miðvágur",
         "agent": "Betri",
         "city": "Miðvágur",
@@ -8391,6 +8786,7 @@
         "yearBuilt": "Bygd\n            2007\n          "
     },
     {
+        "addedDate": "2025-05-22",
         "address": "Vágsvegur 74 900 Vágur",
         "agent": "Betri",
         "city": "Vágur",
@@ -8418,6 +8814,7 @@
         "yearBuilt": "Bygd\n            1939\n          "
     },
     {
+        "addedDate": "2025-05-22",
         "address": "Matr.nr. 1470n 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -8439,6 +8836,7 @@
         "yearBuilt": "Bygd\n            1950/1991\n          "
     },
     {
+        "addedDate": "2025-05-23",
         "address": "Niðri Í Túni 1 475 Funningur",
         "agent": "Betri",
         "city": "Funningur",
@@ -8463,6 +8861,7 @@
         "yearBuilt": "Bygd\n            1978\n          "
     },
     {
+        "addedDate": "2025-05-23",
         "address": "Karlamagnusarbreyt 2A 188 Hoyvík",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -8487,6 +8886,7 @@
         "yearBuilt": "Bygd\n            2021\n          "
     },
     {
+        "addedDate": "2025-05-28",
         "address": "Argjavegur 10, Argir 160 Argir",
         "agent": "Betri",
         "city": "Argir",
@@ -8506,6 +8906,7 @@
         "yearBuilt": "Bygd\n            2010- 2013\n          "
     },
     {
+        "addedDate": "2025-05-30",
         "address": "Inni á Fløtum 660 Søldarfjørður",
         "agent": "Betri",
         "city": "Søldarfjørður",
@@ -8525,6 +8926,7 @@
         "yearBuilt": "Bygd\n            2009\n          "
     },
     {
+        "addedDate": "2025-06-06",
         "address": "Gerðisvegur 29 600 Saltangará",
         "agent": "Betri",
         "city": "Saltangará",
@@ -8549,6 +8951,7 @@
         "yearBuilt": "Bygd\n            1846\n          "
     },
     {
+        "addedDate": "2025-06-06",
         "address": "Bóndabrekka 10 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -8575,6 +8978,7 @@
         "yearBuilt": "Bygd\n            1978\n          "
     },
     {
+        "addedDate": "2025-06-11",
         "address": "Áarrás 4 160 Argir",
         "agent": "Betri",
         "city": "Argir",
@@ -8601,6 +9005,7 @@
         "yearBuilt": "Bygd\n            1988\n          "
     },
     {
+        "addedDate": "2025-06-12",
         "address": "Argjavegur 10 160 Argir",
         "agent": "Betri",
         "city": "Argir",
@@ -8622,6 +9027,7 @@
         "yearBuilt": "Bygd\n            2010- 2013\n          "
     },
     {
+        "addedDate": "2025-06-12",
         "address": "inni á Fløtum 2 660 Søldarfjørður",
         "agent": "Betri",
         "city": "Søldarfjørður",
@@ -8645,6 +9051,7 @@
         "yearBuilt": "Bygd\n            2009\n          "
     },
     {
+        "addedDate": "2025-06-17",
         "address": "Æðuvíkarvegur 18 645 Æðuvík",
         "agent": "Betri",
         "city": "Æðuvík",
@@ -8666,6 +9073,7 @@
         "yearBuilt": "Bygd\n            1924\n          "
     },
     {
+        "addedDate": "2025-06-18",
         "address": "Ovari Vegur 35 335 Leynar",
         "agent": "Betri",
         "city": "Leynar",
@@ -8688,6 +9096,7 @@
         "yearBuilt": "Bygd\n            2004\n          "
     },
     {
+        "addedDate": "2025-06-19",
         "address": "Bøgøta 3B 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -8712,6 +9121,7 @@
         "yearBuilt": "Bygd\n            Óvist\n          "
     },
     {
+        "addedDate": "2025-06-19",
         "address": "Brekkuvegur 41 470 Eiði",
         "agent": "Betri",
         "city": "Eiði",
@@ -8737,6 +9147,7 @@
         "yearBuilt": "Bygd\n            1964\n          "
     },
     {
+        "addedDate": "2025-06-23",
         "address": "Stangavegur 49 700 Klaksvík",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -8761,6 +9172,7 @@
         "yearBuilt": "Bygd\n            1950/1970\n          "
     },
     {
+        "addedDate": "2025-06-24",
         "address": "Rættargøta 3 438 Langasandur",
         "agent": "Betri",
         "city": "Langasandur",
@@ -8784,6 +9196,7 @@
         "yearBuilt": "Bygd\n            2022\n          "
     },
     {
+        "addedDate": "2025-06-25",
         "address": "Garðabrekka 9 513 Syðrugøta",
         "agent": "Betri",
         "city": "Syðrugøta",
@@ -8810,6 +9223,7 @@
         "yearBuilt": "Bygd\n            1974\n          "
     },
     {
+        "addedDate": "2025-07-02",
         "address": "Við Høgnaheyggj 4 625 Glyvrar",
         "agent": "Betri",
         "city": "Glyvrar",
@@ -8832,6 +9246,7 @@
         "yearBuilt": "Bygd\n            1978\n          "
     },
     {
+        "addedDate": "2025-07-02",
         "address": "Brekkuvegur 17 470 Eiði",
         "agent": "Betri",
         "city": "Eiði",
@@ -8853,6 +9268,7 @@
         "yearBuilt": "Bygd\n            1910\n          "
     },
     {
+        "addedDate": "2025-07-02",
         "address": "Hoyvíksvegur 18 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -8881,6 +9297,7 @@
         "yearBuilt": "Bygd\n            1907\n          "
     },
     {
+        "addedDate": "2025-07-03",
         "address": "Ovari Vegur 77 800 Tvøroyri",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -8900,6 +9317,7 @@
         "yearBuilt": "Bygd\n            1986\n          "
     },
     {
+        "addedDate": "2025-07-03",
         "address": "Tjaldursvegur 8 800 Tvøroyri",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -8922,6 +9340,7 @@
         "yearBuilt": "Bygd\n            1985\n          "
     },
     {
+        "addedDate": "2025-07-07",
         "address": "í Lágni 21 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -8943,6 +9362,7 @@
         "yearBuilt": "Bygd\n            1990\n          "
     },
     {
+        "addedDate": "2025-07-10",
         "address": "Garðavegur 62 700 Klaksvík",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -8966,6 +9386,7 @@
         "yearBuilt": "Bygd\n            1939/45\n          "
     },
     {
+        "addedDate": "2025-07-17",
         "address": "Fámjinsvegur 15 870 Fámjin",
         "agent": "Betri",
         "city": "Fámjin",
@@ -8988,6 +9409,7 @@
         "yearBuilt": "Bygd\n            1948\n          "
     },
     {
+        "addedDate": "2025-07-22",
         "address": "Rasmusargøta 19 495 Kolbeinagjógv",
         "agent": "Betri",
         "city": "Kolbeinagjógv",
@@ -9010,6 +9432,7 @@
         "yearBuilt": "Bygd\n            1958\n          "
     },
     {
+        "addedDate": "2025-07-24",
         "address": "Glyvravegur 60 625 Glyvrar",
         "agent": "Betri",
         "city": "Glyvrar",
@@ -9033,6 +9456,7 @@
         "yearBuilt": "Bygd\n            1976\n          "
     },
     {
+        "addedDate": "2025-07-25",
         "address": "Streymnesvegur 96-98 435 Streymnes",
         "agent": "Betri",
         "city": "Streymnes",
@@ -9052,6 +9476,7 @@
         "yearBuilt": "Bygd\n            2025 / 2026\n          "
     },
     {
+        "addedDate": "2025-07-25",
         "address": "Á Mýratrøðni 380 Sørvágur",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -9071,6 +9496,7 @@
         "yearBuilt": "Bygd\n            2025/2026\n          "
     },
     {
+        "addedDate": "2025-07-31",
         "address": "Rituvíkarvegur 16 640 Rituvík",
         "agent": "Betri",
         "city": "Rituvík",
@@ -9092,6 +9518,7 @@
         "yearBuilt": "Bygd\n            1953\n          "
     },
     {
+        "addedDate": "2025-07-31",
         "address": "Djóna í Geil Gøta 31 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9114,6 +9541,7 @@
         "yearBuilt": "Bygd\n            1951\n          "
     },
     {
+        "addedDate": "2025-08-18",
         "address": "Torvgøta 31E 700 Klaksvík",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -9135,6 +9563,7 @@
         "yearBuilt": "Bygd\n            2023/2024\n          "
     },
     {
+        "addedDate": "2025-08-19",
         "address": "Niðri í Túni 2 475 Funningur",
         "agent": "Betri",
         "city": "Funningur",
@@ -9160,6 +9589,7 @@
         "yearBuilt": "Bygd\n            1910\n          "
     },
     {
+        "addedDate": "2025-08-21",
         "address": "Hoygarðsvegur 38 750 Viðareiði",
         "agent": "Betri",
         "city": "Viðareiði",
@@ -9181,6 +9611,7 @@
         "yearBuilt": "Bygd\n            1910\n          "
     },
     {
+        "addedDate": "2025-08-22",
         "address": "Undir Kongavarða 7C 160 Argir",
         "agent": "Betri",
         "city": "Argir",
@@ -9202,6 +9633,7 @@
         "yearBuilt": "Bygd\n            2021\n          "
     },
     {
+        "addedDate": "2025-08-27",
         "address": "Kovalág 7 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9225,6 +9657,7 @@
         "yearBuilt": "Bygd\n            1971\n          "
     },
     {
+        "addedDate": "2025-08-27",
         "address": "Jóannesar Paturssonargøta 64 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9249,6 +9682,7 @@
         "yearBuilt": "Bygd\n            1969\n          "
     },
     {
+        "addedDate": "2025-08-28",
         "address": "Dalatrøð 8, Tórshavn 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9268,6 +9702,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-09-03",
         "address": "Havnargøta 350 Vestmanna",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -9287,6 +9722,7 @@
         "yearBuilt": "Bygd\n            2025 / 2026\n          "
     },
     {
+        "addedDate": "2025-09-11",
         "address": "Villingadalsvegur 6 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9313,6 +9749,7 @@
         "yearBuilt": "Bygd\n            uml 1983\n          "
     },
     {
+        "addedDate": "2025-09-16",
         "address": "Ovari Vegur 37 335 Leynar",
         "agent": "Betri",
         "city": "Leynar",
@@ -9339,6 +9776,7 @@
         "yearBuilt": "Bygd\n            1991\n          "
     },
     {
+        "addedDate": "2025-09-26",
         "address": "Lynggøta 14 826 Trongisvágur",
         "agent": "Betri",
         "city": "Trongisvágur",
@@ -9358,6 +9796,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-06",
         "address": "Skálavegur 187 480 Skála",
         "agent": "Betri",
         "city": "Skála",
@@ -9382,6 +9821,7 @@
         "yearBuilt": "Bygd\n            1956\n          "
     },
     {
+        "addedDate": "2025-10-08",
         "address": "Havnargøta, íbúð 2 350 Vestmanna",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -9401,6 +9841,7 @@
         "yearBuilt": "Bygd\n            2025 / 2026\n          "
     },
     {
+        "addedDate": "2025-10-08",
         "address": "Havnargøta, íbúð 1 350 Vestmanna",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -9420,6 +9861,7 @@
         "yearBuilt": "Bygd\n            2025 / 2026\n          "
     },
     {
+        "addedDate": "2025-10-10",
         "address": "Lygnesvegur 10 660 Søldarfjørður",
         "agent": "Betri",
         "city": "Søldarfjørður",
@@ -9441,6 +9883,7 @@
         "yearBuilt": "Bygd\n            2009\n          "
     },
     {
+        "addedDate": "2025-10-13",
         "address": "Karlamagnusarbreyt 9B, 2.2 188 Hoyvík",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -9460,6 +9903,7 @@
         "yearBuilt": "Bygd\n            2021\n          "
     },
     {
+        "addedDate": "2025-10-17",
         "address": "Matr. nr. 237b 478 Elduvík",
         "agent": "Betri",
         "city": "Elduvík",
@@ -9479,6 +9923,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-10-22",
         "address": "Hornagøta 15 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9503,6 +9948,7 @@
         "yearBuilt": "Bygd\n            1957/1968\n          "
     },
     {
+        "addedDate": "2025-10-22",
         "address": "Maritugøta 117H 188 Hoyvík",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -9522,6 +9968,7 @@
         "yearBuilt": "Bygd\n            2009\n          "
     },
     {
+        "addedDate": "2025-10-23",
         "address": "Hoydalsvegur 22, Tórshavn 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9541,6 +9988,7 @@
         "yearBuilt": "Bygd\n            1940\n          "
     },
     {
+        "addedDate": "2025-10-23",
         "address": "Tórsgøta 36 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9570,6 +10018,7 @@
         "yearBuilt": "Bygd\n            1914\n          "
     },
     {
+        "addedDate": "2025-10-29",
         "address": "Ravnsoyargøta 4A, Tórshavn 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9591,6 +10040,7 @@
         "yearBuilt": "Bygd\n            1989\n          "
     },
     {
+        "addedDate": "2025-10-30",
         "address": "Varðabyrgi 6 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9610,6 +10060,7 @@
         "yearBuilt": "Bygd\n            1990\n          "
     },
     {
+        "addedDate": "2025-11-04",
         "address": "Íslandsvegur 41 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9631,6 +10082,7 @@
         "yearBuilt": "Bygd\n            1965\n          "
     },
     {
+        "addedDate": "2025-11-06",
         "address": "Undir Hválinum 8 800 Tvøroyri",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -9652,6 +10104,7 @@
         "yearBuilt": "Bygd\n            1978\n          "
     },
     {
+        "addedDate": "2025-11-07",
         "address": "Skúlavegur 490 Strendur",
         "agent": "Betri",
         "city": "Strendur",
@@ -9671,6 +10124,7 @@
         "yearBuilt": "Bygd\n            2026\n          "
     },
     {
+        "addedDate": "2025-11-28",
         "address": "Niðaragøta 120 188 Hoyvík",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -9694,6 +10148,7 @@
         "yearBuilt": "Bygd\n            1993\n          "
     },
     {
+        "addedDate": "2025-12-05",
         "address": "Mylnuvegur 6 466 Ljósá",
         "agent": "Betri",
         "city": "Ljósá",
@@ -9713,6 +10168,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2025-12-05",
         "address": "Matr. 52b 380 Sørvágur",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -9732,6 +10188,7 @@
         "yearBuilt": "Bygd\n            1979\n          "
     },
     {
+        "addedDate": "2025-12-11",
         "address": "Oyggjarvegur 44 1.1 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9753,6 +10210,7 @@
         "yearBuilt": "Bygd\n            2023\n          "
     },
     {
+        "addedDate": "2025-12-12",
         "address": "Heimasta Horn 26, 4.3 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9775,6 +10233,7 @@
         "yearBuilt": "Bygd\n            2012\n          "
     },
     {
+        "addedDate": "2025-12-18",
         "address": "Lágarvegur 22 490 Strendur",
         "agent": "Betri",
         "city": "Strendur",
@@ -9796,6 +10255,7 @@
         "yearBuilt": "Bygd\n            1940\n          "
     },
     {
+        "addedDate": "2025-12-19",
         "address": "Kirkjugøta 20 440 Haldórsvík",
         "agent": "Betri",
         "city": "Haldórsvík",
@@ -9815,6 +10275,7 @@
         "yearBuilt": "Bygd\n            Ikki upplýst\n          "
     },
     {
+        "addedDate": "2026-01-19",
         "address": "á Brúgv 17 388 Mykines",
         "agent": "Betri",
         "city": "Mykines",
@@ -9836,6 +10297,7 @@
         "yearBuilt": "Bygd\n            1919\n          "
     },
     {
+        "addedDate": "2026-01-22",
         "address": "Eyrgøta 4 490 Strendur",
         "agent": "Betri",
         "city": "Strendur",
@@ -9857,6 +10319,7 @@
         "yearBuilt": "Bygd\n            1922\n          "
     },
     {
+        "addedDate": "2026-01-28",
         "address": "Matr. 216b og 216c 800 Tvøroyri",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -9876,6 +10339,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-28",
         "address": "Matr. 215 800 Tvøroyri",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -9895,6 +10359,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-28",
         "address": "Matr. 121 826 Trongisvágur",
         "agent": "Betri",
         "city": "Trongisvágur",
@@ -9914,6 +10379,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-01-28",
         "address": "Matr. 699 800 Tvøroyri",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -9933,6 +10399,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-02-04",
         "address": "Heygsgerði 9 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9958,6 +10425,7 @@
         "yearBuilt": "Bygd\n            2004\n          "
     },
     {
+        "addedDate": "2026-02-16",
         "address": "Oyggjarvegur 42, 1.5, 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -9980,6 +10448,7 @@
         "yearBuilt": "Bygd\n            2023\n          "
     },
     {
+        "addedDate": "2026-02-16",
         "address": "Matr. nr. 11e 785 Haraldssund",
         "agent": "Betri",
         "city": "Haraldssund",
@@ -10003,6 +10472,7 @@
         "yearBuilt": "Bygd\n            1964\n          "
     },
     {
+        "addedDate": "2026-02-18",
         "address": "Geilin 11 494 Innan Glyvur",
         "agent": "Betri",
         "city": "Innan Glyvur",
@@ -10026,6 +10496,7 @@
         "yearBuilt": "Bygd\n            2008\n          "
     },
     {
+        "addedDate": "2026-02-19",
         "address": "Regnavegur 7 520 Leirvík",
         "agent": "Betri",
         "city": "Leirvík",
@@ -10047,6 +10518,7 @@
         "yearBuilt": "Bygd\n            1920/2024\n          "
     },
     {
+        "addedDate": "2026-02-19",
         "address": "Mylnuvegur 8 466 Ljósá",
         "agent": "Betri",
         "city": "Ljósá",
@@ -10068,6 +10540,7 @@
         "yearBuilt": "Bygd\n            1957\n          "
     },
     {
+        "addedDate": "2026-02-19",
         "address": "Rituvíkarvegur 79 640 Rituvík",
         "agent": "Betri",
         "city": "Rituvík",
@@ -10089,6 +10562,7 @@
         "yearBuilt": "Bygd\n            1922\n          "
     },
     {
+        "addedDate": "2026-02-20",
         "address": "Lambavegur 10 627 Lamba",
         "agent": "Betri",
         "city": "Lamba",
@@ -10111,6 +10585,7 @@
         "yearBuilt": "Bygd\n            1905\n          "
     },
     {
+        "addedDate": "2026-03-05",
         "address": "Fløtuvegur 10 490 Strendur",
         "agent": "Betri",
         "city": "Strendur",
@@ -10132,6 +10607,7 @@
         "yearBuilt": "Bygd\n            1938\n          "
     },
     {
+        "addedDate": "2026-03-12",
         "address": "Karlamagnusarbreyt 42, 0.5 188 Hoyvík",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -10154,6 +10630,7 @@
         "yearBuilt": "Bygd\n            2019\n          "
     },
     {
+        "addedDate": "2026-03-16",
         "address": "Karlotsgøta 4 188 Hoyvík",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -10173,6 +10650,7 @@
         "yearBuilt": "Bygd\n            2011\n          "
     },
     {
+        "addedDate": "2026-03-16",
         "address": "Sjóvartún 10 350 Vestmanna",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -10199,6 +10677,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "2026-03-19",
         "address": "Sleipnisgøta 16 100 Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10221,6 +10700,7 @@
         "yearBuilt": "Bygd\n            1985\n          "
     },
     {
+        "addedDate": "2026-03-25",
         "address": "Eystan Garð 5D 700 Klaksvík",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -10240,6 +10720,7 @@
         "yearBuilt": "Bygd\n            2026\n          "
     },
     {
+        "addedDate": "2026-03-27",
         "address": "Ennivegur 75 530 Fuglafjørður",
         "agent": "Betri",
         "city": "Fuglafjørður",
@@ -10259,6 +10740,7 @@
         "yearBuilt": "Bygd\n            1961\n          "
     },
     {
+        "addedDate": "",
         "address": "Eystanvegur 3",
         "agent": "Betri",
         "city": "Sandur",
@@ -10281,6 +10763,7 @@
         "yearBuilt": "Bygd Uml. 1996"
     },
     {
+        "addedDate": "",
         "address": "Mýrigøta 3",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10300,6 +10783,7 @@
         "yearBuilt": "Bygd 1954"
     },
     {
+        "addedDate": "",
         "address": "Toftanes 30",
         "agent": "Betri",
         "city": "Leirvík",
@@ -10319,6 +10803,7 @@
         "yearBuilt": "Bygd 1958"
     },
     {
+        "addedDate": "",
         "address": "Argjavegur 18",
         "agent": "Betri",
         "city": "Argir",
@@ -10338,6 +10823,7 @@
         "yearBuilt": "Bygd 1932"
     },
     {
+        "addedDate": "",
         "address": "Bakkavegur 151",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -10360,6 +10846,7 @@
         "yearBuilt": "Bygd 1989"
     },
     {
+        "addedDate": "",
         "address": "Heiðaravegur 11",
         "agent": "Betri",
         "city": "Skálavík",
@@ -10381,6 +10868,7 @@
         "yearBuilt": "Bygd 1968"
     },
     {
+        "addedDate": "",
         "address": "Skálavegur 185",
         "agent": "Betri",
         "city": "Skála",
@@ -10405,6 +10893,7 @@
         "yearBuilt": "Bygd 1928"
     },
     {
+        "addedDate": "",
         "address": "Tartarlág 6",
         "agent": "Betri",
         "city": "Oyndarfjørður",
@@ -10424,6 +10913,7 @@
         "yearBuilt": "Bygd 1999"
     },
     {
+        "addedDate": "",
         "address": "Kongagøta 7,0 vm",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10443,6 +10933,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Søldarfjarðarvegur 32",
         "agent": "Betri",
         "city": "Søldarfjørður",
@@ -10462,6 +10953,7 @@
         "yearBuilt": "Bygd 1978"
     },
     {
+        "addedDate": "",
         "address": "Hoygarðsvegur 6",
         "agent": "Betri",
         "city": "Miðvágur",
@@ -10483,6 +10975,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Lynggøta 8",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10502,6 +10995,7 @@
         "yearBuilt": "Bygd 1966"
     },
     {
+        "addedDate": "",
         "address": "Undir Nesinum 10",
         "agent": "Betri",
         "city": "Toftir",
@@ -10525,6 +11019,7 @@
         "yearBuilt": "Bygd 2001"
     },
     {
+        "addedDate": "",
         "address": "Undir Skorum matr nr 27a",
         "agent": "Betri",
         "city": "Froðba",
@@ -10544,6 +11039,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Bøgøta 8",
         "agent": "Betri",
         "city": "Sumba",
@@ -10563,6 +11059,7 @@
         "yearBuilt": "Bygd 1936"
     },
     {
+        "addedDate": "",
         "address": "Bókbindaragøta 38",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10584,6 +11081,7 @@
         "yearBuilt": "Bygd 1971"
     },
     {
+        "addedDate": "",
         "address": "Lokkargarðsvegur 5",
         "agent": "Betri",
         "city": "Sumba",
@@ -10603,6 +11101,7 @@
         "yearBuilt": "Bygd 1950"
     },
     {
+        "addedDate": "",
         "address": "Raðhús í Brekkugerði 21",
         "agent": "Betri",
         "city": "Hósvík",
@@ -10622,6 +11121,7 @@
         "yearBuilt": "Bygd 2024"
     },
     {
+        "addedDate": "",
         "address": "Heiðavegur 13",
         "agent": "Betri",
         "city": "Saltangará",
@@ -10641,6 +11141,7 @@
         "yearBuilt": "Bygd\n            1987\n          "
     },
     {
+        "addedDate": "",
         "address": "Eyðargøta 2",
         "agent": "Betri",
         "city": "Norðragøta",
@@ -10667,6 +11168,7 @@
         "yearBuilt": "Bygd\n            1932\n          "
     },
     {
+        "addedDate": "",
         "address": "Bókindaragøta 14",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10686,6 +11188,7 @@
         "yearBuilt": "Bygd\n            1957\n          "
     },
     {
+        "addedDate": "",
         "address": "Jákup Nolsøes gøta 37",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10707,6 +11210,7 @@
         "yearBuilt": "Bygd\n            1964\n          "
     },
     {
+        "addedDate": "",
         "address": "Undir Grashjalla 50",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -10730,6 +11234,7 @@
         "yearBuilt": "Bygd\n            2022\n          "
     },
     {
+        "addedDate": "",
         "address": "Matr.nr.992s",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10751,6 +11256,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "í Heygnum 138",
         "agent": "Betri",
         "city": "Trongisvágur",
@@ -10770,6 +11276,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Ápramsvegur",
         "agent": "Betri",
         "city": "Miðvágur",
@@ -10789,6 +11296,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Við Krossá 6",
         "agent": "Betri",
         "city": "Kaldbak",
@@ -10808,6 +11316,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Gerðisbreyt 21",
         "agent": "Betri",
         "city": "Velbastaður",
@@ -10827,6 +11336,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Hornavegur 4",
         "agent": "Betri",
         "city": "Oyri",
@@ -10846,6 +11356,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Matr nr 632 í Skopun",
         "agent": "Betri",
         "city": "Skopun",
@@ -10865,6 +11376,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Matr. nr. 111a Sørvágur",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -10884,6 +11396,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "við Hornaveg, Oyri",
         "agent": "Betri",
         "city": "Oyrarbakki",
@@ -10903,6 +11416,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Ovarivegur 11",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -10924,6 +11438,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Matr. 49, Elduvík",
         "agent": "Betri",
         "city": "Elduvík",
@@ -10943,6 +11458,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Dalagøta 27",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -10964,6 +11480,7 @@
         "yearBuilt": "Bygd\n            1973\n          "
     },
     {
+        "addedDate": "",
         "address": "Glyvravegur 15/17",
         "agent": "Betri",
         "city": "Glyvrar",
@@ -10983,6 +11500,7 @@
         "yearBuilt": "Bygd\n            1959\n          "
     },
     {
+        "addedDate": "",
         "address": "Heygavegur 1b",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -11007,6 +11525,7 @@
         "yearBuilt": "Bygd\n            1958\n          "
     },
     {
+        "addedDate": "",
         "address": "Undir Klakki 41",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -11028,6 +11547,7 @@
         "yearBuilt": "Bygd\n            1985\n          "
     },
     {
+        "addedDate": "",
         "address": "Oyggjarvegur 42, 3.2",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -11047,6 +11567,7 @@
         "yearBuilt": "Bygd\n            2022\n          "
     },
     {
+        "addedDate": "",
         "address": "Garðavegur 66",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -11071,6 +11592,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Undir Kongavarða 5B",
         "agent": "Betri",
         "city": "Argir",
@@ -11092,6 +11614,7 @@
         "yearBuilt": "Bygd\n            2021\n          "
     },
     {
+        "addedDate": "",
         "address": "Skúlagøta 6",
         "agent": "Betri",
         "city": "Selatrað",
@@ -11111,6 +11634,7 @@
         "yearBuilt": "Bygd\n            1981\n          "
     },
     {
+        "addedDate": "",
         "address": "Á Sondum 19",
         "agent": "Betri",
         "city": "Sandavágur",
@@ -11130,6 +11654,7 @@
         "yearBuilt": "Bygd\n            1860/70 inum\n          "
     },
     {
+        "addedDate": "",
         "address": "Lýðarsvegur 36",
         "agent": "Betri",
         "city": "Toftir",
@@ -11149,6 +11674,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Ovara Gerðisbrekka 11",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -11168,6 +11694,7 @@
         "yearBuilt": "Bygd\n            2004\n          "
     },
     {
+        "addedDate": "",
         "address": "Berjabrekka 171",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -11187,6 +11714,7 @@
         "yearBuilt": "Bygd\n            1987\n          "
     },
     {
+        "addedDate": "",
         "address": "Ægishædd 8",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -11213,6 +11741,7 @@
         "yearBuilt": "Bygd\n            1981\n          "
     },
     {
+        "addedDate": "",
         "address": "Vágsvegur 76",
         "agent": "Betri",
         "city": "Vágur",
@@ -11240,6 +11769,7 @@
         "yearBuilt": "Bygd\n            1950\n          "
     },
     {
+        "addedDate": "",
         "address": "Skálavegur 12",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -11264,6 +11794,7 @@
         "yearBuilt": "Bygd\n            1963\n          "
     },
     {
+        "addedDate": "",
         "address": "Rasmusargøta 5",
         "agent": "Betri",
         "city": "Miðvágur",
@@ -11289,6 +11820,7 @@
         "yearBuilt": "Bygd\n            2007\n          "
     },
     {
+        "addedDate": "",
         "address": "Vágsvegur 74",
         "agent": "Betri",
         "city": "Vágur",
@@ -11316,6 +11848,7 @@
         "yearBuilt": "Bygd\n            1939\n          "
     },
     {
+        "addedDate": "",
         "address": "Matr.nr. 1470n",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -11337,6 +11870,7 @@
         "yearBuilt": "Bygd\n            1950/1991\n          "
     },
     {
+        "addedDate": "",
         "address": "Niðri Í Túni 1",
         "agent": "Betri",
         "city": "Funningur",
@@ -11361,6 +11895,7 @@
         "yearBuilt": "Bygd\n            1978\n          "
     },
     {
+        "addedDate": "",
         "address": "Karlamagnusarbreyt 2A",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -11385,6 +11920,7 @@
         "yearBuilt": "Bygd\n            2021\n          "
     },
     {
+        "addedDate": "",
         "address": "Argjavegur 10, Argir",
         "agent": "Betri",
         "city": "Argir",
@@ -11404,6 +11940,7 @@
         "yearBuilt": "Bygd\n            2010- 2013\n          "
     },
     {
+        "addedDate": "",
         "address": "Inni á Fløtum",
         "agent": "Betri",
         "city": "Søldarfjørður",
@@ -11423,6 +11960,7 @@
         "yearBuilt": "Bygd\n            2009\n          "
     },
     {
+        "addedDate": "",
         "address": "Gerðisvegur 29",
         "agent": "Betri",
         "city": "Saltangará",
@@ -11447,6 +11985,7 @@
         "yearBuilt": "Bygd\n            1846\n          "
     },
     {
+        "addedDate": "",
         "address": "Bóndabrekka 10",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -11473,6 +12012,7 @@
         "yearBuilt": "Bygd\n            1978\n          "
     },
     {
+        "addedDate": "",
         "address": "Áarrás 4",
         "agent": "Betri",
         "city": "Argir",
@@ -11499,6 +12039,7 @@
         "yearBuilt": "Bygd\n            1988\n          "
     },
     {
+        "addedDate": "",
         "address": "Argjavegur 10",
         "agent": "Betri",
         "city": "Argir",
@@ -11520,6 +12061,7 @@
         "yearBuilt": "Bygd\n            2010- 2013\n          "
     },
     {
+        "addedDate": "",
         "address": "inni á Fløtum 2",
         "agent": "Betri",
         "city": "Søldarfjørður",
@@ -11543,6 +12085,7 @@
         "yearBuilt": "Bygd\n            2009\n          "
     },
     {
+        "addedDate": "",
         "address": "Æðuvíkarvegur 18",
         "agent": "Betri",
         "city": "Æðuvík",
@@ -11564,6 +12107,7 @@
         "yearBuilt": "Bygd\n            1924\n          "
     },
     {
+        "addedDate": "",
         "address": "Ovari Vegur 35",
         "agent": "Betri",
         "city": "Leynar",
@@ -11586,6 +12130,7 @@
         "yearBuilt": "Bygd\n            2004\n          "
     },
     {
+        "addedDate": "",
         "address": "Bøgøta 3B",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -11610,6 +12155,7 @@
         "yearBuilt": "Bygd\n            Óvist\n          "
     },
     {
+        "addedDate": "",
         "address": "Brekkuvegur 41",
         "agent": "Betri",
         "city": "Eiði",
@@ -11635,6 +12181,7 @@
         "yearBuilt": "Bygd\n            1964\n          "
     },
     {
+        "addedDate": "",
         "address": "Stangavegur 49",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -11659,6 +12206,7 @@
         "yearBuilt": "Bygd\n            1950/1970\n          "
     },
     {
+        "addedDate": "",
         "address": "Rættargøta 3",
         "agent": "Betri",
         "city": "Langasandur",
@@ -11682,6 +12230,7 @@
         "yearBuilt": "Bygd\n            2022\n          "
     },
     {
+        "addedDate": "",
         "address": "Garðabrekka 9",
         "agent": "Betri",
         "city": "Syðrugøta",
@@ -11708,6 +12257,7 @@
         "yearBuilt": "Bygd\n            1974\n          "
     },
     {
+        "addedDate": "",
         "address": "Við Høgnaheyggj 4",
         "agent": "Betri",
         "city": "Glyvrar",
@@ -11730,6 +12280,7 @@
         "yearBuilt": "Bygd\n            1978\n          "
     },
     {
+        "addedDate": "",
         "address": "Brekkuvegur 17",
         "agent": "Betri",
         "city": "Eiði",
@@ -11751,6 +12302,7 @@
         "yearBuilt": "Bygd\n            1910\n          "
     },
     {
+        "addedDate": "",
         "address": "Hoyvíksvegur 18",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -11779,6 +12331,7 @@
         "yearBuilt": "Bygd\n            1907\n          "
     },
     {
+        "addedDate": "",
         "address": "Ovari Vegur 77",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -11798,6 +12351,7 @@
         "yearBuilt": "Bygd\n            1986\n          "
     },
     {
+        "addedDate": "",
         "address": "Tjaldursvegur 8",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -11820,6 +12374,7 @@
         "yearBuilt": "Bygd\n            1985\n          "
     },
     {
+        "addedDate": "",
         "address": "í Lágni 21",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -11841,6 +12396,7 @@
         "yearBuilt": "Bygd\n            1990\n          "
     },
     {
+        "addedDate": "",
         "address": "Garðavegur 62",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -11864,6 +12420,7 @@
         "yearBuilt": "Bygd\n            1939/45\n          "
     },
     {
+        "addedDate": "",
         "address": "Fámjinsvegur 15",
         "agent": "Betri",
         "city": "Fámjin",
@@ -11886,6 +12443,7 @@
         "yearBuilt": "Bygd\n            1948\n          "
     },
     {
+        "addedDate": "",
         "address": "Rasmusargøta 19",
         "agent": "Betri",
         "city": "Kolbeinagjógv",
@@ -11908,6 +12466,7 @@
         "yearBuilt": "Bygd\n            1958\n          "
     },
     {
+        "addedDate": "",
         "address": "Glyvravegur 60",
         "agent": "Betri",
         "city": "Glyvrar",
@@ -11931,6 +12490,7 @@
         "yearBuilt": "Bygd\n            1976\n          "
     },
     {
+        "addedDate": "",
         "address": "Streymnesvegur 96-98",
         "agent": "Betri",
         "city": "Streymnes",
@@ -11950,6 +12510,7 @@
         "yearBuilt": "Bygd\n            2025 / 2026\n          "
     },
     {
+        "addedDate": "",
         "address": "Á Mýratrøðni",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -11969,6 +12530,7 @@
         "yearBuilt": "Bygd\n            2025/2026\n          "
     },
     {
+        "addedDate": "",
         "address": "Rituvíkarvegur 16",
         "agent": "Betri",
         "city": "Rituvík",
@@ -11990,6 +12552,7 @@
         "yearBuilt": "Bygd\n            1953\n          "
     },
     {
+        "addedDate": "",
         "address": "Djóna í Geil Gøta 31",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12012,6 +12575,7 @@
         "yearBuilt": "Bygd\n            1951\n          "
     },
     {
+        "addedDate": "",
         "address": "Torvgøta 31E",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -12033,6 +12597,7 @@
         "yearBuilt": "Bygd\n            2023/2024\n          "
     },
     {
+        "addedDate": "",
         "address": "Niðri í Túni 2",
         "agent": "Betri",
         "city": "Funningur",
@@ -12058,6 +12623,7 @@
         "yearBuilt": "Bygd\n            1910\n          "
     },
     {
+        "addedDate": "",
         "address": "Hoygarðsvegur 38",
         "agent": "Betri",
         "city": "Viðareiði",
@@ -12079,6 +12645,7 @@
         "yearBuilt": "Bygd\n            1910\n          "
     },
     {
+        "addedDate": "",
         "address": "Undir Kongavarða 7C",
         "agent": "Betri",
         "city": "Argir",
@@ -12100,6 +12667,7 @@
         "yearBuilt": "Bygd\n            2021\n          "
     },
     {
+        "addedDate": "",
         "address": "Kovalág 7",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12123,6 +12691,7 @@
         "yearBuilt": "Bygd\n            1971\n          "
     },
     {
+        "addedDate": "",
         "address": "Jóannesar Paturssonargøta 64",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12147,6 +12716,7 @@
         "yearBuilt": "Bygd\n            1969\n          "
     },
     {
+        "addedDate": "",
         "address": "Dalatrøð 8, Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12166,6 +12736,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Havnargøta",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -12185,6 +12756,7 @@
         "yearBuilt": "Bygd\n            2025 / 2026\n          "
     },
     {
+        "addedDate": "",
         "address": "Villingadalsvegur 6",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12211,6 +12783,7 @@
         "yearBuilt": "Bygd\n            uml 1983\n          "
     },
     {
+        "addedDate": "",
         "address": "Ovari Vegur 37",
         "agent": "Betri",
         "city": "Leynar",
@@ -12237,6 +12810,7 @@
         "yearBuilt": "Bygd\n            1991\n          "
     },
     {
+        "addedDate": "",
         "address": "Lynggøta 14",
         "agent": "Betri",
         "city": "Trongisvágur",
@@ -12256,6 +12830,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Skálavegur 187",
         "agent": "Betri",
         "city": "Skála",
@@ -12280,6 +12855,7 @@
         "yearBuilt": "Bygd\n            1956\n          "
     },
     {
+        "addedDate": "",
         "address": "Havnargøta, íbúð 2",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -12299,6 +12875,7 @@
         "yearBuilt": "Bygd\n            2025 / 2026\n          "
     },
     {
+        "addedDate": "",
         "address": "Havnargøta, íbúð 1",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -12318,6 +12895,7 @@
         "yearBuilt": "Bygd\n            2025 / 2026\n          "
     },
     {
+        "addedDate": "",
         "address": "Lygnesvegur 10",
         "agent": "Betri",
         "city": "Søldarfjørður",
@@ -12339,6 +12917,7 @@
         "yearBuilt": "Bygd\n            2009\n          "
     },
     {
+        "addedDate": "",
         "address": "Karlamagnusarbreyt 9B, 2.2",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -12358,6 +12937,7 @@
         "yearBuilt": "Bygd\n            2021\n          "
     },
     {
+        "addedDate": "",
         "address": "Matr. nr. 237b",
         "agent": "Betri",
         "city": "Elduvík",
@@ -12377,6 +12957,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Hornagøta 15",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12401,6 +12982,7 @@
         "yearBuilt": "Bygd\n            1957/1968\n          "
     },
     {
+        "addedDate": "",
         "address": "Maritugøta 117H",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -12420,6 +13002,7 @@
         "yearBuilt": "Bygd\n            2009\n          "
     },
     {
+        "addedDate": "",
         "address": "Hoydalsvegur 22, Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12439,6 +13022,7 @@
         "yearBuilt": "Bygd\n            1940\n          "
     },
     {
+        "addedDate": "",
         "address": "Tórsgøta 36",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12468,6 +13052,7 @@
         "yearBuilt": "Bygd\n            1914\n          "
     },
     {
+        "addedDate": "",
         "address": "Ravnsoyargøta 4A, Tórshavn",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12489,6 +13074,7 @@
         "yearBuilt": "Bygd\n            1989\n          "
     },
     {
+        "addedDate": "",
         "address": "Varðabyrgi 6",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12508,6 +13094,7 @@
         "yearBuilt": "Bygd\n            1990\n          "
     },
     {
+        "addedDate": "",
         "address": "Íslandsvegur 41",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12529,6 +13116,7 @@
         "yearBuilt": "Bygd\n            1965\n          "
     },
     {
+        "addedDate": "",
         "address": "Undir Hválinum 8",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -12550,6 +13138,7 @@
         "yearBuilt": "Bygd\n            1978\n          "
     },
     {
+        "addedDate": "",
         "address": "Skúlavegur",
         "agent": "Betri",
         "city": "Strendur",
@@ -12569,6 +13158,7 @@
         "yearBuilt": "Bygd\n            2026\n          "
     },
     {
+        "addedDate": "",
         "address": "Niðaragøta 120",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -12592,6 +13182,7 @@
         "yearBuilt": "Bygd\n            1993\n          "
     },
     {
+        "addedDate": "",
         "address": "Mylnuvegur 6",
         "agent": "Betri",
         "city": "Ljósá",
@@ -12611,6 +13202,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Matr. 52b",
         "agent": "Betri",
         "city": "Sørvágur",
@@ -12630,6 +13222,7 @@
         "yearBuilt": "Bygd\n            1979\n          "
     },
     {
+        "addedDate": "",
         "address": "Oyggjarvegur 44 1.1",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12651,6 +13244,7 @@
         "yearBuilt": "Bygd\n            2023\n          "
     },
     {
+        "addedDate": "",
         "address": "Heimasta Horn 26, 4.3",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12673,6 +13267,7 @@
         "yearBuilt": "Bygd\n            2012\n          "
     },
     {
+        "addedDate": "",
         "address": "Lágarvegur 22",
         "agent": "Betri",
         "city": "Strendur",
@@ -12694,6 +13289,7 @@
         "yearBuilt": "Bygd\n            1940\n          "
     },
     {
+        "addedDate": "",
         "address": "Kirkjugøta 20",
         "agent": "Betri",
         "city": "Haldórsvík",
@@ -12713,6 +13309,7 @@
         "yearBuilt": "Bygd\n            Ikki upplýst\n          "
     },
     {
+        "addedDate": "",
         "address": "á Brúgv 17",
         "agent": "Betri",
         "city": "Mykines",
@@ -12734,6 +13331,7 @@
         "yearBuilt": "Bygd\n            1919\n          "
     },
     {
+        "addedDate": "",
         "address": "Eyrgøta 4",
         "agent": "Betri",
         "city": "Strendur",
@@ -12755,6 +13353,7 @@
         "yearBuilt": "Bygd\n            1922\n          "
     },
     {
+        "addedDate": "",
         "address": "Matr. 216b og 216c",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -12774,6 +13373,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Matr. 215",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -12793,6 +13393,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Matr. 121",
         "agent": "Betri",
         "city": "Trongisvágur",
@@ -12812,6 +13413,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Matr. 699",
         "agent": "Betri",
         "city": "Tvøroyri",
@@ -12831,6 +13433,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Heygsgerði 9",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12856,6 +13459,7 @@
         "yearBuilt": "Bygd\n            2004\n          "
     },
     {
+        "addedDate": "",
         "address": "Oyggjarvegur 42, 1.5,",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -12878,6 +13482,7 @@
         "yearBuilt": "Bygd\n            2023\n          "
     },
     {
+        "addedDate": "",
         "address": "Matr. nr. 11e",
         "agent": "Betri",
         "city": "Haraldssund",
@@ -12901,6 +13506,7 @@
         "yearBuilt": "Bygd\n            1964\n          "
     },
     {
+        "addedDate": "",
         "address": "Geilin 11",
         "agent": "Betri",
         "city": "Innan Glyvur",
@@ -12924,6 +13530,7 @@
         "yearBuilt": "Bygd\n            2008\n          "
     },
     {
+        "addedDate": "",
         "address": "Regnavegur 7",
         "agent": "Betri",
         "city": "Leirvík",
@@ -12945,6 +13552,7 @@
         "yearBuilt": "Bygd\n            1920/2024\n          "
     },
     {
+        "addedDate": "",
         "address": "Mylnuvegur 8",
         "agent": "Betri",
         "city": "Ljósá",
@@ -12966,6 +13574,7 @@
         "yearBuilt": "Bygd\n            1957\n          "
     },
     {
+        "addedDate": "",
         "address": "Rituvíkarvegur 79",
         "agent": "Betri",
         "city": "Rituvík",
@@ -12987,6 +13596,7 @@
         "yearBuilt": "Bygd\n            1922\n          "
     },
     {
+        "addedDate": "",
         "address": "Lambavegur 10",
         "agent": "Betri",
         "city": "Lamba",
@@ -13009,6 +13619,7 @@
         "yearBuilt": "Bygd\n            1905\n          "
     },
     {
+        "addedDate": "",
         "address": "Fløtuvegur 10",
         "agent": "Betri",
         "city": "Strendur",
@@ -13030,6 +13641,7 @@
         "yearBuilt": "Bygd\n            1938\n          "
     },
     {
+        "addedDate": "",
         "address": "Karlamagnusarbreyt 42, 0.5",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -13052,6 +13664,7 @@
         "yearBuilt": "Bygd\n            2019\n          "
     },
     {
+        "addedDate": "",
         "address": "Karlotsgøta 4",
         "agent": "Betri",
         "city": "Hoyvík",
@@ -13071,6 +13684,7 @@
         "yearBuilt": "Bygd\n            2011\n          "
     },
     {
+        "addedDate": "",
         "address": "Sjóvartún 10",
         "agent": "Betri",
         "city": "Vestmanna",
@@ -13097,6 +13711,7 @@
         "yearBuilt": ""
     },
     {
+        "addedDate": "",
         "address": "Sleipnisgøta 16",
         "agent": "Betri",
         "city": "Tórshavn",
@@ -13119,6 +13734,7 @@
         "yearBuilt": "Bygd\n            1985\n          "
     },
     {
+        "addedDate": "",
         "address": "Eystan Garð 5D",
         "agent": "Betri",
         "city": "Klaksvík",
@@ -13138,6 +13754,7 @@
         "yearBuilt": "Bygd\n            2026\n          "
     },
     {
+        "addedDate": "",
         "address": "Ennivegur 75",
         "agent": "Betri",
         "city": "Fuglafjørður",
