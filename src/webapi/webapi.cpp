@@ -376,6 +376,39 @@ void runServer() {
         callback(resp);
       });
 
+  app().registerHandler(
+      "/propertiesJson",
+      [](const HttpRequestPtr &req,
+         std::function<void(const HttpResponsePtr &)> &&callback) {
+        std::ifstream ifs("../src/storage/properties.json");
+        if (!ifs.is_open()) {
+          auto resp = HttpResponse::newHttpResponse();
+          resp->setStatusCode(k404NotFound);
+          resp->setContentTypeCode(CT_APPLICATION_JSON);
+          resp->setBody(R"({"error":"Could not open properties.json"})");
+          callback(resp);
+          return;
+        }
+
+        json j;
+        try {
+          ifs >> j;
+        } catch (std::exception &e) {
+          auto resp = HttpResponse::newHttpResponse();
+          resp->setStatusCode(k500InternalServerError);
+          resp->setContentTypeCode(CT_APPLICATION_JSON);
+          resp->setBody(std::string(R"({"error":"JSON parse error: )") +
+                        e.what() + R"("})");
+          callback(resp);
+          return;
+        }
+
+        auto resp = HttpResponse::newHttpResponse();
+        resp->setContentTypeCode(CT_APPLICATION_JSON);
+        resp->setBody(j.dump());
+        callback(resp);
+      });
+
   auto loop = app().getLoop();
   scheduleDailyScraper(loop);
 
