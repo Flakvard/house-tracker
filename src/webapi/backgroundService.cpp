@@ -49,8 +49,8 @@ std::chrono::steady_clock::duration getTimeUntilNextRun() {
   // Advance to 20:00 today
   auto nextRunTime = system_clock::from_time_t(std::mktime(&nowTm));
 
-  // If it's after 20:00 or weekend, advance to next weekday
-  while (now >= nextRunTime || nowTm.tm_wday == 0 || nowTm.tm_wday == 6) {
+  // If it's after 20:00, advance to next weekday
+  while (now >= nextRunTime) {
     nextRunTime += hours(24);
     std::time_t tempT = system_clock::to_time_t(nextRunTime);
     nowTm = safeLocaltime(tempT);
