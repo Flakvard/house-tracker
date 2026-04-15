@@ -399,6 +399,9 @@ std::string buildPropertiesGrid() {
         (addedDate.empty() || archivedDate.empty()) ? -1
                                                     : diffDays(addedDate, archivedDate);
 
+    const int archivedDaysListed =
+        (status == "archived" && daysUntilSold >= 0) ? daysUntilSold : daysListed;
+
     const std::string searchText =
         address + " " + city + " " + kommunaKey + " " + syslaKey + " " + type + " " +
         website + " " + id;
@@ -408,6 +411,8 @@ std::string buildPropertiesGrid() {
         offerPerInsideM2 > 0 ? formatNumberDots(offerPerInsideM2) : "-";
     const std::string pricePerInsideText =
         pricePerInsideM2 > 0 ? formatNumberDots(pricePerInsideM2) : "-";
+    const std::string dayBadgeText =
+        archivedDaysListed >= 0 ? std::to_string(archivedDaysListed) + "d" : "";
     const std::string servedPath = buildImagePath(item);
 
     cards << "<article class=\"property-card\" data-search=\""
@@ -423,10 +428,15 @@ std::string buildPropertiesGrid() {
 
     if (!servedPath.empty() && servedPath != "/images/_") {
       cards << "<div class=\"property-media\"><img src=\"" << htmlEscape(servedPath)
-            << "\" alt=\"" << htmlEscape(address) << "\"></div>";
+            << "\" alt=\"" << htmlEscape(address) << "\">";
     } else {
-      cards << "<div class=\"property-media placeholder\">No image</div>";
+      cards << "<div class=\"property-media placeholder\">No image";
     }
+    if (!dayBadgeText.empty()) {
+      cards << "<span class=\"media-day-badge\">" << htmlEscape(dayBadgeText)
+            << "</span>";
+    }
+    cards << "</div>";
 
     cards << "<div class=\"property-body\">"
           << "<div class=\"property-topline\">"
@@ -464,7 +474,7 @@ std::string buildPropertiesGrid() {
           << metricHtml("Added", addedDate.empty() ? "-" : addedDate)
           << metricHtml("Archived", archivedDate.empty() ? "-" : archivedDate)
           << metricHtml("Days listed",
-                        daysListed >= 0 ? std::to_string(daysListed) : "-")
+                        archivedDaysListed >= 0 ? std::to_string(archivedDaysListed) : "-")
           << metricHtml("Days until sold",
                         daysUntilSold >= 0 ? std::to_string(daysUntilSold) : "-")
           << metricHtml("Offer/inside",
@@ -529,29 +539,11 @@ void runServer() {
                 margin: 0 auto;
                 padding: 1rem;
               }
-              .hero {
-                border: 1px solid var(--line);
-                background: var(--panel-bg);
-                border-radius: 28px;
-                padding: 1.25rem;
-                box-shadow: 0 12px 40px rgba(65, 45, 25, 0.08);
-              }
-              .hero h1 {
-                margin: 0;
-                font-size: clamp(2rem, 5vw, 4rem);
-                line-height: 0.92;
-                letter-spacing: -0.04em;
-              }
-              .hero p {
-                margin: 0.75rem 0 0;
-                max-width: 60ch;
-                color: var(--muted);
-              }
               .toolbar {
                 display: grid;
                 grid-template-columns: repeat(4, minmax(0, 1fr));
                 gap: 0.75rem;
-                margin: 1rem 0 1.25rem;
+                margin: 0 0 1.25rem;
                 padding: 1rem;
                 border: 1px solid var(--line);
                 border-radius: 26px;
@@ -619,6 +611,8 @@ void runServer() {
                 box-shadow: 0 12px 30px rgba(70, 50, 30, 0.08);
               }
               .property-media {
+                position: relative;
+                overflow: hidden;
                 aspect-ratio: 16 / 10;
                 background: linear-gradient(135deg, #d9c6b4, #bfa084);
               }
@@ -635,6 +629,26 @@ void runServer() {
                 font-weight: 700;
                 letter-spacing: 0.04em;
                 text-transform: uppercase;
+              }
+              .media-day-badge {
+                position: absolute;
+                top: 0.8rem;
+                right: 0.8rem;
+                z-index: 2;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 3.1rem;
+                padding: 0.32rem 0.6rem;
+                border-radius: 999px;
+                background: rgba(20, 18, 15, 0.46);
+                border: 1px solid rgba(255,255,255,0.2);
+                backdrop-filter: blur(8px);
+                color: white;
+                font-size: 0.82rem;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+                pointer-events: none;
               }
               .property-body {
                 display: flex;
@@ -797,11 +811,6 @@ void runServer() {
           </head>
           <body>
             <main class="shell">
-              <section class="hero">
-                <h1>Property Atlas</h1>
-                <p>Switch from a dense spreadsheet view to a faster visual scan. Each card keeps the key market numbers, listing lifecycle, and image front and center.</p>
-              </section>
-
               <section class="toolbar">
                 <input id="search-filter" type="text" placeholder="Search address, city, type, website or id">
                 <input id="price-filter" type="text" placeholder="Price, e.g. >1000000">
